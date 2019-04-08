@@ -3,11 +3,11 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Print("Enter a number: ")
-	var input float64
-	fmt.Scanf("%f", &input)
+	fmt.Print("Enter a degree: ")
+	var fharenheit float64
+	fmt.Scanf("%f", &fharenheit)
 
-	output := (input - 32) * 5 / 9
+	celcium := (fharenheit - 32) * 5 / 9
 
-	fmt.Println(output)
+	fmt.Println("temperature in celcium is ", celcium)
 }
