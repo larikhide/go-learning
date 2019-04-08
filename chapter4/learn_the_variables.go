@@ -3,10 +3,11 @@ package main
 import "fmt"
 
 func main() {
-	var x string = "Hello World"
-	fmt.Println(x)
-}
+	fmt.Print("Enter a number: ")
+	var input float64
+	fmt.Scanf("%f", &input)
 
-func f() {
-	fmt.Println(x)
+	output := (input - 32) * 5 / 9
+
+	fmt.Println(output)
 }
