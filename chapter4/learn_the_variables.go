@@ -3,7 +3,14 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Print("Enter a foots: ")
+	var x string = "Hello World"
+	fmt.Println(x)
+	fmt.Print("Enter a foots: ") /* можно сделать так */
+
+	var y string
+	x = "Hello World"
+	fmt.Println(x) /* а можно так */
+
 	var foots float64
 	fmt.Scanf("%f", &foots)
 
