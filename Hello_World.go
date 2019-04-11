@@ -9,4 +9,4 @@ func main() {
 }
 
 // way to merged stages
-/* for make a block comment press shift + alr + A */
+/* for make a block comment press shift + alt + A */
