@@ -29,5 +29,7 @@ func main() {
 	fmt.Println(!true)
 	// finish to show boolean operators
 
-	fmt.Println("32132 * 42452 = ", 32132*42452)
+	fmt.Println("32132 * 42452 = ", 32132*42452) /* use for calculation */
+
+	fmt.Println((true && false) || (false && true) || !(false && false)) /* the solution of the exercise */
 }
