@@ -12,9 +12,15 @@ func main() {
 }
 
 func test() {
-	var x string
-	x = "first"
-	fmt.Println(x)
-	x = "second"
-	fmt.Println(x)
+	var z string
+	z = "first"
+	fmt.Println(z)
+	z = "second"
+	fmt.Println(z) /* можно так */
+
+	var c string
+	c = "first"
+	fmt.Println(c)
+	c = c + "second"
+	fmt.Println(c) /* но так пизже */
 }
