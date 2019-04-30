@@ -5,7 +5,8 @@ import "fmt"
 func main() {
 	fmt.Print("Enter a number: ")
 	var number int
-	fmt.Scanf("%i", &number)
+	fmt.Scanf("%d", &number)
+	fmt.Println(number)
 	switch number {
 	case 0:
 		fmt.Println("zero")
