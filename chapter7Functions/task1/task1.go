@@ -2,12 +2,12 @@ package main
 
 import "fmt"
 
-func half(digit int) (int, bool) {
-	r := digit / 2
-	return r, r%2 == 0
+func half(num int) (int, bool) {
+	r := num / 2
+	return r, num%2 == 0
 }
 
 func main() {
-	fmt.Println(half(4))
-	fmt.Println(half(4))
+	fmt.Println(half(2))
+	fmt.Println(half(43))
 }
