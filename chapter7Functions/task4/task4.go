@@ -9,5 +9,5 @@ func fibonacci(element int) int {
 	return fibonacci(element-1) + fibonacci(element-2)
 }
 func main() {
-	fmt.Println(fibonacci(3))
+	fmt.Println(fibonacci(2))
 }
