@@ -10,9 +10,9 @@ func main() {
 }
 
 func maxElement(list ...int) int {
-	maxNum := math.MaxInt32
+	maxNum := math.MinInt32
 	for _, value := range list {
-		if maxNum < value || maxNum == math.MaxInt32 {
+		if maxNum < value {
 			maxNum = value
 		}
 	}
