@@ -7,7 +7,7 @@ func swap(x *int, y *int) {
 }
 func main() {
 	x, y := 1, 2
-
+	fmt.Println("x=", x, "y=", y)
 	swap(&x, &y)
 	fmt.Println("x=", x, "y=", y)
 
