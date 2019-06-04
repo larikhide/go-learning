@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"os"
 	"path/filepath"
 )
 
-func dirTree(out *os.File, info string, err bool) error {
+func dirTree(out io.Writer, info string, err bool) error {
 	filepath.Walk(".", func(path string, info os.FileInfo, err error) error {
 		fmt.Println(path)
 		return nil
