@@ -2,11 +2,17 @@ package main
 
 import (
 	"fmt"
-	"io"
 	"os"
 	"path/filepath"
-	"strings"
 )
+
+func dirTree(out *os.File, info string, err bool) error {
+	filepath.Walk(".", func(path string, info os.FileInfo, err error) error {
+		fmt.Println(path)
+		return nil
+	})
+	return nil
+}
 
 func main() {
 	out := os.Stdout
