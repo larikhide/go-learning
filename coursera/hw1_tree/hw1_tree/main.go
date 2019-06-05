@@ -5,15 +5,8 @@ import (
 	"io"
 	"os"
 	"path/filepath"
+	"strings"
 )
-
-func dirTree(out io.Writer, info string, err bool) error {
-	filepath.Walk(".", func(path string, info os.FileInfo, err error) error {
-		fmt.Println(path)
-		return nil
-	})
-	return nil
-}
 
 func main() {
 	out := os.Stdout
