@@ -4,19 +4,23 @@ import (
 	"fmt"
 	"io"
 	"os"
-	"path/filepath"
-	"strings"
 )
 
-func dirTree(out io.Writer, info string, err bool) error {
-	filepath.Walk("testdata", func(path string, info os.FileInfo, err error) error {
+func dirTree(decrOfFile io.Writer, nameOfSomth string, hzChto bool) error {
+	dir, err := os.Open(".")
+	if err != nil {
+		return fmt.Errorf("file not sorted")
+	}
+	defer dir.Close()
 
-		path = strings.Replace(path, "\\", "\n└───", -1)
-		fmt.Println(path)
-
-		return nil
-	})
-	return nil /* показать, что нет ошибок */
+	fileInfos, err := dir.Readdir(-1)
+	if err != nil {
+		return fmt.Errorf("end of directory")
+	}
+	for _, fi := range fileInfos {
+		fmt.Println(fi.Name())
+	}
+	return nil
 }
 
 func main() {
