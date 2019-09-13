@@ -20,7 +20,8 @@ func dirTree(decrOfFile io.Writer, nameOfSomth string, hzChto bool) error {
 	for _, fi := range fileInfos {
 		fmt.Println(fi.Name())
 	}
-	return nil
+
+	return err
 }
 
 func main() {
