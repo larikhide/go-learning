@@ -1,25 +1,32 @@
 package main
 
-func binarySearch(list []int, item int) pos int {
-	low:= 0
-	high:=len(list) - 1
-	for _, low <= high, i++ {
-		mid = (low+high)
+import "fmt"
+
+func binarySearch(list []int, item int) int {
+	low := 0
+	high := len(list) - 1
+	var guess, mid int
+	for low != high {
+		mid = (low + high) / 2
 		guess = list[mid]
 		switch {
 		case guess == item:
-			return mid
+			return guess
 		case guess > item:
-			high = mid -1
+			high = guess
+		case guess < item:
+			low = guess
 		default:
-			low = mid +1
+			return item
 		}
 	}
-return pos
+	return guess
 }
 
-func main () {
-	list:= make([]int, 5)
-	fmt.Scanf(&list)
+func main() {
+	list := make([]int, 5)
+	for i := 0; i < 5; i++ {
+		fmt.Scan(&list[i])
+	}
 	fmt.Println(binarySearch(list, 4))
 }
