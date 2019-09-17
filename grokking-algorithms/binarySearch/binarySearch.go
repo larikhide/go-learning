@@ -3,24 +3,21 @@ package main
 import "fmt"
 
 func binarySearch(list []int, item int) int {
-	low := 0
-	high := len(list) - 1
-	var guess, mid int
-	for low != high {
+	low := 0              //индекс первого элемента среза
+	high := len(list) - 1 //индекс последнего элемента
+	var mid int
+	for low <= high {
 		mid = (low + high) / 2
-		guess = list[mid]
 		switch {
-		case guess == item:
-			return guess
-		case guess > item:
-			high = guess
-		case guess < item:
-			low = guess
-		default:
-			return item
+		case list[mid] == item:
+			return list[mid]
+		case list[mid] > item:
+			high = mid - 1
+		case list[mid] < item:
+			low = mid + 1
 		}
 	}
-	return guess
+	return list[mid]
 }
 
 func main() {
