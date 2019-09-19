@@ -2,22 +2,21 @@ package main
 
 import "fmt"
 
-func binarySearch(list []int, item int) int {
-	low := 0              //индекс первого элемента среза
-	high := len(list) - 1 //индекс последнего элемента
-	var mid int
-	for low <= high {
-		mid = (low + high) / 2
-		switch {
-		case list[mid] == item:
-			return list[mid]
-		case list[mid] > item:
-			high = mid - 1
-		case list[mid] < item:
-			low = mid + 1
-		}
+// функция возвращает позицию загаданного числа
+func binarySearch(list []int, item int) (id int) {
+	mid := int(float64(len(list)) / 2.0) //так нормально делать?
+	switch {
+	case len(list) == 0:
+		id = -1 //нет элементов, нет числа
+	case list[mid] == item:
+		id = mid
+	case list[mid] > item:
+		id = binarySearch(list[:mid], item)
+	case list[mid] < item:
+		id = binarySearch(list[mid+1:], item)
+		id += mid + 1
 	}
-	return list[mid]
+	return
 }
 
 func main() {
