@@ -7,7 +7,7 @@ func binarySearch(list []int, item int) (id int) {
 	mid := int(float64(len(list)) / 2.0) //так нормально делать?
 	switch {
 	case len(list) == 0:
-		id = -1 //нет элементов, нет числа
+		id = -1 //нет элементов, нет числа, разобраться в чем проблема когда вводишь ряд без искомого числа
 	case list[mid] == item:
 		id = mid
 	case list[mid] > item:
