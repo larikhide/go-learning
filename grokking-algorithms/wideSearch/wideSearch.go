@@ -1,30 +1,33 @@
 package main
 
-import "fmt"
-
-/* func wideSearch (map[string]string) string {
-	for _,
-} */
+import (
+	"fmt"
+)
 
 func main() {
-	persons := map[string]map[int]string{
-		"you": map[int]string{
-			0: "Alice",
-			1: "Bob",
-			2: "Claire",
+	persons := map[string]map[string]string{
+		"you": map[string]string{
+			"Alice":  "noSeller",
+			"Bob":    "noSeller",
+			"Claire": "noSeller",
 		},
-		"Bob": map[int]string{
-			0: "Anuj",
-			1: "Peggy",
+		"Bob": map[string]string{
+			"Anuj":  "noSeller",
+			"Peggy": "noSeller",
 		},
-		"Alice": map[int]string{
-			0: "Peggy",
+		"Alice": map[string]string{
+			"Peggy": "Seller",
 		},
-		"Claire": map[int]string{
-			0: "Thom",
-			1: "Jonny",
+		"Claire": map[string]string{
+			"Thom":  "noSeller",
+			"Jonny": "noSeller",
 		},
+		"Anuj":  map[string]string{},
+		"Peggy": map[string]string{},
+		"Thom":  map[string]string{},
+		"Jonny": map[string]string{},
 	}
-
-	fmt.Println(persons)
+	for k, v := range persons {
+		fmt.Println(k, v)
+	}
 }
