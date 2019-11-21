@@ -27,7 +27,11 @@ func main() {
 		"Thom":  map[string]string{},
 		"Jonny": map[string]string{},
 	}
-	for k, v := range persons {
-		fmt.Println(k, v)
+	for k := range persons {
+		for v := range k {
+			if string(v) == "Seller" {
+				fmt.Println("Seller")
+			}
+		}
 	}
 }
