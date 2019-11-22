@@ -19,7 +19,7 @@ func main() {
 			"Peggy": "Seller",
 		},
 		"Claire": map[string]string{
-			"Thom":  "noSeller",
+			"Thom":  "Seller",
 			"Jonny": "noSeller",
 		},
 		"Anuj":  map[string]string{},
@@ -27,10 +27,10 @@ func main() {
 		"Thom":  map[string]string{},
 		"Jonny": map[string]string{},
 	}
-	for k := range persons {
-		for v := range k {
-			if string(v) == "Seller" {
-				fmt.Println("Seller")
+	for _, v := range persons {
+		for name, vs := range v {
+			if vs == "Seller" {
+				fmt.Printf("%s is %s of mango\n", name, vs)
 			}
 		}
 	}
