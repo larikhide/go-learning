@@ -5,33 +5,60 @@ import (
 )
 
 func main() {
-	persons := map[string]map[string]string{
-		"you": map[string]string{
-			"Alice":  "noSeller",
-			"Bob":    "noSeller",
-			"Claire": "noSeller",
+	persons := map[string][]string{
+		"you": []string{
+			"Alice",
+			"Bob",
+			"Claire",
 		},
-		"Bob": map[string]string{
-			"Anuj":  "noSeller",
-			"Peggy": "noSeller",
+		"Bob": []string{
+			"Anuj",
+			"Peggy",
 		},
-		"Alice": map[string]string{
-			"Peggy": "Seller",
+		"Alice": []string{
+			"Peggy",
 		},
-		"Claire": map[string]string{
-			"Thom":  "Seller",
-			"Jonny": "noSeller",
+		"Claire": []string{
+			"Thom",
+			"Jonny",
 		},
-		"Anuj":  map[string]string{},
-		"Peggy": map[string]string{},
-		"Thom":  map[string]string{},
-		"Jonny": map[string]string{},
+		"Anuj":  []string{},
+		"Peggy": []string{},
+		"Thom":  []string{},
+		"Jonny": []string{},
 	}
-	for _, v := range persons {
-		for name, vs := range v {
-			if vs == "Seller" {
-				fmt.Printf("%s is %s of mango\n", name, vs)
+	visited := []string{}
+	bfs("you", persons, func(name string) {
+		visited = append(visited, name)
+	})
+	fmt.Println(visited)
+}
+
+func bfs(start string, persons map[string][]string, fn func(string)) {
+	frontier := []string{start}
+	visited := map[string]bool{}
+	next := []string{}
+
+	for 0 < len(frontier) {
+		next = []string{}
+		for _, name := range frontier {
+			visited[name] = true
+			fn(name)
+			for _, n := range bfsFrontier(name, persons, visited) {
+				next = append(next, string(n))
 			}
 		}
+		frontier = next
 	}
+}
+
+func bfsFrontier(name string, persons map[string][]string, visited map[string]bool) []string {
+	next := []string{}
+	iter := func(n string) bool { _, ok := visited[string(n)]; return !ok }
+	for _, n := range persons[name] {
+		if iter(n) {
+			next = append(next, string(n))
+		}
+	}
+	return next
 }
