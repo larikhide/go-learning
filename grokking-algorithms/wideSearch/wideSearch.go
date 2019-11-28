@@ -17,9 +17,9 @@ func main() {
 		11: []int{7},
 		12: []int{7},
 	}
-	traders := []int{}
+	traders := []int{} //массив для чуваков, удволетворяющих условиям
 	bfs(2, nodes, func(node int) {
-		if node > 10 {
+		if node > 10 { //если чувак больше 10, то он подходит
 			traders = append(traders, node)
 		}
 	})
@@ -39,7 +39,7 @@ func queueMaker(node int, nodes map[int][]int, visited map[int]bool) []int {
 }
 
 func bfs(start int, nodes map[int][]int, fn func(int)) {
-	first := []int{start}     //первый (кандидат?)
+	first := []int{start}     //проверяемая очередь и первый в ней кандидат
 	visited := map[int]bool{} //создание списка уже проверенных кандидатов
 	next := []int{}           // массив для хранения нового состояния очереди
 
