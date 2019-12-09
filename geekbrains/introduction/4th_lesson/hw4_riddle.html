@@ -1,0 +1,33 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+alert("Давай поиграем с тобой в игру =)");
+
+var trueAnswer = 0;
+var firstRiddle = prompt("Висит груша, нельзя скушать. Что это?");
+if (firstRiddle == "Лампочка" || firstRiddle == "лампочка" || firstRiddle == "Лампа" || firstRiddle == "лампа") {
+    alert("Котенок умненький! Молодец! =*");
+    trueAnswer++
+} else {
+    alert("Не угадал((");
+}
+
+var secondRiddle = prompt("Папа у которого может и не быть детей?");
+if (secondRiddle == "Римский" || secondRiddle == "римский") {
+    alert("Золото! =*");
+    trueAnswer++;
+} else {
+    alert("Не угадал((");
+}
+
+var thirdRiddle = prompt("Реклама какой авиакампании была про анальчик?)");
+if(thirdRiddle == "Победа" || thirdRiddle == "победа") {
+    alert("Правильно! ты молодец!");
+    trueAnswer++;
+} else {
+    alert("Эх! Мимо.");
+}
+
+document.write("Ты отгадал " + trueAnswer + " загадки");
+
+</script>
