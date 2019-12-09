@@ -1,0 +1,24 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+    var answer = parseInt(Math.random() * 100);
+    var firstUser = prompt("Введите имя первого игрока: ");
+    var secondUser = prompt("Введите имя второго игрока: ");
+    var userAnswer = +prompt("Угадайте число от 0 до 100");
+
+    while (true) {
+        if(userAnswer == answer){
+            alert("Поздравляю, вы угадали! ");
+            break; //завершает цикл, continue - переходим к следующей операции
+        } else if(userAnswer > answer){
+           next = secondUser;
+           userAnswer = +prompt("Вы ввели слишком большое число. Ход переходит игроку " + next + "." + next + ", Введите число");
+        } else if(userAnswer < answer){
+            next = secondUser;
+           userAnswer = +prompt("Вы ввели слишком маленькое число. Ход переходит игроку " + next + "." + next + ", Введите число");
+        }
+    }
+
+    alert("Правильный ответ: " + answer);
+
+</script>
