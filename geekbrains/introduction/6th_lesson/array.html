@@ -1,12 +1,17 @@
 <meta charset="utf-8">
 <script type="text/javascript">
 
-var numbers = [43, 7, 23, 54, 76];
+var numbers = []; //cоздание пустого массива
+
+for(var i = 0; i< 5; i++) {
+    var randomNumber = parseInt(Math.random()*100);
+    numbers.push(randomNumber);
+}
+
 
 alert("Запомните числа и их порядок " + numbers);
 
 var userAnswer = +prompt("Каким было первое число?");
-alert(numbers[0]);
 
 if (userAnswer == numbers[0]) {
     alert("Всё верно!");
@@ -15,12 +20,18 @@ if (userAnswer == numbers[0]) {
 }
 
 userAnswer = +prompt("А последнее?");
-alert(numbers.length);
-alert(numbers[numbers.length - 1]);
 if (userAnswer == numbers[numbers.length - 1]) {
     alert("Всё верно!");
 } else {
     alert("А вот и нет! Правильный ответ: " + numbers[numbers.length - 1]);
+}
+
+var n = parseInt(Math.random()*numbers.length);
+userAnswer = +prompt("А как на счет числа под номером " + (n +1) + "?");
+if(userAnswer == numbers[n]) {
+    alert("Всё верно!");
+} else {
+    alert("А вот и нет! Правильный ответ: " + numbers[n]);
 }
 
 </script>
