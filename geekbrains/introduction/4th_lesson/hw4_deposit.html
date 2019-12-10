@@ -4,12 +4,13 @@
 var acсount = +prompt("Чтобы расчитать размер вклада введите первоначальную сумму цифрами в рублях");
 var interest = +prompt("Введите процентую ставку цифрами")/100;
 var time = +prompt("Введите срок вклада");
+var result = "Изменение размера вклада по годам:<br>";
 
-document.write("ИТОГ:<br>");
 for (var i = 1; i <= time; i++) {
     acсount += acсount * interest;
-    alert("к концу " + i + " года у вас будет " + acсount.toFixed(2) + " руб.");
-    document.write("к концу " + i + " года на счету " + acсount.toFixed(2) + " руб.<br>");
+    result += i + " год: " + acсount.toFixed(2) + " рублей<br>";
 }
+
+document.write(result)
 
 </script>
