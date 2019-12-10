@@ -3,31 +3,34 @@
 
 alert("Давай поиграем с тобой в игру =)");
 
-var trueAnswer = 0;
-var firstRiddle = prompt("Висит груша, нельзя скушать. Что это?");
-if (firstRiddle == "Лампочка" || firstRiddle == "лампочка" || firstRiddle == "Лампа" || firstRiddle == "лампа") {
-    alert("Котенок умненький! Молодец! =*");
-    trueAnswer++
+var score = 0;
+var userAnswer = prompt("Висит груша, нельзя скушать. Что это?");
+userAnswer = userAnswer.toLowerCase(); //строку приводит в нижний регистр
+if (userAnswer == "лампочка" || userAnswer == "лампа") { //tolOwerCase делался для того, чтобы не перечислять варианты "Лампочка" и "Лампа"
+    alert("Это правильный ответ");
+    score++
+} else {
+    alert("Ответ неверный");
+}
+
+userAnswer = prompt("Папа у которого может и не быть детей?");
+userAnswer = userAnswer.toLowerCase();
+if (userAnswer == "римский") {
+    alert("Это правильный ответ");
+    score++;
 } else {
     alert("Не угадал((");
 }
 
-var secondRiddle = prompt("Папа у которого может и не быть детей?");
-if (secondRiddle == "Римский" || secondRiddle == "римский") {
-    alert("Золото! =*");
-    trueAnswer++;
-} else {
-    alert("Не угадал((");
-}
-
-var thirdRiddle = prompt("Реклама какой авиакампании была про анальчик?)");
-if(thirdRiddle == "Победа" || thirdRiddle == "победа") {
+userAnswer = prompt("Реклама какой авиакампании была про анальчик?)");
+userAnswer = userAnswer.toLowerCase();
+if(userAnswer == "победа") {
     alert("Правильно! ты молодец!");
-    trueAnswer++;
+    score++;
 } else {
     alert("Эх! Мимо.");
 }
 
-document.write("Ты отгадал " + trueAnswer + " загадки");
+document.write("Ты отгадал " + score + " загадки");
 
 </script>
