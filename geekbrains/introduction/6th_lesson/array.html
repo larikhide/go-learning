@@ -1,0 +1,26 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+var numbers = [43, 7, 23, 54, 76];
+
+alert("Запомните числа и их порядок " + numbers);
+
+var userAnswer = +prompt("Каким было первое число?");
+alert(numbers[0]);
+
+if (userAnswer == numbers[0]) {
+    alert("Всё верно!");
+} else {
+    alert("А вот и нет! Правильный ответ: " + numbers[0]);
+}
+
+userAnswer = +prompt("А последнее?");
+alert(numbers.length);
+alert(numbers[numbers.length - 1]);
+if (userAnswer == numbers[numbers.length - 1]) {
+    alert("Всё верно!");
+} else {
+    alert("А вот и нет! Правильный ответ: " + numbers[numbers.length - 1]);
+}
+
+</script>
