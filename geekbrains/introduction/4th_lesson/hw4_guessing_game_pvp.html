@@ -4,19 +4,31 @@
     var answer = parseInt(Math.random() * 100);
     var firstUser = prompt("Введите имя первого игрока: ");
     var secondUser = prompt("Введите имя второго игрока: ");
-    var userAnswer = +prompt("Угадайте число от 0 до 100");
+    var next = firstUser;
+
 
     while (true) {
+
+        var userAnswer = prompt("Игрок " + next + "! Угадайте число от 0 до 100.\nДля выхода введите q");
+
+        if(userAnswer == "q")
+            break;
+
+        userAnswer = parseInt(userAnswer)
+
         if(userAnswer == answer){
-            alert("Поздравляю, вы угадали! ");
+            alert("Поздравляю, вы угадали! \nПобедитель " + next);
             break; //завершает цикл, continue - переходим к следующей операции
         } else if(userAnswer > answer){
-           next = secondUser;
-           userAnswer = +prompt("Вы ввели слишком большое число. Ход переходит игроку " + next + "." + next + ", Введите число");
+           userAnswer = alert("Вы ввели слишком большое число");
         } else if(userAnswer < answer){
-            next = secondUser;
-           userAnswer = +prompt("Вы ввели слишком маленькое число. Ход переходит игроку " + next + "." + next + ", Введите число");
+           userAnswer = alert("Вы ввели слишком маленькое число");
         }
+
+        if(next == firstUser)
+            next = secondUser;
+        else
+            next = firstUser;
     }
 
     alert("Правильный ответ: " + answer);
