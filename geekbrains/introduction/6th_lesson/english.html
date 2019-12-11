@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+    var words = [
+        ["food", "еда"],
+        ["bike", "велосипед"],
+        ["apple", "яблоко"],
+        ["do", "делать"],
+        ["mean", "иметь в виду"],
+    ];
+
+    while(words.length != 0){
+        var i = parseInt(Math.random()*words.length);
+        var userTramslate = prompt("Как переводится слово: " + words[i][0]);
+        if (userTramslate == words[i][1]) {
+            alert("Правильно!");
+            words.splice(i, 1); //удаляет 1 элемент массива, начиная с i
+        } else {
+            alert("Правильный ответ: " + words[i][1]);
+        }
+    }
+
+alert("Поздравляю! Вы выучили все слова!");
+
+</script>
