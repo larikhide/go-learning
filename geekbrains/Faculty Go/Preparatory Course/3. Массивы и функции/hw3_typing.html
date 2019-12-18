@@ -1,0 +1,46 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+//создать строку из случайных данных букв
+function generateText(letters, length){
+    var text = "";
+    for(var i =0; i < length; i++){
+        var n = getRandomNumber(letters.length - 1);
+        text = text + letters[n];
+    }
+    return text;
+}
+
+function getRandomNumber(max){
+    return Math.round(Math.random() * max);
+}
+
+function typingChallenge(task, words, length){
+    while(true){
+        alert(task);
+        var text = generateText(words, length);
+        var userText = prompt(text);
+        if (userText == text) {
+            alert("Все верно!");
+            break;
+        } else {
+            alert("Вы ошиблись. попробуйте еще раз!")
+        }
+    }
+}
+
+alert("Вас приветсвтует прграмма по обучению слепой печати");
+
+var task = "Положите 4 пальца левой руки - мезинец, безымянный, средний и указательный на клавиши ф, ы, в, а. Запомните, что буква А находится под вашим указательным пальцем, а Ф -под мизинцем.\nТеперь неспеа набирайте текст. Постарайтесь не смотреть на клавиатуру";
+
+typingChallenge(task, ["ф", "а"], 10);
+
+task = "Поставьте мизинец левой руки на букву Ф, безымянный палец — на Ы, средний — на В, указательный — на А. Мизинец правой руки на букву Ж, безымянный палец — на Д, средний — на Л, указательный — на О. Запомните расположение пальцев. Повторяйте за мной";
+
+typingChallenge(task, ["ы", "в"], 10);
+
+task = "Поставьте мизинец левой руки на букву Ф, безымянный палец — на Ы, средний — на В, указательный — на А. Мизинец правой руки на букву Ж, безымянный палец — на Д, средний -— на Л, указательный — на О. Запомните расположение пальцев";
+
+typingChallenge(task, ["о", "ж"], 10);
+
+</script>
