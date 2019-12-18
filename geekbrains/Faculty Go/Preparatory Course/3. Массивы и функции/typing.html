@@ -1,13 +1,12 @@
 <meta charset="utf-8">
 <script type="text/javascript">
 
-    function generateText(letters, text){
+    function generateText(letters, length){
         var text = "";
-        for(var i =0; i < lenght; i++){
-            var n = getRandomNumber(lenght.letters - 1);
+        for(var i =0; i < length; i++){
+            var n = getRandomNumber(letters.length - 1);
             text = text + letters[n];
         }
-
         return text;
     }
 
