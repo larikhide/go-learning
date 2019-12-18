@@ -10,15 +10,15 @@
     }
 
     function getRandomNumber(max){
-            return Math.round(Math.random() * max);
+            return Math.round(Math.random() * max); // генерируем случайное число
     }
 
     function generateRandomNumberArray(length){
         var numbers = []; //cоздание пустого массива
 
-        for(var i = 0; i < length; i++) {
-        var randomNumber = getRandomNumber(100);
-        numbers.push(randomNumber);
+        for(var i = 0; i < length; i++) { //наполнение массива случайными числами
+            var randomNumber = getRandomNumber(100);
+            numbers.push(randomNumber);
         }
         return numbers;
     }
