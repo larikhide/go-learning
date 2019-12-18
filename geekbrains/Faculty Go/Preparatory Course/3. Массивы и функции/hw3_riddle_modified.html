@@ -1,0 +1,29 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+function getAnswer(question, answers){
+    var userAnswer = prompt(question);
+    userAnswer = userAnswer.toLowerCase();
+
+    for(var i = 0; i < answers.length; i++) {
+        if (userAnswer == answers[i]) {
+            alert("Это правильный ответ");
+            score++;
+            return;
+        }
+    }
+    alert("Не угадал((");
+}
+
+
+alert("Давай поиграем с тобой в игру =)");
+
+var score = 0;
+//TODO можно избежать дублирование вызова функции через цикл и массив параметров
+getAnswer("Висит груша, нельзя скушать. Что это?", ["лампочка", "лампа"]);
+getAnswer("Папа у которого может и не быть детей?", ["римский"]);
+getAnswer("Зимой и летом одним цветом", ["елка", "ёлка"]);
+
+document.write("Ты отгадал " + score + " загадки");
+
+</script>
