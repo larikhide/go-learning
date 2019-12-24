@@ -7,13 +7,9 @@
     </head>
     <body>
 <div class="content">
-    <div class="header">
-        <a href="#">Главная</a>
-        <a href="puzzle.html">Загадки</a>
-        <a href="guess.html">Угадайка</a>
-        <a href="guess-2.html">Угадайка PVP</a>
-        <a href="password_gen.html">Генератор паролей</a>
-    </div>
+    <?php
+        include "menu.php";
+    ?>
     <h1>Личный сайт студента GeekBrains</h1>
 
     <div class="center">
@@ -26,11 +22,10 @@
 
             <p>Здесь вы можете сыграть в несколько игр, которые я написал, по ходу выполнения подготовительного курса: <br>
 
-            <a href="#">Главная</a>
-            <a href="puzzle.html">Загадки</a>
-            <a href="guess.html">Угадайка</a>
-            <a href="guess-2.html">Угадайка PVP</a>
-            <a href="password_gen.html">Генератор паролей</a>
+            <?php
+            include "menu.php";
+            ?>
+
             </p>
         </div>
     </div>
@@ -38,7 +33,7 @@
 
 
     <div class="footer">
-        Copyright &copy;  Elon Tusk
+        Copyright &copy; <?php echo date("Y");?> Elon Tusk
     </div>
 
 
