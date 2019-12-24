@@ -48,7 +48,7 @@ body {
 .content {
     min-width: 1300px;
     margin: 0 auto;
-    min-height: calc(100vh - 140px); 
+    min-height: calc(100vh - 140px);
 }
 
 .content h1 {
