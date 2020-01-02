@@ -1,0 +1,67 @@
+/* 2. В качестве фона установить цвет #f8f8f8 */
+body {
+  background-color: #f8f8f8;
+}
+
+/* 3.a. Для всех ссылок меню задать определенный стиль текста, размер шрифта, начертания шрифта */
+.menu {
+  text-align: center;
+  border: brown solid 2px;
+}
+
+.menu li a {
+  font-style: oblique;
+  font-size: 24px;
+  color: cadetblue;
+  text-decoration: none;
+}
+
+/* 3.b. Убрать маркеры списка*/
+.menu li {
+  list-style-type: none;
+}
+
+/* 4. а. Заголовки */
+.headers {
+  color: black;
+  font-size: 18px;
+  font-weight: 400;
+  background-color: #eaeaea;
+  text-align: center;
+}
+
+/* 4.b. Краткое описание товара */
+.short_descr {
+  color: #484343;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 16px;
+}
+
+/* 4.c. Подробное описание товара */
+.full_descr {
+  color: #484343;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+}
+
+/* 4.d. Список характеристик товара */
+.list {
+  font-family: "Courier New", Courier, monospace;
+  list-style-type: georgian;
+}
+
+/* 5.a. Задать значения ширины и высоты для полей ввода */
+.input_window {
+  size: initial;
+  /* 5.b. Задать стили для текста внутри полей input (Цвет текста, размер шрифта и т.д.) */
+  color: grey;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Создать рамку без использования border */
+.outline {
+  outline: 3px solid #00af64;
+}
