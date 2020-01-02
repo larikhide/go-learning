@@ -54,10 +54,12 @@ body {
 }
 
 /* 5.a. Задать значения ширины и высоты для полей ввода */
-.input_window {
+input[type="text"],
+textarea,
+select {
   size: initial;
   /* 5.b. Задать стили для текста внутри полей input (Цвет текста, размер шрифта и т.д.) */
-  color: grey;
+  color: red;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
