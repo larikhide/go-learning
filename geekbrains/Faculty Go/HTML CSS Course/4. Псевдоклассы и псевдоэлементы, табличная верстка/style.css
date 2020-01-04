@@ -1,0 +1,93 @@
+body {
+  background-color: #f8f8f8;
+}
+
+.menu li a {
+  font-style: oblique;
+  font-size: 24px;
+  color: cadetblue;
+  text-decoration: none;
+}
+
+/*1. При наведении на меню сайта цвет ссылок должен меняться на произвольный */
+.menu li a:hover {
+  color: red;
+}
+
+/* 2. На всех страницах создать блок с классом header, содержащий:
+
+Логотип интернет-магазина;
+Меню сайта. */
+.header {
+  outline: brown solid 2px;
+}
+
+.header td {
+  border: 2px solid brown;
+}
+.header table {
+  width: 100%;
+}
+.logo_space {
+  /* тут не очень понял, почему не могу задать ширину ячейки по размеру контента внутри этой ячейки. все параметры типа auto итд давали большую ширину. В итоге задал любое малое значение */
+  width: 1px;
+}
+/* убрать точки в меню */
+.menu li {
+  list-style-type: none;
+}
+
+/* назвал так класс заголовков с прошлой домашней работы. К текущему заданию с созданием блока с классом header нет никакой связи */
+.headers {
+  color: black;
+  font-size: 18px;
+  font-weight: 400;
+  background-color: #eaeaea;
+  text-align: center;
+}
+
+/* Краткое описание товара */
+.short_descr {
+  color: #484343;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 16px;
+}
+
+/* Подробное описание товара */
+.full_descr {
+  color: #484343;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+}
+
+/* Список характеристик товара */
+.list {
+  font-family: "Courier New", Courier, monospace;
+  list-style-type: georgian;
+}
+
+/* Задать значения ширины и высоты для полей ввода */
+/* input[type="text"] {
+  size: initial;
+  color: red;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: fit-content;
+} */
+
+/* 4. При вводе текста в поле Email на странице контактной информации поменять цвет текста и цвет поля.
+Меняю только цвет поля, т.к. цвет для текста был изменен ранее*/
+/* input[type="text"]:focus {
+  background-color: darkkhaki;
+} */
+/* !!!!!!!!!как сделать первую букву заглавной?? */
+.viva:focus {
+  color: #00af64;
+}
+
+/* Создать рамку без использования border */
+.outline {
+  outline: 3px solid #00af64;
+}
