@@ -32,8 +32,8 @@ body {
   /* тут не очень понял, почему не могу задать ширину ячейки по размеру контента внутри этой ячейки. все параметры типа auto итд давали большую ширину. В итоге задал любое малое значение */
   width: 1px;
 }
-/* убрать точки в меню */
-.menu li {
+
+li {
   list-style-type: none;
 }
 
@@ -102,9 +102,7 @@ table {
 }
 
 /* 8.На странице просмотра товара каталога в каждом параграфе сделать первую букву первого слова другим шрифтом и размером. */
-.short_descr::first-letter,
-.full_descr::first-letter,
-.special_offer::first-letter {
+.product_info p::first-letter {
   font-family: "Times New Roman", Times, serif;
   font-size: 200%;
   color: red;
@@ -114,4 +112,13 @@ table {
 .content table tr:first-child {
   height: 100px;
   background-color: salmon;
+}
+
+h1 {
+  background-color: sandybrown;
+}
+
+.footer {
+  background-color: rgb(170, 174, 177);
+  height: 100px;
 }
