@@ -69,25 +69,49 @@ body {
   list-style-type: georgian;
 }
 
-/* Задать значения ширины и высоты для полей ввода */
-/* input[type="text"] {
-  size: initial;
-  color: red;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  width: fit-content;
-} */
-
-/* 4. При вводе текста в поле Email на странице контактной информации поменять цвет текста и цвет поля.
-Меняю только цвет поля, т.к. цвет для текста был изменен ранее*/
-/* input[type="text"]:focus {
+/* 4. При вводе текста в поле Email на странице контактной информации поменять цвет текста и цвет поля.*/
+/* 5. При вводе текста в текстовые поля каждое слово должно начинаться с большой буквы, даже если пользователь будет вводить с маленькой. */
+input[type="text"]:focus {
   background-color: darkkhaki;
-} */
-/* !!!!!!!!!как сделать первую букву заглавной?? */
-.viva:focus {
-  color: #00af64;
+  color: red;
+  text-transform: capitalize;
 }
 
-/* Создать рамку без использования border */
+input[type="text"] {
+  color: rgb(124, 175, 36);
+  text-transform: capitalize;
+}
+
+/* 6. Задание стилей для таблицы из 6го пункта */
+td {
+  border: 2px solid brown;
+  text-align: center;
+}
+
+table {
+  width: 500px;
+  margin: auto;
+}
+
+/* 7. При наведении на изображения в разделе просмотра товара, подробного описания, необходимо сделать так, чтобы рамка исчезала, но сама картинка при этом не должна смещаться, т.е., должна оставаться неподвижной. */
 .outline {
   outline: 3px solid #00af64;
+}
+.outline:hover {
+  outline: none;
+}
+
+/* 8.На странице просмотра товара каталога в каждом параграфе сделать первую букву первого слова другим шрифтом и размером. */
+.short_descr::first-letter,
+.full_descr::first-letter,
+.special_offer::first-letter {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 200%;
+  color: red;
+}
+
+/* 11. *Задать высоту для верхней строки таблицы, отличную от всех остальных. */
+.content table tr:first-child {
+  height: 100px;
+  background-color: salmon;
 }
