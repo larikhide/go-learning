@@ -1,0 +1,131 @@
+body {
+  background-color: #f8f8f8;
+}
+
+.menu li a {
+  font-style: oblique;
+  font-size: 24px;
+  color: cadetblue;
+  text-decoration: none;
+}
+
+.menu li a:hover {
+  color: red;
+}
+/* 1. Создать родительский блок с классом container, задать значение ширины и расположить блок по центру экрана. */
+.container {
+  width: 400px;
+  margin: 0 auto;
+}
+
+header {
+  height: 100px; /* 2. Задать блоку с классом header значение высоты. */
+  outline: solid 3px brown;
+  background-color: burlywood;
+  margin: 0 auto;
+}
+
+/* 3. Отодвинуть логотип от верхнего и левого края. */
+.logo {
+  margin-top: 10px;
+  margin-left: 10px;
+  outline: brown solid 1px;
+  float: left; /* 5. Разместить меню справа от логотипа. */
+}
+
+.menu > li {
+  list-style-type: none;
+  display: inline; /* 4. Из вертикального меню сделать горизонтальное. */
+}
+
+.menu {
+  overflow: hidden;
+  margin-top: 35px;
+  float: right; /* 6. Прижать меню к правому краю. */
+  padding-left: 0px;
+}
+
+/* Footer (на всех страницах:)
+1. Задать высоту.
+2. Поменять цвет фона.
+3. Прижать текст «Все права защищены» к правому краю и отодвинуть от верхней и правой границы. */
+footer {
+  height: 100px;
+  background-color: rgb(170, 174, 177);
+  text-align: right;
+}
+
+/* назвал так класс заголовков с прошлой домашней работы. К текущему заданию с созданием блока с классом header нет никакой связи */
+.headers {
+  color: black;
+  font-size: 18px;
+  font-weight: 400;
+  background-color: #eaeaea;
+  text-align: center;
+}
+
+/* Краткое описание товара */
+.short_descr {
+  color: #484343;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 16px;
+}
+
+/* Подробное описание товара */
+.full_descr {
+  color: #484343;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+}
+
+.list {
+  font-family: "Courier New", Courier, monospace;
+  list-style-type: georgian;
+}
+
+input[type="text"]:focus {
+  background-color: darkkhaki;
+  color: red;
+  text-transform: capitalize;
+}
+
+input[type="text"] {
+  color: rgb(124, 175, 36);
+  text-transform: capitalize;
+}
+
+/* 6. Задание стилей для таблицы из 6го пункта */
+td {
+  border: 2px solid brown;
+  text-align: center;
+}
+
+table {
+  width: 500px;
+  margin: auto;
+}
+
+.outline {
+  outline: 3px solid #00af64;
+}
+.outline:hover {
+  outline: none;
+}
+
+.product_info p::first-letter {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 200%;
+  color: red;
+}
+
+.content table tr:first-child {
+  height: 100px;
+  background-color: salmon;
+}
+
+h1 {
+  background-color: sandybrown;
+}
