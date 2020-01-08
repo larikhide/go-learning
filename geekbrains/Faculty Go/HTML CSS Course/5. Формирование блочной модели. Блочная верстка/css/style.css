@@ -53,6 +53,44 @@ footer {
   height: 100px;
   background-color: rgb(170, 174, 177);
   text-align: right;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+/* Страница просмотра товара каталога:
+1. Разместить краткое описание товара справа от картинки. */
+.product_view {
+  float: left;
+  padding-right: 10px;
+}
+
+.short_descr {
+  color: #484343;
+  height: 30px;
+  font-size: 14px;
+  font-style: italic;
+  overflow: hidden;
+}
+
+/* 2. Добавить кнопку «Купить». */
+button {
+  position: fixed;
+  right: 7px;
+  top: 129px;
+  font-size: 26px;
+}
+
+button img {
+  float: left;
+}
+
+/* 3. Присвоить эффект наведения и нажатия кнопке «Купить». */
+button:hover {
+  background-color: green;
+}
+
+button:focus {
+  background-color: grey;
 }
 
 /* назвал так класс заголовков с прошлой домашней работы. К текущему заданию с созданием блока с классом header нет никакой связи */
@@ -61,15 +99,8 @@ footer {
   font-size: 18px;
   font-weight: 400;
   background-color: #eaeaea;
-  text-align: center;
-}
-
-/* Краткое описание товара */
-.short_descr {
-  color: #484343;
-  font-size: 14px;
-  font-style: italic;
-  line-height: 16px;
+  overflow: hidden;
+  text-align: center; /* TODO выровнять текст заголовка с остальными */
 }
 
 /* Подробное описание товара */
