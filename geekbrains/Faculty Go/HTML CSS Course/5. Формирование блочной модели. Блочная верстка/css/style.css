@@ -93,6 +93,30 @@ button:focus {
   background-color: grey;
 }
 
+/* 2. Расположить элементы каталога горизонтально */
+.catalog li {
+  list-style-type: none;
+  float: left;
+  text-align: center;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+.catalog a {
+  text-decoration: none;
+}
+
+hr {
+  clear: both;
+}
+
+/* **Страница контактов:
+1. Ширина карты 100%,
+2. Высота карты 374px. */
+.map {
+  width: 100%;
+  height: 374px;
+}
 /* назвал так класс заголовков с прошлой домашней работы. К текущему заданию с созданием блока с классом header нет никакой связи */
 .headers {
   color: black;
@@ -103,7 +127,6 @@ button:focus {
   text-align: center; /* TODO выровнять текст заголовка с остальными */
 }
 
-/* Подробное описание товара */
 .full_descr {
   color: #484343;
   font-size: 16px;
@@ -112,10 +135,10 @@ button:focus {
   text-align: left;
 }
 
-.list {
+/* .list {
   font-family: "Courier New", Courier, monospace;
   list-style-type: georgian;
-}
+} */
 
 input[type="text"]:focus {
   background-color: darkkhaki;
@@ -128,7 +151,6 @@ input[type="text"] {
   text-transform: capitalize;
 }
 
-/* 6. Задание стилей для таблицы из 6го пункта */
 td {
   border: 2px solid brown;
   text-align: center;
