@@ -5,7 +5,7 @@ body {
 .menu li a {
   font-style: oblique;
   font-size: 24px;
-  color: cadetblue;
+  color: black;
   text-decoration: none;
 }
 
@@ -14,35 +14,40 @@ body {
 }
 /* 1. Создать родительский блок с классом container, задать значение ширины и расположить блок по центру экрана. */
 .container {
-  width: 400px;
+  width: 95%;
   margin: 0 auto;
 }
 
 header {
-  height: 100px; /* 2. Задать блоку с классом header значение высоты. */
-  outline: solid 3px brown;
+  height: 200px; /* 2. Задать блоку с классом header значение высоты. */
   background-color: burlywood;
+  background: url(../img/hat_background.jpg);
   margin: 0 auto;
 }
 
 /* 3. Отодвинуть логотип от верхнего и левого края. */
 .logo {
-  margin-top: 10px;
-  margin-left: 10px;
-  outline: brown solid 1px;
-  float: left; /* 5. Разместить меню справа от логотипа. */
+  margin: 10px 10px;
+  display: inline-block; /* 5. Разместить меню справа от логотипа. */
 }
 
-.menu > li {
+.logo img {
+  border: 3px solid #daeff3;
+  border-radius: 50%;
+}
+
+.menu > ul > li {
   list-style-type: none;
-  display: inline; /* 4. Из вертикального меню сделать горизонтальное. */
+  display: inline-block; /* 4. Из вертикального меню сделать горизонтальное. */
+  padding-right: 10px;
 }
 
 .menu {
-  overflow: hidden;
-  margin-top: 35px;
+  width: 375px;
+  margin: 20px;
+  border: 3px solid #daeff3;
   float: right; /* 6. Прижать меню к правому краю. */
-  padding-left: 0px;
+  background-color: #f4a460;
 }
 
 /* Footer (на всех страницах:)
@@ -60,8 +65,9 @@ footer {
 /* Страница просмотра товара каталога:
 1. Разместить краткое описание товара справа от картинки. */
 .product_view {
+  display: block;
   float: left;
-  padding-right: 10px;
+  margin-right: 10px;
 }
 
 .short_descr {
@@ -75,8 +81,8 @@ footer {
 /* 2. Добавить кнопку «Купить». */
 button {
   position: fixed;
-  right: 7px;
-  top: 129px;
+  right: 3%;
+  top: 229px;
   font-size: 26px;
 }
 
@@ -98,12 +104,29 @@ button:focus {
   list-style-type: none;
   float: left;
   text-align: center;
-  margin-right: 15px;
-  margin-bottom: 15px;
+  margin: 10px 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px black;
+  padding: 20px 10px;
+  /* вместо float и text-align можно:
+display: flex;
+justify-content: center;
+align-items: flex-end; */
 }
 
 .catalog a {
   text-decoration: none;
+  color: #484343;
+}
+
+/* TODO: разобраться с тонокстями display:flex. Нравится как у препода сделано, нравится идея позиционировать блоки с помощью flex, а не обтеканиями */
+.catalog {
+  display: flex;
+  align-content: flex-start;
+  align-items: baseline;
+  padding: 0;
+  flex-wrap: wrap;
+  margin: auto;
 }
 
 hr {
@@ -123,8 +146,17 @@ hr {
   font-size: 18px;
   font-weight: 400;
   background-color: #eaeaea;
+  clear: both;
   overflow: hidden;
-  text-align: center; /* TODO выровнять текст заголовка с остальными */
+  text-align: center;
+}
+
+.product_info {
+  color: black;
+  font-size: 18px;
+  font-weight: 400;
+  background-color: #eaeaea;
+  overflow: hidden;
 }
 
 .full_descr {
