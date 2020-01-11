@@ -158,7 +158,14 @@ body {
 .featured-product {
   width: 270px;
   height: 270px;
+  display: inline-block;
   object-fit: contain;
+  padding-right: 30px;
+}
+
+/* костыль, чтобы чертвертый элеент не переносился и не создавать специальынй класс для последнего */
+.featured-catalog {
+  width: 1366px;
 }
 
 .menu-featured-link {
