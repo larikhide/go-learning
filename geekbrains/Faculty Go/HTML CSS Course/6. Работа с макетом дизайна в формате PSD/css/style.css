@@ -51,10 +51,6 @@ body {
   padding: 10px 13px;
 }
 
-.menu-link:hover {
-  color: #212121;
-}
-
 .menu-link-active {
   color: #212121;
   font-weight: 700;
@@ -69,14 +65,21 @@ body {
   text-transform: uppercase;
 }
 
+.slider-trending:hover {
+  color: #ffffff;
+}
+
 .slider-text {
   margin-top: 283px;
 }
 .slider-h2 {
   color: #212121;
-  font-style: 62px;
-  font-weight: 100;
   text-transform: uppercase;
+  font-size: 62px;
+  font-weight: 100;
+  line-height: 1.16;
+  letter-spacing: -0.05em;
+  text-align: left;
 }
 
 .slider-content {
@@ -104,11 +107,30 @@ body {
   display: inline-block;
   text-decoration: none;
   letter-spacing: 3.6px;
+  opacity: 0.6;
 }
 
-.button > img,
-.explore-button > img {
-  margin-bottom: -5px;
+/* .button-arrow {
+  background: url(../img/arrow-silver.svg);
+  width: 9px;
+  height: 12px;
+  display: inline-block;
+  background-repeat: no-repeat;
+} */
+
+/* .button-arrow {
+  background-image: url(../img/arrow.svg);
+  display: inline-block;
+  width: 9px;
+  height: 12px;
+  background-repeat: no-repeat;
+} */
+.button:hover,
+.explore-button:hover,
+.menu-featured-link:hover,
+.menu-link:hover {
+  color: #212121;
+  opacity: 1;
 }
 
 .circle {
@@ -191,10 +213,6 @@ body {
   padding-bottom: 19px;
 }
 
-.menu-featured-link:hover {
-  color: #212121;
-}
-
 .feature-explorer {
   font-style: 18px;
   font-weight: 700;
@@ -206,6 +224,7 @@ body {
 
 .explore-button {
   color: #212121;
+  opacity: 0.6;
   font-style: 18px;
   font-weight: 700;
   text-transform: uppercase;
@@ -214,4 +233,61 @@ body {
   float: right;
   text-decoration: none;
   letter-spacing: 3.6px;
+}
+
+.featured-product {
+  position: relative;
+}
+
+.product-activator {
+  position: absolute;
+  width: 270px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: rgba(252, 252, 252, 0.9);
+  display: none;
+  padding-top: 76px;
+}
+
+.activator-header {
+  font-size: 22px;
+  color: #212121;
+  font-weight: bold;
+  line-height: 1.364;
+  text-align: center;
+}
+
+.featured-product:hover .product-activator {
+  display: block;
+}
+.activator-arrow {
+  display: block;
+  margin: 0 auto;
+  margin-top: 11.5px;
+}
+.activator-link {
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto;
+  border: 4px solid rgba(252, 252, 252, 0.9);
+  background-color: rgba(252, 252, 252, 0.9);
+  border-radius: 50%;
+}
+
+.activator-link:hover {
+  box-shadow: 0 2px 5px 1px rgba(33, 33, 33, 0.35);
+}
+
+.activator-details {
+  font-size: 14px;
+  color: rgb(108, 108, 108);
+  line-height: 1.571;
+  text-align: center;
+  width: 223.756px;
+  height: 31.936px;
+  display: block;
+  margin: 0 auto;
 }
