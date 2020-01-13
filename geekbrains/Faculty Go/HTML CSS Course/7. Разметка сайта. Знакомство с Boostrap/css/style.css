@@ -1,0 +1,9 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #ffffff;
+}
+
+.slider {
+  background-image: url(../img/slider-img.jpg);
+  border: 1px solid red;
+}
