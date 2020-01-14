@@ -22,34 +22,30 @@
   </head>
   <body>
     <div class="container">
-      <div class="navbar"></div>
-      <div class="navbar-sticky"></div>
+      <nav class="navbar sticky-top navbar-light bg-light">
+        <a href="#"><img src="img/logo.svg" class="float-left" alt="logo"/></a>
+        <ul class="nav float-left">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">History</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Showroom</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><img src="#" alt="search-logo"/></a>
+          </li>
+        </ul>
+      </nav>
       <div class="slider">
-        <nav class="navbar sticky-top navbar-light bg-light">
-          <a href="#"
-            ><img src="img/logo.svg" class="float-left" alt="logo"
-          /></a>
-          <ul class="nav float-left">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Products</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">History</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Showroom</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><img src="#" alt="search-logo"/></a>
-            </li>
-          </ul>
-        </nav>
         <div class="slider-content">
           <p class="slider-tag">TRENDING</p>
           <h2 class="slider-name">Fishnet Chair</h2>
@@ -70,7 +66,7 @@
           ><a href="" class="circle"></a>
         </div>
       </div>
-      <div class="featured-product">
+      <div class="featured-products-page">
         <ul class="nav tab-control">
           <li class="nav-item">
             <a class="nav-link active" href="#">Active</a>
@@ -94,77 +90,133 @@
         <a href="#" class="btn-ghost"
           >Explore All <img src="img/arrow.svg" alt="arrow"
         /></a>
-        <div class="row row-cols-1 row-cols-md-2">
-          <div class="col mb-4">
-            <div class="card">
-              <img src="..." class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-              </div>
-            </div>
+        <div class="tab-content">
+          <div class="feature-product">
+            <img src="img/product-1.png" class="feature-product-img" />
           </div>
-          <div class="col mb-4">
-            <div class="card">
-              <img src="..." class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-              </div>
-            </div>
+          <div class="feature-product">
+            <img src="img/product-2.png" class="feature-product-img" />
           </div>
-          <div class="col mb-4">
-            <div class="card">
-              <img src="..." class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content.
-                </p>
-              </div>
-            </div>
+          <div class="feature-product">
+            <img src="img/product-3.png" class="feature-product-img" />
           </div>
-          <div class="col mb-4">
-            <div class="card">
-              <img src="..." class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-              </div>
-            </div>
+          <div class="feature-product">
+            <img src="img/product-4.png" class="feature-product-img" />
+          </div>
+        </div>
+      </div>
+      <div class="promo-product-page">
+        <div class="slider-promo-1">
+          <div class="slider-content">
+            <p class="slider-tag">TRENDING</p>
+            <h2 class="slider-name">Fishnet Chair</h2>
+            <p class="slider-details">
+              Seat and back with upholstery made of cold cure foam. Steel frame,
+              available in matt powder-coated black
+            </p>
+            <a href="#" class="slider-button"
+              >Order Us<img
+                class="slider-button-img"
+                src="img/arrow.png"
+                alt="arrow"
+            /></a>
+          </div>
+        </div>
+
+        <div class="slider-promo-2">
+          <div class="slider-content">
+            <p class="slider-tag">TRENDING</p>
+            <h2 class="slider-name">Fishnet Chair</h2>
+            <p class="slider-details">
+              Seat and back with upholstery made of cold cure foam. Steel frame,
+              available in matt powder-coated black
+            </p>
+            <a href="#" class="slider-button"
+              >Order Us<img
+                class="slider-button-img"
+                src="img/arrow.png"
+                alt="arrow"
+            /></a>
           </div>
         </div>
       </div>
 
-      <div class="promo-product">
-        <div class="card bg-dark text-white">
-          <img src="..." class="card-img" alt="..." />
-          <div class="card-img-overlay">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
+      <div class="trending-products-page">
+        <div class="trending-title">
+          <h2>Trending Products</h2>
+          <a href="#" class="btn-ghost"
+            >Explore All <img src="img/arrow.svg" alt="arrow"
+          /></a>
+        </div>
+
+        <ul class="trending-content">
+          <li class="trending-product">
+            <img
+              src="img/product-1.png"
+              alt="trending-img"
+              class="trending-img"
+            />
+          </li>
+          <li class="trending-product">
+            <img
+              src="img/product-1.png"
+              alt="trending-img"
+              class="trending-img"
+            />
+          </li>
+          <li class="trending-product">
+            <img
+              src="img/product-1.png"
+              alt="trending-img"
+              class="trending-img"
+            />
+          </li>
+          <li class="trending-product">
+            <img
+              src="img/product-1.png"
+              alt="trending-img"
+              class="trending-img"
+            />
+          </li>
+          <li class="trending-product">
+            <img
+              src="img/product-1.png"
+              alt="trending-img"
+              class="trending-img"
+            />
+          </li>
+          <li class="trending-product">
+            <img
+              src="img/product-1.png"
+              alt="trending-img"
+              class="trending-img"
+            />
+          </li>
+        </ul>
+      </div>
+      <div class="hot-deals">
+        <div class="slider">
+          <div class="slider-content">
+            <p class="slider-tag">TRENDING</p>
+            <h2 class="slider-name">Fishnet Chair</h2>
+            <p class="slider-details">
+              Seat and back with upholstery made of cold cure foam. Steel frame,
+              available in matt powder-coated black
             </p>
-            <p class="card-text">Last updated 3 mins ago</p>
+            <a href="#" class="slider-button"
+              >Order Us<img
+                class="slider-button-img"
+                src="img/arrow.png"
+                alt="arrow"
+            /></a>
+          </div>
+          <div class="pagination">
+            <a href="" class="circle"></a
+            ><a href="" class="circle circle-active"></a
+            ><a href="" class="circle"></a>
           </div>
         </div>
       </div>
-      <div class="trending-products"></div>
-      <div class="hot-deals"></div>
       <div class="exclusive-product"></div>
       <div class="mobile-app"></div>
     </div>
