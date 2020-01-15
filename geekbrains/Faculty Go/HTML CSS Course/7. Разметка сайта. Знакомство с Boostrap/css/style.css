@@ -1,89 +1,6 @@
-body {
-  font-family: "Montserrat", sans-serif;
-  background-color: #ffffff;
-  color: #212121;
-}
-
-.container {
-  margin: 0 auto;
-}
-
 .slider {
-  height: 800px;
   background: url(../img/slider-img.jpg);
-}
-
-.slider,
-.featured-products-page {
-  padding-left: 98px;
-  padding-right: 98px;
-}
-
-.slider-tag {
-  color: #43a047;
-  font-size: 18px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.slider-tag:hover {
-  color: #ffffff;
-}
-
-.slider-name {
-  text-transform: uppercase;
-  font-weight: 100;
-  line-height: 1.16;
-  color: #212121;
-}
-
-.slider-content {
-  font-weight: 300;
-  line-height: 24px;
-  max-width: 50%;
-  /*  padding-left: 5%;
-  padding-right: 5%; */
-}
-.container {
-  width: 1366px;
-}
-
-.slider-details {
-  color: #6c6c6c;
-}
-
-.slider-button {
-  font-weight: 700;
-  text-transform: uppercase;
-  border-radius: 23px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 5px 1px rgba(33, 33, 33, 0.35);
-  width: 212px;
-  text-align: center;
-  line-height: 45px;
-  display: inline-block;
-  letter-spacing: 3.6px;
-  color: #6c6c6c;
-}
-
-.slider-button-img {
-  visibility: hidden;
-}
-
-.slider-button:hover .slider-button-img {
-  color: #212121;
-  visibility: visible;
-  text-decoration: none;
-}
-
-.slider-button:active {
-  box-shadow: none;
-}
-
-.pagination {
-  width: 50em;
-  margin-left: auto;
-  margin-right: auto;
+  height: 600px;
 }
 
 .circle {
@@ -94,53 +11,19 @@ body {
   border-radius: 50%;
   margin: 5px;
 }
+.circle:hover {
+  background-color: #212121;
+}
 
 .circle-active {
   width: 40px;
   height: 40px;
   background-color: #212121;
+  margin-bottom: 0px;
 }
 
-.circle:hover {
-  background-color: #212121;
-}
-
-.tab-content {
+.pagination {
   display: flex;
-  justify-content: space-around;
-}
-.promo-product-page {
-  display: flex;
-  height: 680px;
-  flex-grow: 1;
-}
-
-.slider-promo-1 {
-  background-image: url(../img/promo-img-1.png);
-  background-size: cover;
-}
-
-.slider-promo-2 {
-  background: url(../img/promo-img-2.png);
-  background-size: cover;
-}
-
-.trending-content {
-  display: flex;
-  align-content: flex-start;
-  align-items: baseline;
-  padding: 0;
-  flex-wrap: wrap;
-  margin: 0 auto;
-}
-
-.trending-product {
-  display: flex;
-  justify-content: center;
   align-items: flex-end;
-  margin: 15px;
-}
-
-.hot-deals-content {
-  background: url(../img/hot-deals-img.png);
+  padding-bottom: 20px;
 }
