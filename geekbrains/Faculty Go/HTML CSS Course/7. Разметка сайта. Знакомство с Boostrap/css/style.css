@@ -1,11 +1,17 @@
 .slider {
   background: url(../img/slider-img.jpg);
-  height: 600px;
+  min-height: 600px;
+}
+
+.slider-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .circle {
-  width: 30px;
-  height: 30px;
+  min-width: 30px;
+  min-height: 30px;
   display: inline-block;
   background-color: #c7c7c7;
   border-radius: 50%;
@@ -16,8 +22,8 @@
 }
 
 .circle-active {
-  width: 40px;
-  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
   background-color: #212121;
   margin-bottom: 0px;
 }
@@ -26,4 +32,57 @@
   display: flex;
   align-items: flex-end;
   padding-bottom: 20px;
+}
+
+.tab-control {
+  display: flex;
+}
+
+.tab-control-item {
+  list-style-type: none;
+}
+
+.tab-control-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #6c6c6c;
+}
+.btn-ghost {
+  display: flex;
+  padding: 0.5rem 1rem;
+  color: #6c6c6c;
+  justify-content: flex-end;
+}
+
+.featured-content {
+  margin-top: 120px;
+  margin-bottom: 120px;
+}
+
+.slider-promo-1 {
+  min-height: 683px;
+  background: url(../img/promo-img-2.png) no-repeat;
+  background-size: contain;
+}
+
+.slider-promo-2 {
+  min-height: 683px;
+  background: url(../img/promo-img-1.png) no-repeat;
+  background-size: contain;
+}
+
+.trending-products-page li {
+  list-style-type: none;
+  margin: 15px auto;
+}
+
+/* В bootstrap у ul есть по умолчанию отступ   */
+.trending-content {
+  padding-inline-start: 0;
+  justify-content: space-between;
+}
+
+.hot-deals {
+  background: url(../img/hot-deals-img.png);
+  min-height: 600px;
 }
