@@ -19,6 +19,10 @@ a:hover {
   }
 }
 
+.nav {
+  float: left;
+}
+
 .slider {
   background: url(../img/slider-img.jpg);
   min-height: 800px;
