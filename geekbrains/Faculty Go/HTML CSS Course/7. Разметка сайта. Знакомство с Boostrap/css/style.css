@@ -22,6 +22,7 @@ a:hover {
 .slider {
   background: url(../img/slider-img.jpg);
   min-height: 800px;
+  margin-bottom: 120px;
 }
 
 .slider-content {
@@ -31,16 +32,21 @@ a:hover {
   display: flex;
   margin-left: 83px;
 }
-
 .slider-tag {
   color: #43a047;
+}
+.slider-tag,
+.promo-tag,
+.hot-tag {
   font-size: 18px;
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 22px;
 }
 
-.slider-tag:hover {
+.slider-tag:hover,
+.hot-tag:hover,
+.promo-tag:hover {
   color: #ffffff;
 }
 
@@ -109,6 +115,10 @@ a:hover {
   padding-bottom: 20px;
 }
 
+.featured-products-page {
+  justify-content: center;
+}
+
 .tab-control {
   display: flex;
 }
@@ -144,12 +154,18 @@ a:hover {
   background-size: contain;
 }
 
+.promo-tag {
+  color: #1e88e5;
+}
+.trending-products-page {
+  justify-content: center;
+}
+
 .trending-products-page li {
   list-style-type: none;
   margin: 15px auto;
 }
 
-/* В bootstrap у ul есть по умолчанию отступ   */
 .trending-content {
   padding-inline-start: 0;
   justify-content: space-between;
@@ -157,5 +173,30 @@ a:hover {
 
 .hot-deals {
   background: url(../img/hot-deals-img.png);
-  min-height: 600px;
+  min-height: 800px;
+  margin-bottom: 120px;
+}
+
+.hot-tag {
+  color: #e53935;
+}
+
+.exclusive-products-sm {
+  list-style-type: none;
+}
+
+.app-link {
+  float: left;
+  margin-right: 10px;
+}
+
+.mobile-app {
+  background: url(../img/back-img.png) no-repeat;
+  background-size: contain;
+  height: 516px;
+}
+
+footer {
+  background: url(../img/footer-back.png);
+  height: 384px;
 }
