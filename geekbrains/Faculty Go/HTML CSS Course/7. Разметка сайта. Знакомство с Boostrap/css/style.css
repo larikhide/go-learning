@@ -1,12 +1,87 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #ffffff;
+}
+
+a {
+  color: #6c6c6c;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #212121;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 1366px) {
+  .container {
+    min-width: 1366px;
+  }
+}
+
 .slider {
   background: url(../img/slider-img.jpg);
-  min-height: 600px;
+  min-height: 800px;
 }
 
 .slider-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  display: flex;
+  margin-left: 83px;
+}
+
+.slider-tag {
+  color: #43a047;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.slider-tag:hover {
+  color: #ffffff;
+}
+
+.slider-name {
+  text-transform: uppercase;
+  font-size: 62px;
+  /* не получилось сделать тонкий текст, мешают стили Bootstrap, но не определил что именно */
+  font-weight: 100;
+  line-height: 1.16;
+  margin-bottom: 34px;
+}
+
+.slider-details {
+  color: #6c6c6c;
+  font-style: normal;
+  font-weight: 300;
+  margin-bottom: 32px;
+}
+
+.slider-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  text-transform: uppercase;
+  border-radius: 23px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px 1px rgba(33, 33, 33, 0.35);
+  width: 212px;
+  line-height: 45px;
+  letter-spacing: 3.6px;
+}
+
+.arrow,
+.btn-ghost img {
+  opacity: 0;
+}
+
+.slider-button:hover .arrow,
+.btn-ghost > a:hover .arrow {
+  opacity: 1;
 }
 
 .circle {
@@ -45,12 +120,10 @@
 .tab-control-link {
   display: block;
   padding: 0.5rem 1rem;
-  color: #6c6c6c;
 }
 .btn-ghost {
   display: flex;
   padding: 0.5rem 1rem;
-  color: #6c6c6c;
   justify-content: flex-end;
 }
 
