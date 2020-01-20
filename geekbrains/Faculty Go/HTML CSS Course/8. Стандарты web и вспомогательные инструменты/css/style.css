@@ -171,6 +171,12 @@ a:hover {
 
 .tab-control {
   display: flex;
+  padding-left: 83px;
+}
+
+.catalog > .tab-control {
+  margin: 70px auto;
+  padding-left: 68px;
 }
 
 .tab-control-item {
@@ -457,21 +463,23 @@ form button:active {
 .catalog > .tab-control a {
   text-transform: uppercase;
   font-size: 18px;
+  margin-bottom: 70px;
 }
 
 .set-1,
-.set-2 {
+.set-2,
+.set-3 {
   /* display: grid; */
   /* grid-template-columns: 1fr 1fr 1fr; */
   /* grid-template-rows: 1fr 1fr; */
   /* grid-gap: 30px; */
   /* grid-row-gap: 37px; */
-  margin: 70px auto;
+  margin: 0 auto;
   /* padding: 0; */
   text-align: center;
 }
 
-.set-2 {
+.set-3 {
   display: none;
   margin-top: -70px;
 }
@@ -488,6 +496,15 @@ form button:active {
   margin: 0 auto;
 }
 
+.reload button {
+  border: none;
+  background-color: #fff;
+  opacity: 0.8;
+}
+
+.reload button:hover {
+  opacity: 1;
+}
 /* TODO(option) подумать как сделать появление по кнопке
 .reload > button:checked .set-2 {
   display: block;
@@ -502,4 +519,23 @@ form button:active {
   text-align: left;
   margin-left: 83px;
   padding-bottom: 55px;
+}
+
+.product-details .tab-control {
+  justify-content: center;
+  background-color: #f4f4f4;
+}
+
+.product-details > ul > li > a {
+  margin-top: 180px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: center;
+  border: none;
+}
+
+.product-details > ul > li > a:hover {
+  border: none;
 }
