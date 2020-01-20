@@ -229,6 +229,9 @@ a:hover {
   right: 0;
   top: 0;
   background: #fcfcfc;
+  max-width: 270px;
+  max-height: 270px;
+  margin: 0 auto;
 }
 
 .featured-content > .col-3:hover .product-activator,
@@ -323,24 +326,37 @@ a:hover {
   color: #e53935;
 }
 .exclusive-product {
-  justify-content: center;
   margin-bottom: 120px;
+  margin: 0 auto;
+  max-width: 88%;
+  padding-bottom: 120px;
 }
 
 .exclusive-product-lg {
   background: url(../img/product-1-lg.png) no-repeat;
   background-size: cover;
+  max-height: 570px;
+}
+
+.exclusive-content .slider-name {
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: left;
+  text-transform: none;
 }
 
 .exclusive-products-sm {
+  display: grid;
   list-style-type: none;
-  justify-content: space-evenly;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+  padding-left: 30px;
 }
 
 .exclusive-product-preview {
-  max-width: 270px;
-  max-height: 270px;
-  padding-left: 0px;
+  position: relative;
 }
 
 .app-link {
