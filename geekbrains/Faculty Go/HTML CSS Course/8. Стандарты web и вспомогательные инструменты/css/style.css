@@ -459,6 +459,40 @@ form button:active {
   font-size: 18px;
 }
 
+.set-1,
+.set-2 {
+  /* display: grid; */
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  /* grid-template-rows: 1fr 1fr; */
+  /* grid-gap: 30px; */
+  /* grid-row-gap: 37px; */
+  margin: 70px auto;
+  /* padding: 0; */
+  text-align: center;
+}
+
+.set-2 {
+  display: none;
+  margin-top: -70px;
+}
+
+.products .product-preview {
+  margin: 15px;
+}
+.reload {
+  text-align: center;
+  padding-bottom: 120px;
+}
+.reload i {
+  font-size: 42px;
+  margin: 0 auto;
+}
+
+/* TODO(option) подумать как сделать появление по кнопке
+.reload > button:checked .set-2 {
+  display: block;
+} */
+
 /*TODO прикрутить сюда препроцессор для padding-bottom и margin-left */
 .hero-title {
   font-size: 62px;
