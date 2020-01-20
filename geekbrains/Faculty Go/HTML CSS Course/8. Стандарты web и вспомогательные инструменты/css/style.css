@@ -344,7 +344,8 @@ a:hover {
   max-height: 570px;
 }
 
-.exclusive-content .slider-name {
+.exclusive-content .slider-name,
+.details-info .slider-name {
   font-size: 36px;
   font-weight: bold;
   line-height: 1.2;
@@ -520,10 +521,13 @@ form button:active {
   margin-left: 83px;
   padding-bottom: 55px;
 }
+/* styles for product-details page */
 
 .product-details .tab-control {
   justify-content: center;
   background-color: #f4f4f4;
+  height: 5em;
+  padding-top: 2em;
 }
 
 .product-details > ul > li > a {
@@ -538,4 +542,95 @@ form button:active {
 
 .product-details > ul > li > a:hover {
   border: none;
+}
+
+.wh {
+  background-color: #ffffff;
+  min-height: 7.5em;
+}
+
+.product-slider {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.details-img {
+  margin: 0 auto;
+}
+
+.colors-product-list {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+}
+
+.colors-product {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.color-img {
+  opacity: 1;
+}
+
+.color-img:hover {
+  opacity: 0.5;
+}
+
+.price {
+  font-size: 50px;
+  line-height: 1.333;
+  text-align: center;
+}
+
+.details-info {
+  /* display: grid; */
+  text-align: center;
+  /*  grid-template-rows: repeat(8, 1fr); */
+}
+
+.details-info .slider-name {
+  text-align: center;
+  padding-top: 2em;
+}
+
+.fa-dollar-sign {
+  font-size: 36px;
+}
+
+.details-info .slider-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 900;
+  text-transform: uppercase;
+  border-radius: 45px;
+  background-color: #f44336;
+  box-shadow: 0 2px 5px 1px rgba(33, 33, 33, 0.35);
+  min-width: 100%;
+  min-height: 4em;
+  line-height: 45px;
+  letter-spacing: 3.6px;
+  font-size: 22px;
+}
+.details-info .slider-button:active {
+  box-shadow: none;
+}
+
+.fa-chevron-right {
+  opacity: 0;
+}
+
+.details-info .slider-button:hover .fa-chevron-right {
+  opacity: 1;
+}
+
+.details-text {
+  text-align: left;
+}
+
+.details-info > p {
+  padding-top: 20px;
 }
