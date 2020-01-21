@@ -1,0 +1,3 @@
+jQuery(document).ready(function($){var quote_block=$('[data-role="widget_quote_text"]');var quote_button=$('[data-role="widget_get_new_quote"]');function showNewQuote(insert_into){quote_button.off('click');var request=$.ajax({url:"/wp-content/plugins/citation-widget/get-quote.php",dataType:"text",cache:false});request.done(function(msg){$(insert_into).text(msg);quote_button.click(getQuote);});request.fail(function(jqXHR,textStatus){console.log('Не могу загрузить цитату :( ');quote_button.click(getQuote);});}
+function getQuote(event){event.stopPropagation();showNewQuote(quote_block);}
+quote_button.click(getQuote);if(quote_button[0].offsetWidth>0&&quote_button[0].offsetHeight>0)showNewQuote(quote_block);});

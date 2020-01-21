@@ -80,7 +80,7 @@ a:hover {
   font-size: 18px;
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 15px;
+  margin-bottom: 22px;
 }
 
 .slider-tag:hover,
@@ -210,65 +210,6 @@ a:hover {
   margin-bottom: 120px;
 }
 
-.product-preview {
-  box-shadow: 0 2px 5px 1px rgba(33, 33, 33, 0.35);
-}
-
-.product-preview:hover {
-  box-shadow: 0 2px 5px 1px rgba(33, 33, 33, 0.6);
-}
-.product-preview:active {
-  box-shadow: none;
-}
-
-.product-activator {
-  position: absolute;
-  opacity: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  top: 0;
-  background: #fcfcfc;
-}
-
-.featured-content > .col-3:hover .product-activator,
-.exclusive-product-preview:hover .product-activator {
-  opacity: 0.8;
-}
-
-.activator-link {
-  display: block;
-  width: 48px;
-  height: 48px;
-  border: 4px solid rgba(252, 252, 252, 0.9);
-  background-color: rgba(252, 252, 252, 0.9);
-  border-radius: 50%;
-  margin: 50px auto;
-}
-
-.activator-link:hover {
-  box-shadow: 0 2px 5px 1px rgba(33, 33, 33, 0.35);
-}
-
-.activator-arrow {
-  display: block;
-  margin: 0 auto;
-  margin-top: 11.5px;
-}
-
-.activator-header {
-  font-size: 22px;
-  color: #212121;
-  font-weight: bold;
-  line-height: 1.364;
-  text-align: center;
-  margin-top: -25px;
-}
-
-.activator-details {
-  text-align: center;
-}
-
 .slider-promo-1,
 .slider-promo-2 {
   min-height: 683px;
@@ -293,7 +234,6 @@ a:hover {
 }
 .trending-products-page {
   justify-content: center;
-  padding-bottom: 120px;
 }
 
 .trending-products-page > h2 {
@@ -306,6 +246,17 @@ a:hover {
   list-style-type: none;
   margin: 15px;
   max-width: 370px;
+}
+
+.product-preview {
+  box-shadow: 0 2px 5px 1px rgba(33, 33, 33, 0.35);
+}
+
+.product-preview:hover {
+  box-shadow: 0 2px 5px 1px rgba(33, 33, 33, 0.6);
+}
+.product-preview:active {
+  box-shadow: none;
 }
 
 .trending-content {
@@ -340,7 +291,6 @@ a:hover {
 .exclusive-product-preview {
   max-width: 270px;
   max-height: 270px;
-  padding-left: 0px;
 }
 
 .app-link {
@@ -404,19 +354,4 @@ footer button {
 
 .bottom-info {
   justify-content: space-evenly;
-}
-
-.social-links {
-  display: flex;
-  justify-content: space-around;
-}
-
-.social-links > li {
-  list-style-type: none;
-  font-size: 28px;
-}
-
-.terms-conditions {
-  display: flex;
-  justify-content: flex-end;
 }

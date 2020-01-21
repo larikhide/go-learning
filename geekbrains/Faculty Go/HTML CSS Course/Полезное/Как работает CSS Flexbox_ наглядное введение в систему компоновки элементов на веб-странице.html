@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)https://tproger.ru/translations/how-css-flexbox-works/ -->
+<html lang="ru-RU" class=" cssanimations"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="pingback" href="https://tproger.ru/xmlrpc.php">
+<!--[if lt IE 9]>
+	<script src="https://cdn.tproger.ru/wp-content/themes/bliss/assets/js/html5.js?x57051" type="text/javascript"></script>
+	<![endif]-->
+<link rel="preconnect" href="https://cdn.tproger.ru/">
+<link rel="preconnect" href="https://cdn.onesignal.com/" crossorigin="">
+<link rel="preconnect" href="https://onesignal.com/" crossorigin="">
+<link rel="preconnect" href="https://mc.yandex.ru/" crossorigin="">
+<link rel="preconnect" href="https://vk.com/" crossorigin="">
+<link rel="preconnect" href="https://rstat.tproger.ru/" crossorigin="">
+<link rel="preconnect" href="https://www.google-analytics.com/" crossorigin="">
+<link rel="preconnect" href="https://stats.g.doubleclick.net/" crossorigin="">
+
+<title>Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице</title>
+<meta name="description" content="Flexbox предназначен для более гибкого выравнивания элементов на веб-странице. Он значительно упрощает многие вещи, которые раздражают вас в чистом CSS.">
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://tproger.ru/translations/how-css-flexbox-works/">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице">
+<meta property="og:description" content="Flexbox предназначен для более гибкого выравнивания элементов на веб-странице. Он значительно упрощает многие вещи, которые раздражают вас в чистом CSS.">
+<meta property="og:url" content="https://tproger.ru/translations/how-css-flexbox-works/">
+<meta property="og:site_name" content="Tproger">
+<meta property="article:publisher" content="https://www.facebook.com/tproger/">
+<meta property="article:tag" content="CSS">
+<meta property="article:tag" content="Веб-разработка">
+<meta property="article:tag" content="Для начинающих">
+<meta property="article:section" content="Переводы">
+<meta property="article:published_time" content="2017-02-20T20:03:57+00:00">
+<meta property="article:modified_time" content="2019-10-09T12:34:05+00:00">
+<meta property="og:updated_time" content="2019-10-09T12:34:05+00:00">
+<meta property="og:image" content="https://tproger.ru/wp-content/uploads/2017/02/flexbox-min.png">
+<meta property="og:image:secure_url" content="https://tproger.ru/wp-content/uploads/2017/02/flexbox-min.png">
+<meta property="og:image:width" content="770">
+<meta property="og:image:height" content="270">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="Flexbox предназначен для более гибкого выравнивания элементов на веб-странице. Он значительно упрощает многие вещи, которые раздражают вас в чистом CSS.">
+<meta name="twitter:title" content="Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице">
+<meta name="twitter:site" content="@tproger">
+<meta name="twitter:image" content="https://cdn.tproger.ru/wp-content/uploads/2017/02/flexbox-min.png">
+<meta name="twitter:creator" content="@tproger">
+
+<link rel="amphtml" href="https://tproger.ru/translations/how-css-flexbox-works/amp/"><meta name="generator" content="AMP for WP 1.0.14"><link rel="dns-prefetch" href="https://cdn.tproger.ru/">
+<link rel="alternate" type="application/rss+xml" title="Tproger » Лента" href="https://tproger.ru/feed/">
+<link rel="alternate" type="application/rss+xml" title="Tproger » Лента комментариев к «Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице»" href="https://tproger.ru/translations/how-css-flexbox-works/feed/">
+<script src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/web"></script><script defer="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/85970.js.Без названия"></script>
+<script type="text/javascript" defer="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/mobile-lazy-load.js.Без названия"></script>
+<script defer="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/16421.js.Без названия"></script>
+<script type="text/javascript" defer="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/main.plugin.custom.js.Без названия"></script>
+<script defer="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/75091.js.Без названия"></script>
+<script type="text/javascript" async="" data-cfasync="false" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/performance.js.Без названия"></script>
+<script defer="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/6597d.js.Без названия"></script>
+<script type="text/javascript" defer="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/timeago.js.Без названия"></script>
+<script type="text/javascript" defer="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/onesignal-segmentation.js.Без названия"></script>
+<script type="text/javascript" defer="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/count-up.js.Без названия"></script>
+<script type="text/javascript" defer="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/script.js.Без названия"></script>
+<link rel="https://api.w.org/" href="https://tproger.ru/wp-json/">
+<link rel="shortlink" href="https://tproger.ru/?p=28540">
+<link rel="icon" href="https://cdn.tproger.ru/favicon.ico?v=2">
+<link rel="apple-touch-icon" sizes="180x180" href="https://tproger.ru/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://tproger.ru/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://tproger.ru/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://tproger.ru/favicon-16x16.png">
+<link rel="manifest" href="https://tproger.ru/manifest.json">
+<link rel="mask-icon" href="https://tproger.ru/safari-pinned-tab.svg" color="#2aa5a0">
+<meta name="apple-mobile-web-app-title" content="Tproger">
+<meta name="application-name" content="Tproger">
+<meta name="theme-color" content="#2aa5a0">
+<style id="svelte-7u9qbo-style">.telegram.svelte-7u9qbo{display:none}.pre-modal-cover.svelte-7u9qbo,.pre-modal-container.svelte-7u9qbo{display:none}.modal-buttons.svelte-7u9qbo{display:flex;flex-wrap:wrap;align-items:center}.pre-modal-cover.svelte-7u9qbo{position:fixed;left:0;top:0;z-index:900;background-color:#ccc;opacity:0.5;overflow:hidden}.pre-modal-container.svelte-7u9qbo{z-index:900;position:fixed;top:calc((100vh - 470px) / 2);left:calc((100vw - 350px) / 2);width:350px;height:470px;flex-wrap:wrap;justify-content:flex-end}.modal-buttons.svelte-7u9qbo{justify-content:center}.modal-buttons.svelte-7u9qbo,.pre-modal-cover.svelte-7u9qbo{width:100%}.btn.svelte-7u9qbo{margin:8px;width:290px;border:1px solid #ededed;border-radius:5px;font-size:16px;line-height:2;cursor:pointer}.btn.svelte-7u9qbo:hover{border-color:#ccc;transition:0.5s}.disabled.svelte-7u9qbo{color:gray !important;cursor:default;pointer-events:none}span.svelte-7u9qbo{display:inline-block;color:#2b2a29;width:calc(100% - 50px)}.modal-icon.svelte-7u9qbo{width:30px;height:30px}.pre-modal-cover.svelte-7u9qbo{height:100%}.footer.svelte-7u9qbo{text-align:left;padding:10px 20px 0px 30px;line-height:1.6}.flex.svelte-7u9qbo{display:flex}</style><link rel="prefetch"><script src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/OneSignalPageSDKES6.js.Без названия" async=""></script><meta id="Reverso_extension___elForCheckedInstallExtension" name="Reverso extension" content="2.2.196"><style id="theia-sticky-sidebar-stylesheet-TSS">.theiaStickySidebar:after {content: ""; display: table; clear: both;}</style></head>
+<body class="post-template-default single single-post postid-28540 single-format-standard dark match-braces">
+<div id="eventfrozen" class="event-frozen"> </div>
+<style>
+			#fake-post {
+				display: none;
+				position: fixed;
+				z-index: 0;
+				background: #fff;
+			}
+			#fake-header {
+				font-family: Roboto, sans-serif;
+				font-weight: 500;
+				line-height: 1.3;
+				color: #333;
+			}
+			.dark {
+				background: #2b2a29;
+			}
+			#fake-scroll {
+				display: none;
+			}
+			@media (max-width: 480px) {
+				#fake-post {
+					display: block;
+					top: 129px;
+					width: 100%;
+					height: 100%;
+				}
+				#fake-header {
+					margin: 15px 20px;
+					font-size: 26px;
+				}
+			}
+			@media (min-width: 1320px) {
+				#fake-post {
+					display: block;
+					top: 83px;
+					left: calc((100% - 880px - 370px  - 20px) / 2);
+					width: 880px;
+					height: 100%;
+					border-top-left-radius: 4px;
+					border-top-right-radius: 4px;
+				}
+				#fake-header {
+					padding: 50px 105px 66px 105px;
+					margin: 0;
+					font-size: 34px;
+				}
+				#fake-scroll {
+					display: block;
+					position: relative;
+					top: 101%;
+					width: 1px;
+					height: 1px;
+				}
+			}
+			</style>
+
+<div id="fake-scroll"></div>
+<link media="all" href="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/autoptimize_d0b1c0695aa4a1c453547bf5401d89e5.css" rel="stylesheet"><div id="page" class="site">
+
+<header id="masthead" role="banner" class="">
+<div class="top-duft-punk">
+<div id="header-container">
+<nav id="header" role="navigation" class="windowed">
+<div class="header-toogle">
+<div id="main-menu-toggle" class="header-item">
+<input type="checkbox">
+<span></span>
+<span></span>
+<span></span>
+<ul id="main-menu" style=""><li id="menu-item-116231" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown tag-menu-item"><a href="javascript:void(0);">Лента<i class="icon-angle-down"></i></a>
+<ul class="dropdown-menu">
+<li id="menu-item-116232" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/">Сначала новое</a></li> <li id="menu-item-116233" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/top/hot/">Набирает популярность</a></li> <li id="menu-item-116234" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item divider"><a href="https://tproger.ru/">–</a></li> <li id="menu-item-116235" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/top/week/">Лучшее за неделю</a></li> <li id="menu-item-116236" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/top/month/">Лучшее за месяц</a></li> <li id="menu-item-116237" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/top/ever/">Лучшее за всё время</a></li>
+</ul>
+</li><li id="menu-item-116238" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown tag-menu-item"><a href="javascript:void(0);">Рубрики<i class="icon-angle-down"></i></a>
+<ul class="dropdown-menu">
+<li id="menu-item-99849" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a title="Новости IT" href="https://tproger.ru/news/">Новости</a></li> <li id="menu-item-116246" class="menu-item menu-item-type-taxonomy menu-item-object-category tag-menu-item"><a href="https://tproger.ru/category/curriculum/">Планы обучения</a></li> <li id="menu-item-12274" class="menu-item menu-item-type-taxonomy menu-item-object-category tag-menu-item"><a title="Задачи с IT-собеседований" href="https://tproger.ru/category/problems/">Задачки</a></li> <li id="menu-item-73978" class="menu-item menu-item-type-taxonomy menu-item-object-category tag-menu-item"><a title="Тесты и викторины" href="https://tproger.ru/category/quiz/">Тесты и викторины</a></li> <li id="menu-item-116243" class="menu-item menu-item-type-taxonomy menu-item-object-category tag-menu-item"><a href="https://tproger.ru/category/books/">Книги</a></li> <li id="menu-item-116240" class="menu-item menu-item-type-taxonomy menu-item-object-category tag-menu-item"><a href="https://tproger.ru/category/video/">Видео</a></li> <li id="menu-item-116244" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent tag-menu-item"><a href="https://tproger.ru/category/explain/">Коротко о главном</a></li> <li id="menu-item-21201" class="menu-item menu-item-type-taxonomy menu-item-object-category tag-menu-item"><a title="Ответы экспертов на вопросы читателей" href="https://tproger.ru/category/experts/">Советы экспертов</a></li> <li id="menu-item-116249" class="menu-item menu-item-type-taxonomy menu-item-object-category tag-menu-item"><a href="https://tproger.ru/category/articles/">Статьи</a></li> <li id="menu-item-116245" class="menu-item menu-item-type-taxonomy menu-item-object-category tag-menu-item"><a href="https://tproger.ru/category/translations/">Переводы</a></li> <li id="menu-item-116247" class="menu-item menu-item-type-taxonomy menu-item-object-category tag-menu-item"><a href="https://tproger.ru/category/digest/">Подборки</a></li> <li id="menu-item-116239" class="menu-item menu-item-type-taxonomy menu-item-object-category tag-menu-item"><a href="https://tproger.ru/category/devnull/">Юмор</a></li> <li id="menu-item-116241" class="menu-item menu-item-type-taxonomy menu-item-object-category tag-menu-item"><a href="https://tproger.ru/category/interview/">Интервью</a></li>
+</ul>
+</li><li id="menu-item-116254" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown tag-menu-item"><a href="javascript:void(0);">Темы<i class="icon-angle-down"></i></a>
+<ul class="dropdown-menu">
+<li id="menu-item-116253" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/tag/for-beginners/">Для начинающих</a></li> <li id="menu-item-116257" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/tag/algorithms/">Алгоритмы</a></li> <li id="menu-item-116258" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/tag/design-patterns/">Паттерны проектирования</a></li> <li id="menu-item-116260" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/tag/software-development/">Методологии разработки</a></li> <li id="menu-item-116255" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/tag/web/">Веб-разработка</a></li> <li id="menu-item-116256" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/tag/gamedev/">Разработка игр</a></li> <li id="menu-item-116262" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/tag/mobiledev/">Мобильная разработка</a></li> <li id="menu-item-116259" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/tag/machine-learning/">Машинное обучение</a></li> <li id="menu-item-116264" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/tag/neural-network/">Нейронные сети</a></li> <li id="menu-item-116263" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/tag/ai/">Искусственный интеллект</a></li> <li id="menu-item-116266" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/tag/data-science/">Data Science</a></li> <li id="menu-item-116265" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/tag/interface-design-ux/">Дизайн интерфейсов и UX</a></li> <li id="menu-item-116261" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/tag/sysadm/">Системное администрирование</a></li> <li id="menu-item-116294" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item divider"><a href="https://tproger.ru/">–</a></li> <li id="menu-item-116291" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/translations/how-css-flexbox-works/#tagsModal" style="font-weight: bold;">Все темы</a></li>
+</ul>
+</li><li id="menu-item-116269" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown tag-menu-item"><a href="javascript:void(0);">Языки<i class="icon-angle-down"></i></a>
+<ul class="dropdown-menu">
+<li id="menu-item-116272" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/tag/python/">Python</a></li> <li id="menu-item-116270" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/tag/javascript/">JavaScript</a></li> <li id="menu-item-116275" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/tag/go/">Go</a></li> <li id="menu-item-116276" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/tag/java/">Java</a></li> <li id="menu-item-116273" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/tag/cpp/">C++</a></li> <li id="menu-item-116274" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/tag/c-sharp/">C#</a></li> <li id="menu-item-116277" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/tag/php/">PHP</a></li> <li id="menu-item-116278" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/tag/css/">CSS</a></li> <li id="menu-item-116279" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/tag/sql/">SQL</a></li> <li id="menu-item-116293" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item divider"><a href="https://tproger.ru/">–</a></li> <li id="menu-item-116292" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/translations/how-css-flexbox-works/#languagesModal" style="font-weight: bold;">Все языки</a></li>
+</ul>
+</li><li id="menu-item-116280" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown tag-menu-item"><a href="javascript:void(0);">Бренды<i class="icon-angle-down"></i></a>
+<ul class="dropdown-menu">
+<li id="menu-item-116281" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/tag/microsoft/">Microsoft</a></li> <li id="menu-item-116282" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/tag/facebook/">Facebook</a></li> <li id="menu-item-116283" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/tag/google/">Google</a></li> <li id="menu-item-116284" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/tag/yandex/">Яндекс</a></li>
+</ul>
+</li><li id="menu-item-116285" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown tag-menu-item"><a href="javascript:void(0);">Работа<i class="icon-angle-down"></i></a>
+<ul class="dropdown-menu">
+<li id="menu-item-116286" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/jobs/?utm_source=tproger_ru_main_menu">Вакансии</a></li> <li id="menu-item-116287" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/ad/jobs">Добавить вакансию</a></li> <li id="menu-item-116288" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item divider"><a href="https://tproger.ru/">–</a></li> <li id="menu-item-116289" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/tag/job/">Советы</a></li> <li id="menu-item-116290" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a href="https://tproger.ru/tag/job-interview/">Подготовка к собеседованию</a></li>
+</ul>
+</li><li id="menu-item-85895" class="menu-item menu-item-type-custom menu-item-object-custom tag-menu-item"><a title="События и курсы, на которых можно поднять свой уровень" href="https://tproger.ru/events/">События и курсы</a></li>
+<li class="menu-separator hide-on-desktop"></li>
+<li class="hide-on-desktop">
+<a href="https://tproger.ru/about/publish-me/?utm_source=tproger_ru_mobile_menu">Выпустить свой материал</a>
+</li>
+<li class="hide-on-desktop">
+<a href="https://tproger.ru/ad/">Реклама на tproger.ru</a>
+</li>
+</ul> </div>
+</div>
+<div id="header-logo">
+<a id="main-logo" class="header-item header-clickable" href="https://tproger.ru/">
+<img src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/logo.svg">
+<span id="logo-text" class="hide-on-mobile hide-on-narrow">Tproger</span>
+</a>
+</div>
+<div class="header-right">
+<a id="search_icon" href="https://tproger.ru/search/" class="header-item header-clickable">
+<img src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/icon-search.svg" alt="Поиск">
+</a>
+<a id="user-icon" class="header-item hoverable" href="https://tproger.ru/translations/how-css-flexbox-works/#" onclick="openAuthWindow()"><img src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/icon-user.svg">
+          	<span class="hide-on-mobile">Войти</span></a>
+</div>
+</nav>
+<div id="tproger-login"><div class="pre-modal-cover svelte-7u9qbo"></div> <div align="center" class="pre-modal-container box svelte-7u9qbo"><div id="auth-modal-close" class="close-post icon-close"></div> <div class="modal-buttons svelte-7u9qbo"><span class="btn icon-vkontakte colored svelte-7u9qbo"><span class="svelte-7u9qbo">ВКонтакте</span></span><span class="btn icon-github-circled-alt2 colored svelte-7u9qbo"><span class="svelte-7u9qbo">GitHub</span></span><span class="btn icon-facebook colored svelte-7u9qbo"><span class="svelte-7u9qbo">Facebook</span></span><span class="btn icon-twitter colored svelte-7u9qbo"><span class="svelte-7u9qbo">Twitter</span></span><span class="btn icon-google colored svelte-7u9qbo"><span class="svelte-7u9qbo">Google</span></span><span class="btn icon-yandex colored svelte-7u9qbo"><span class="svelte-7u9qbo">Yandex</span></span> <p class="footer svelte-7u9qbo"> Авторизуясь, вы соглашаетесь с
+      <a href="https://tproger.ru/wp-content/uploads/custom/terms_v1.pdf">
+        правилами пользования сайтом
+      </a>
+      и даете
+      <a href="https://tproger.ru/wp-content/uploads/custom/privacy_v1.pdf">
+        согласие на обработку персональных данных</a>.</p></div></div></div>
+<script async="" defer="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/loginArea.js.Без названия"></script>
+</div>
+</div>
+<div class="header-searchbox" id="searchbox">
+<form method="get" action="https://tproger.ru/search">
+<div class="header-searchbox-input-wrapper">
+<input name="q" maxlength="128" class="header-searchbox-input" placeholder="Введите запрос и нажмите Enter...">
+<span class="header-searchbox-input-cancel icon-cancel"></span>
+</div>
+</form>
+</div>
+</header>
+<div id="main" class="windowed"> <div id="float-widget-container" style="">
+<div id="float-widget" class="float-widget-show" style="padding-bottom: 10px; transition: transform 0.6s ease 0s;">
+<a id="float-widget-a" href="https://tprg.ru/CFz2" target="_blank">
+<div id="float-widget-blocks">
+<div class="box" id="float-widget-text" style="width: 180px;">Курс по работе с высоконагруженными веб-приложениями</div>
+<div id="float-widget-positive-btn" class="float-widget-btn" style="background-color: rgb(0, 139, 237);">Подробнее</div>
+<div id="float-widget-negative-btn" class="float-widget-btn">Закрыть это</div>
+</div>
+<div class="float-widget-close-btn" id="float-widget-close-btn" style="display:none;">✕</div>
+<img id="float-widget-img" class="no-lazy-img" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/owls-algo-white.svg" style="margin-right: 0px; width: 190px;">
+</a>
+</div>
+</div>
+<input type="hidden" value="CSS,Веб-разработка,Для начинающих" id="post_tag_list">
+<div id="primary" class="row right_side">
+<div id="content" role="main">
+<div class="mobile_baner" id="fbaner-mobile" style="display:none;">
+</div>
+<article id="post-28540" class="box single post-28540 post type-post status-publish format-standard has-post-thumbnail hentry category-translations tag-css tag-web tag-for-beginners" itemscope="" itemtype="http://schema.org/Article">
+<div class="sticky-header">
+<div class="sticky-header-container content-windowed">
+<div class="sticky-sharing sharing">
+<a title="Поделиться во ВКонтакте" class="colored icon-vkontakte" href="javascript:void(0);" onclick="social_share(&#39;https://vk.com/share.php?url=https%3A%2F%2Ftproger.ru%2Ftranslations%2Fhow-css-flexbox-works%2F&amp;title=%D0%9A%D0%B0%D0%BA+%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%B5%D1%82+CSS+Flexbox%3A+%D0%BD%D0%B0%D0%B3%D0%BB%D1%8F%D0%B4%D0%BD%D0%BE%D0%B5+%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5+%D0%B2+%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%83+%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8+%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2+%D0%BD%D0%B0+%D0%B2%D0%B5%D0%B1-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B5&#39;);"></a>
+<a title="Поделиться на Facebook" class="colored icon-facebook" href="javascript:void(0);" onclick="social_share(&#39;http://www.facebook.com/sharer.php?u=https%3A%2F%2Ftproger.ru%2Ftranslations%2Fhow-css-flexbox-works%2F&amp;t=%D0%9A%D0%B0%D0%BA+%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%B5%D1%82+CSS+Flexbox%3A+%D0%BD%D0%B0%D0%B3%D0%BB%D1%8F%D0%B4%D0%BD%D0%BE%D0%B5+%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5+%D0%B2+%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%83+%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8+%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2+%D0%BD%D0%B0+%D0%B2%D0%B5%D0%B1-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B5&#39;);"></a>
+<a title="Поделиться в Twitter" class="colored icon-twitter" href="javascript:void(0);" onclick="social_share(&#39;http://twitter.com/intent/tweet?url=https%3A%2F%2Ftproger.ru%2Ftranslations%2Fhow-css-flexbox-works%2F&amp;text=Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице&#39;);"></a>
+<a title="Сохранить в Pocket" class="colored icon-pocket small" href="javascript:void(0);" onclick="social_share(&#39;https://getpocket.com/edit?url=https%3A%2F%2Ftproger.ru%2Ftranslations%2Fhow-css-flexbox-works%2F&#39;);"></a>
+<a title="Отправить в Telegram" class="colored icon-telegram" href="javascript:void(0);" onclick="social_share(&#39;https://telegram.me/share/url?url=https%3A%2F%2Ftproger.ru%2Ftranslations%2Fhow-css-flexbox-works%2F&amp;text=Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице&#39;);"></a>
+</div>
+<div class="sticky-caption">Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице</div>
+<div class="sticky-icons">
+<div class="meta-content post-tool-block">
+<div class="icon-bookmark-empty hoverable post-bookmark-icon post-bookmark" data-post="28540" selected="false" title="Добавить в закладки">4</div>
+</div>
+<div id="close-post" class="close-post icon-close"></div>
+</div>
+</div>
+<div class="sidebar-pusher"></div> </div>
+<div class="post-title">
+<h1 class="entry-title" itemprop="headline">Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице</h1>
+<div class="post-meta ">
+<ul>
+<li>
+<a href="https://tproger.ru/category/translations/" title="Все посты категории «Переводы»">Переводы</a>, <time class="entry-date localtime" datetime="2017-02-20T23:03:57+03:00" itemprop="datePublished" content="2017-02-20T23:03:57+03:00" title="20 февраля 2017 в 23:03 МСК">20 февраля 2017 в 23:03</time>
+</li><li><meta itemprop="author" content="Типичный программист"></li> <li data-role="post_views">
+<div class="post-views post-28540 entry-meta" style="display: block;">
+<span class="post-views-icon icon-eye"></span>
+<span id="post-views-count" class="post-views-count">309 990</span>
+</div>
+</li></ul>
+</div>
+</div>
+<div class="entry-image" style="background-color: #A6A4B3" itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject">
+<img src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/flexbox-min.webp" srcset="https://cdn.tproger.ru/wp-content/uploads/2017/02/flexbox-min-300x105.png 300w, https://cdn.tproger.ru/wp-content/uploads/2017/02/flexbox-min.png 770w" sizes="(min-width: 1320px) 880px, (min-width: 977px) 620px, (min-width: 481px) calc(100vw - 40px), 100vw" alt="Обложка поста" itemprop="image url" class="wp-post-image skip-lazy"> </div>
+<div class="entry-container " data-io-article-url="https://tproger.ru/translations/how-css-flexbox-works/">
+<meta itemprop="description" content="Flexbox предназначен для более гибкого выравнивания элементов на веб-странице. Он значительно упрощает многие вещи, которые раздражают вас в чистом CSS.">
+<meta itemprop="wordCount" content="979">
+<meta itemprop="dateModified" content="2019-10-09T15:34:05+03:00">
+<span itemprop="publisher" itemscope="" itemtype="https://schema.org/Organization">
+<span itemprop="logo" itemscope="" itemtype="https://schema.org/ImageObject">
+<meta itemprop="url" content="https://cdn.tproger.ru/android-chrome-32x32.png">
+<meta itemprop="width" content="32">
+<meta itemprop="height" content="32">
+</span>
+<meta itemprop="name" content="Tproger">
+</span>
+<meta itemscope="" itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="https://tproger.ru/translations/how-css-flexbox-works/" content="Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице">
+<div class="entry-content" itemprop="articleBody">
+<p class="epigraph">Перевод статьи <a href="https://medium.freecodecamp.com/an-animated-guide-to-flexbox-d280cf6afc35#.3vx3dhsgh" target="_blank" data-wpel-link="external" rel="nofollow noopener noreferrer">«How Flexbox works — explained with big, colorful, animated gifs»</a></p><p>Flexbox призван спасти нас от&nbsp;неприятных моментов чистого CSS (например, от&nbsp;вертикального выравнивания), и&nbsp;он&nbsp;отлично справляется со&nbsp;своей задачей. Но&nbsp;разобраться в&nbsp;принципах его работы порой бывает сложно, особенно, если вы&nbsp;новичок.<span id="more-28540"></span></p>
+<p>Основная задача Flexbox — сделать слои гибкими, а&nbsp;работу с&nbsp;ними&nbsp;— интуитивно понятными. Для достижения этой цели он&nbsp;позволяет контейнерам самим решать, как обращаться со&nbsp;своими дочерними элементами, в&nbsp;том числе изменять их&nbsp;размер и&nbsp;расстояние между ними.</p>
+<p>Звучит неплохо, но давайте посмотрим, так ли оно гладко на практике. В этой статье мы изучим 9 самых популярных свойств Flexbox, разберемся, что они делают, и как они на самом деле работают.</p>
+<h3>Display: Flex</h3>
+<p>Вот пример страницы:</p>
+<p><img class="lazy-hidden size-full wp-image-28541 aligncenter" src="data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;600px&quot; viewBox=&quot;0 0 600 266&quot;%3E%3C/svg%3E" data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2017/02/600x266_flex_1.gif" alt="" width="600" height="266"><noscript><img class="size-full wp-image-28541 aligncenter" src="https://cdn.tproger.ru/wp-content/uploads/2017/02/600x266_flex_1.gif" alt="" width="600" height="266" /></noscript></p>
+<p>У&nbsp;нас есть 4&nbsp;разноцветных div’а разных размеров, которые находятся внутри серого div’а. У&nbsp;каждого div’а есть свойство <code>display: block</code>. Поэтому каждый квадрат занимает всю ширину строки.</p>
+<p>Чтобы начать работать с&nbsp;Flexbox, нам нужно сделать наш контейнер flex-контейнером. Делается это так:</p>
+<pre class="line-numbers language-css"><code class=" language-css"><span class="token selector">#container</span><span class="token space"> </span><span class="token punctuation brace-curly brace-open brace-level-1" id="pair-0-close">{</span><span class="token lf">
+</span><span class="token space"> </span><span class="token space"> </span><span class="token property">display</span><span class="token punctuation">:</span><span class="token space"> </span>flex<span class="token punctuation">;</span><span class="token lf">
+</span><span class="token punctuation brace-curly brace-close brace-level-1" id="pair-0-open">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><img class="lazy-hidden size-full wp-image-28543 aligncenter" src="data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;600px&quot; viewBox=&quot;0 0 600 258&quot;%3E%3C/svg%3E" data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2017/02/600x258_flex_2.gif" alt="" width="600" height="258"><noscript><img class="size-full wp-image-28543 aligncenter" src="https://cdn.tproger.ru/wp-content/uploads/2017/02/600x258_flex_2.gif" alt="" width="600" height="258" /></noscript></p>
+<p>Вроде&nbsp;бы ничего особо и&nbsp;не&nbsp;изменилось — div’ы всего лишь встали в&nbsp;ряд. Но&nbsp;вы&nbsp;сделали что-то действительно мощное. Вы&nbsp;дали вашим квадратам классное свойство, называемое “flex-контекст”.</p>
+<h3>Flex Direction</h3>
+<p>У&nbsp;flex-контейнера есть две оси: главная ось и&nbsp;перпендикулярная&nbsp;ей.</p>
+<p><img class="lazy-hidden size-full wp-image-28544 aligncenter" src="data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;800px&quot; viewBox=&quot;0 0 800 450&quot;%3E%3C/svg%3E" data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2017/02/axes.png" alt="" width="800" height="450" srcset="" data-srcset="https://cdn.tproger.ru/wp-content/uploads/2017/02/axes.png 800w, https://cdn.tproger.ru/wp-content/uploads/2017/02/axes-300x169.png 300w" sizes="(max-width: 800px) 100vw, 800px"><noscript><img class="size-full wp-image-28544 aligncenter" src="https://cdn.tproger.ru/wp-content/uploads/2017/02/axes.png" alt="" width="800" height="450" srcset="https://cdn.tproger.ru/wp-content/uploads/2017/02/axes.png 800w, https://cdn.tproger.ru/wp-content/uploads/2017/02/axes-300x169.png 300w" sizes="(max-width: 800px) 100vw, 800px" /></noscript></p>
+<p>По&nbsp;умолчанию все предметы располагаются вдоль главной оси: слева направо. Поэтому наши квадраты выровнялись в&nbsp;линию, когда мы&nbsp;применили <code>display: flex</code>. Однако <code>flex-direction</code> позволяет вращать главную ось.</p>
+<pre class="line-numbers language-css"><code class=" language-css"><span class="token selector">#container</span><span class="token space"> </span><span class="token punctuation brace-curly brace-open brace-level-1" id="pair-1-close">{</span><span class="token lf">
+</span><span class="token space"> </span><span class="token space"> </span><span class="token property">display</span><span class="token punctuation">:</span><span class="token space"> </span>flex<span class="token punctuation">;</span><span class="token lf">
+</span><span class="token space"> </span><span class="token space"> </span><span class="token property">flex-direction</span><span class="token punctuation">:</span><span class="token space"> </span>column<span class="token punctuation">;</span><span class="token lf">
+</span><span class="token punctuation brace-curly brace-close brace-level-1" id="pair-1-open">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img class="lazy-hidden size-full wp-image-28546 aligncenter" src="data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;600px&quot; viewBox=&quot;0 0 600 258&quot;%3E%3C/svg%3E" data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2017/02/600x258_flex_3.gif" alt="" width="600" height="258"><noscript><img class="size-full wp-image-28546 aligncenter" src="https://cdn.tproger.ru/wp-content/uploads/2017/02/600x258_flex_3.gif" alt="" width="600" height="258" /></noscript></p>
+<p>Важно заметить, что <code>flex-direction: column</code> не&nbsp;выравнивает квадраты по&nbsp;оси, перпендикулярной главной. Главная ось сама меняет свое расположение и&nbsp;теперь направлена сверху вниз.</p><div class="widget-in-text-ads"><div class="internal-wrapper">
+<a href="https://tproger.ru/events/tg-bot-online-otus/?utm_source=in_text" data-wpel-link="internal" rel="follow"><div style="background: linear-gradient(to right, rgb(255, 255, 255), rgb(255, 255, 255), rgba(255, 255, 255, 0.5) ), 
+                    url(https://cdn.tproger.ru/wp-content/uploads/2020/01/PHP_1540x540-670x235.jpg) no-repeat center right;" class="internal-link">
+<div class="internal-caption">Интенсив «Создание Telegram-бота для заказа кофе в заведении и оплаты онлайн»</div>
+<p class="internal-text">21–22 января в 20:00, онлайн, беcплатно</p>
+<div class="internal-url"><span class="post-views-icon icon-link-ext"></span><span class="internal-site">tproger.ru</span></div></div>
+</a>
+<p><a href="https://tproger.ru/events/tg-bot-online-otus/?utm_source=in_text" data-wpel-link="internal" rel="follow"></a></p>
+<div class="partnered-sign"><a href="https://tproger.ru/events/" targer="_blank" data-wpel-link="internal" rel="follow">События и курсы на tproger.ru</a></div>
+</div></div><p>Есть еще парочка свойств для flex-direction: <code>row-reverse</code> и <code>column-reverse</code>.</p>
+<h3><img class="lazy-hidden size-full wp-image-28547 aligncenter" src="data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;600px&quot; viewBox=&quot;0 0 600 258&quot;%3E%3C/svg%3E" data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2017/02/600x258_flex_4.gif" alt="" width="600" height="258"><noscript><img class="size-full wp-image-28547 aligncenter" src="https://cdn.tproger.ru/wp-content/uploads/2017/02/600x258_flex_4.gif" alt="" width="600" height="258" /></noscript></h3>
+<h3>Justify Content</h3>
+<p><code>Justify-content</code> отвечает за&nbsp;выравнивание элементов по&nbsp;главной оси.</p>
+<p>Вернемся к <code>flex-direction: row</code>.</p>
+<pre class="line-numbers language-css"><code class=" language-css"><span class="token selector">#container</span><span class="token space"> </span><span class="token punctuation brace-curly brace-open brace-level-1" id="pair-2-close">{</span><span class="token lf">
+</span><span class="token space"> </span><span class="token space"> </span><span class="token property">display</span><span class="token punctuation">:</span><span class="token space"> </span>flex<span class="token punctuation">;</span><span class="token lf">
+</span><span class="token space"> </span><span class="token space"> </span><span class="token property">flex-direction</span><span class="token punctuation">:</span><span class="token space"> </span>row<span class="token punctuation">;</span><span class="token lf">
+</span><span class="token space"> </span><span class="token space"> </span><span class="token property">justify-content</span><span class="token punctuation">:</span><span class="token space"> </span>flex-start<span class="token punctuation">;</span><span class="token lf">
+</span><span class="token punctuation brace-curly brace-close brace-level-1" id="pair-2-open">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>Justify-content</code> может принимать 5&nbsp;значений:</p>
+<ol>
+<li><code>flex-start</code>;</li>
+<li><code>flex-end</code>;</li>
+<li><code>center</code>;</li>
+<li><code>space-between</code>;</li>
+<li><code>space-around</code>.</li>
+</ol>
+<p><img class="lazy-hidden size-full wp-image-28550 aligncenter" src="data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;600px&quot; viewBox=&quot;0 0 600 134&quot;%3E%3C/svg%3E" data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2017/02/600x134_flex_5.gif" alt="" width="600" height="134"><noscript><img class="size-full wp-image-28550 aligncenter" src="https://cdn.tproger.ru/wp-content/uploads/2017/02/600x134_flex_5.gif" alt="" width="600" height="134" /></noscript></p>
+<p><code>Space-between</code> задает одинаковое расстояние между квадратами, но&nbsp;не&nbsp;между контейнером и&nbsp;квадратами. <code>Space-around</code> также задает одинаковое расстояние между квадратами, но&nbsp;теперь расстояние между контейнером и&nbsp;квадратами равно половине расстояния между квадратами.</p>
+<h3>Align Items</h3>
+<p>Если <code>justify-content</code> работает с&nbsp;главной осью, то <code>align-items</code> работает с&nbsp;осью, перпендикулярной главной оси.</p>
+<p><img class="lazy-hidden size-full wp-image-28544 aligncenter" src="data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;800px&quot; viewBox=&quot;0 0 800 450&quot;%3E%3C/svg%3E" data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2017/02/axes.png" alt="" width="800" height="450" srcset="" data-srcset="https://cdn.tproger.ru/wp-content/uploads/2017/02/axes.png 800w, https://cdn.tproger.ru/wp-content/uploads/2017/02/axes-300x169.png 300w" sizes="(max-width: 800px) 100vw, 800px"><noscript><img class="size-full wp-image-28544 aligncenter" src="https://cdn.tproger.ru/wp-content/uploads/2017/02/axes.png" alt="" width="800" height="450" srcset="https://cdn.tproger.ru/wp-content/uploads/2017/02/axes.png 800w, https://cdn.tproger.ru/wp-content/uploads/2017/02/axes-300x169.png 300w" sizes="(max-width: 800px) 100vw, 800px" /></noscript></p>
+<p>Вернемся обратно к <code>flex-direction: row</code> и&nbsp;пройдемся по&nbsp;командам <code>align-items</code>:</p>
+<ol>
+<li><code>flex-start</code>;</li>
+<li><code>flex-end</code>;</li>
+<li><code>center</code>;</li>
+<li><code>stretch</code>;</li>
+<li><code>baseline</code>.</li>
+</ol>
+<p><img class="lazy-hidden size-full wp-image-28552 aligncenter" src="data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;600px&quot; viewBox=&quot;0 0 600 210&quot;%3E%3C/svg%3E" data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2017/02/600x210_flex_6.gif" alt="" width="600" height="210"><noscript><img class="size-full wp-image-28552 aligncenter" src="https://cdn.tproger.ru/wp-content/uploads/2017/02/600x210_flex_6.gif" alt="" width="600" height="210" /></noscript></p>
+<p>Стоит заметить, что для <code>align-items: stretch</code> высота квадратов должна быть равна <code>auto</code>. Для <code>align-items: baseline</code> теги параграфа убирать не&nbsp;нужно, иначе получится вот так:</p>
+<p><img class="lazy-hidden size-full wp-image-28553 aligncenter" src="data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;1000px&quot; viewBox=&quot;0 0 1000 319&quot;%3E%3C/svg%3E" data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2017/02/flex_7.png" alt="" width="1000" height="319" srcset="" data-srcset="https://cdn.tproger.ru/wp-content/uploads/2017/02/flex_7.png 1000w, https://cdn.tproger.ru/wp-content/uploads/2017/02/flex_7-300x96.png 300w" sizes="(max-width: 1000px) 100vw, 1000px"><noscript><img class="size-full wp-image-28553 aligncenter" src="https://cdn.tproger.ru/wp-content/uploads/2017/02/flex_7.png" alt="" width="1000" height="319" srcset="https://cdn.tproger.ru/wp-content/uploads/2017/02/flex_7.png 1000w, https://cdn.tproger.ru/wp-content/uploads/2017/02/flex_7-300x96.png 300w" sizes="(max-width: 1000px) 100vw, 1000px" /></noscript></p>
+<p>Чтобы получше разобраться в&nbsp;том, как работают оси, давайте объединим <code>justify-content</code> с <code>align-items</code> и&nbsp;посмотрим, как работает выравнивание по&nbsp;центру для двух свойств <code>flex-direction</code>:</p>
+<p><img class="lazy-hidden size-full wp-image-28554 aligncenter" src="data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;600px&quot; viewBox=&quot;0 0 600 313&quot;%3E%3C/svg%3E" data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2017/02/600x313_flex_8.gif" alt="" width="600" height="313"><noscript><img class="size-full wp-image-28554 aligncenter" src="https://cdn.tproger.ru/wp-content/uploads/2017/02/600x313_flex_8.gif" alt="" width="600" height="313" /></noscript></p>
+<h3>Align Self</h3>
+<p><code>Align-self</code> позволяет выравнивать элементы по&nbsp;отдельности.</p>
+<pre class="line-numbers language-css"><code class=" language-css"><span class="token selector">#container</span><span class="token space"> </span><span class="token punctuation brace-curly brace-open brace-level-1" id="pair-3-close">{</span><span class="token lf">
+</span><span class="token space"> </span><span class="token space"> </span><span class="token property">align-items</span><span class="token punctuation">:</span><span class="token space"> </span>flex-start<span class="token punctuation">;</span><span class="token lf">
+</span><span class="token punctuation brace-curly brace-close brace-level-1" id="pair-3-open">}</span><span class="token lf">
+</span><span class="token selector">.square#one</span><span class="token space"> </span><span class="token punctuation brace-curly brace-open brace-level-1" id="pair-4-close">{</span><span class="token lf">
+</span><span class="token space"> </span><span class="token space"> </span><span class="token property">align-self</span><span class="token punctuation">:</span><span class="token space"> </span>center<span class="token punctuation">;</span><span class="token lf">
+</span><span class="token punctuation brace-curly brace-close brace-level-1" id="pair-4-open">}</span><span class="token lf">
+</span>//<span class="token space"> </span>Only<span class="token space"> </span>this<span class="token space"> </span>square<span class="token space"> </span>will<span class="token space"> </span>be<span class="token space"> </span>centered.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Давайте для двух квадратов применим <code>align-self</code>, а&nbsp;для остальных применим <code>align-items: center</code> и <code>flex-direction: row</code>.</p>
+<p><img class="lazy-hidden size-full wp-image-28556 aligncenter" src="data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;600px&quot; viewBox=&quot;0 0 600 188&quot;%3E%3C/svg%3E" data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2017/02/600x188_flex_9.gif" alt="" width="600" height="188"><noscript><img class="size-full wp-image-28556 aligncenter" src="https://cdn.tproger.ru/wp-content/uploads/2017/02/600x188_flex_9.gif" alt="" width="600" height="188" /></noscript></p>
+<p>&nbsp;</p>
+<h3>Flex-Basis</h3>
+<p><code>Flex-basis</code> отвечает за&nbsp;изначальный размер элементов до&nbsp;того, как они будут изменены другими свойствами Flexbox:<img class="lazy-hidden size-full wp-image-29978 aligncenter" src="data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;1000px&quot; viewBox=&quot;0 0 1000 214&quot;%3E%3C/svg%3E" data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2017/02/flex_10.gif" alt="" width="1000" height="214"><noscript><img class="size-full wp-image-29978 aligncenter" src="https://cdn.tproger.ru/wp-content/uploads/2017/02/flex_10.gif" alt="" width="1000" height="214" /></noscript></p>
+<p><code>Flex-basis</code> влияет на&nbsp;размер элементов вдоль главной оси. <img class="lazy-hidden size-full wp-image-29979 aligncenter" src="data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;800px&quot; viewBox=&quot;0 0 800 450&quot;%3E%3C/svg%3E" data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2017/02/axes-1.png" alt="" width="800" height="450" srcset="" data-srcset="https://cdn.tproger.ru/wp-content/uploads/2017/02/axes-1.png 800w, https://cdn.tproger.ru/wp-content/uploads/2017/02/axes-1-300x169.png 300w" sizes="(max-width: 800px) 100vw, 800px"><noscript><img class="size-full wp-image-29979 aligncenter" src="https://cdn.tproger.ru/wp-content/uploads/2017/02/axes-1.png" alt="" width="800" height="450" srcset="https://cdn.tproger.ru/wp-content/uploads/2017/02/axes-1.png 800w, https://cdn.tproger.ru/wp-content/uploads/2017/02/axes-1-300x169.png 300w" sizes="(max-width: 800px) 100vw, 800px" /></noscript></p>
+<p>Давайте посмотрим, что случится, если мы&nbsp;изменим направление главной оси:</p>
+<p><img class="lazy-hidden size-full wp-image-29981 aligncenter" src="data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;770px&quot; viewBox=&quot;0 0 770 284&quot;%3E%3C/svg%3E" data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2017/02/770x284_flex-11.gif" alt="" width="770" height="284"><noscript><img class="size-full wp-image-29981 aligncenter" src="https://cdn.tproger.ru/wp-content/uploads/2017/02/770x284_flex-11.gif" alt="" width="770" height="284" /></noscript></p>
+<p>Заметьте, что нам пришлось изменить и&nbsp;высоту элементов. <code>Flex-basis</code> может определять как высоту элементов, так и&nbsp;их&nbsp;ширину в&nbsp;зависимости от&nbsp;направления оси.</p>
+<h3>Flex Grow</h3>
+<p>Это свойство немного сложнее.</p>
+<p>Для начала давайте зададим нашим квадратикам одинаковую ширину в&nbsp;120px:</p>
+<p><img class="lazy-hidden alignnone size-full wp-image-29982" src="data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;1000px&quot; viewBox=&quot;0 0 1000 203&quot;%3E%3C/svg%3E" data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2017/02/flex_pic_1.png" alt="" width="1000" height="203" srcset="" data-srcset="https://cdn.tproger.ru/wp-content/uploads/2017/02/flex_pic_1.png 1000w, https://cdn.tproger.ru/wp-content/uploads/2017/02/flex_pic_1-300x61.png 300w" sizes="(max-width: 1000px) 100vw, 1000px"><noscript><img class="alignnone size-full wp-image-29982" src="https://cdn.tproger.ru/wp-content/uploads/2017/02/flex_pic_1.png" alt="" width="1000" height="203" srcset="https://cdn.tproger.ru/wp-content/uploads/2017/02/flex_pic_1.png 1000w, https://cdn.tproger.ru/wp-content/uploads/2017/02/flex_pic_1-300x61.png 300w" sizes="(max-width: 1000px) 100vw, 1000px" /></noscript></p>
+<p>По&nbsp;умолчанию значение <code>flex-grow</code> равно 0. Это значит, что квадратам запрещено расти (занимать оставшееся место в&nbsp;контейнере).</p>
+<p>Попробуем задать <code>flex-grow</code> равным 1&nbsp;для каждого квадрата:</p>
+<p><img class="lazy-hidden alignnone size-full wp-image-29983" src="data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;1000px&quot; viewBox=&quot;0 0 1000 207&quot;%3E%3C/svg%3E" data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2017/02/flex_pic_2.png" alt="" width="1000" height="207" srcset="" data-srcset="https://cdn.tproger.ru/wp-content/uploads/2017/02/flex_pic_2.png 1000w, https://cdn.tproger.ru/wp-content/uploads/2017/02/flex_pic_2-300x62.png 300w" sizes="(max-width: 1000px) 100vw, 1000px"><noscript><img class="alignnone size-full wp-image-29983" src="https://cdn.tproger.ru/wp-content/uploads/2017/02/flex_pic_2.png" alt="" width="1000" height="207" srcset="https://cdn.tproger.ru/wp-content/uploads/2017/02/flex_pic_2.png 1000w, https://cdn.tproger.ru/wp-content/uploads/2017/02/flex_pic_2-300x62.png 300w" sizes="(max-width: 1000px) 100vw, 1000px" /></noscript></p>
+<p>Квадраты заняли оставшееся место в&nbsp;контейнере. Значение <code>flex-grow</code> аннулирует значение ширины.</p>
+<p>Но&nbsp;здесь возникает один вопрос: что значит <code>flex-grow: 1</code>?</p>
+<p>Попробуем задать <code>flex-grow</code> равным 999:</p>
+<p><img class="lazy-hidden alignnone size-full wp-image-29984" src="data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;1000px&quot; viewBox=&quot;0 0 1000 200&quot;%3E%3C/svg%3E" data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2017/02/flex_pic_3.png" alt="" width="1000" height="200" srcset="" data-srcset="https://cdn.tproger.ru/wp-content/uploads/2017/02/flex_pic_3.png 1000w, https://cdn.tproger.ru/wp-content/uploads/2017/02/flex_pic_3-300x60.png 300w" sizes="(max-width: 1000px) 100vw, 1000px"><noscript><img class="alignnone size-full wp-image-29984" src="https://cdn.tproger.ru/wp-content/uploads/2017/02/flex_pic_3.png" alt="" width="1000" height="200" srcset="https://cdn.tproger.ru/wp-content/uploads/2017/02/flex_pic_3.png 1000w, https://cdn.tproger.ru/wp-content/uploads/2017/02/flex_pic_3-300x60.png 300w" sizes="(max-width: 1000px) 100vw, 1000px" /></noscript></p>
+<p>И… ничего не&nbsp;произошло. Так получилось из-за того, что <code>flex-grow</code> принимает не&nbsp;абсолютные значения, а&nbsp;относительные.</p>
+<p>Это значит, что не&nbsp;важно, какое значение у <code>flex-grow</code>, важно, какое оно по&nbsp;отношению к&nbsp;другим квадратам:</p>
+<p><img class="lazy-hidden alignnone size-full wp-image-29986" src="data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;770px&quot; viewBox=&quot;0 0 770 179&quot;%3E%3C/svg%3E" data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2017/02/770x179_flex_12.gif" alt="" width="770" height="179"><noscript><img class="alignnone size-full wp-image-29986" src="https://cdn.tproger.ru/wp-content/uploads/2017/02/770x179_flex_12.gif" alt="" width="770" height="179" /></noscript></p>
+<p>Вначале <code>flex-grow</code> каждого квадрата равен&nbsp;1, в&nbsp;сумме получится 6. Значит, наш контейнер поделен на&nbsp;6&nbsp;частей. Каждый квадрат будет занимать 1/6 часть доступного пространства в&nbsp;контейнере.</p>
+<p>Когда <code>flex-grow</code> третьего квадрата становится равным&nbsp;2, контейнер делится на&nbsp;7&nbsp;частей (1 + 1 + 2 + 1 + 1 + 1).</p>
+<p>Теперь третий квадрат занимает 2/7&nbsp;пространства, остальные&nbsp;— по&nbsp;1/7.</p>
+<p>И&nbsp;так далее.</p>
+<p>Стоит помнить, что <code>flex-grow</code> работает только для главной оси (пока мы&nbsp;не&nbsp;поменяем ее&nbsp;направление).</p>
+<h3>Flex Shrink</h3>
+<p><code>Flex-shrink</code> —&nbsp;прямая противоположность <code>flex-grow</code>. Оно определяет, насколько квадрату можно уменьшиться в&nbsp;размере.</p>
+<p><code>Flex-shrink</code> используется, когда элементы не&nbsp;вмещаются в&nbsp;контейнер.</p>
+<p>Вы&nbsp;определяете, какие элементы должны уменьшиться в&nbsp;размерах, а&nbsp;какие&nbsp;— нет. По&nbsp;умолчанию значение <code>flex-shrink</code> для каждого квадрата равно 1. Это значит, что квадраты будут сжиматься, когда контейнер будет уменьшаться.</p>
+<p>Зададим <code>flex-grow</code> и <code>flex-shrink</code> равными 1:</p>
+<p><img class="lazy-hidden size-full wp-image-29987 aligncenter" src="data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;600px&quot; viewBox=&quot;0 0 600 134&quot;%3E%3C/svg%3E" data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2017/02/600x134_flex_13.gif" alt="" width="600" height="134"><noscript><img class="size-full wp-image-29987 aligncenter" src="https://cdn.tproger.ru/wp-content/uploads/2017/02/600x134_flex_13.gif" alt="" width="600" height="134" /></noscript></p>
+<p>Теперь давайте поменяем значение <code>flex-shrink</code> для третьего квадрата на&nbsp;0. Ему запретили сжиматься, поэтому его ширина останется равной 120px:</p>
+<p><img class="lazy-hidden size-full wp-image-29988 aligncenter" src="data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;600px&quot; viewBox=&quot;0 0 600 134&quot;%3E%3C/svg%3E" data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2017/02/600x134_flex_14.gif" alt="" width="600" height="134"><noscript><img class="size-full wp-image-29988 aligncenter" src="https://cdn.tproger.ru/wp-content/uploads/2017/02/600x134_flex_14.gif" alt="" width="600" height="134" /></noscript></p>
+<p>Стоит помнить что <code>flex-shrink</code> основывается на&nbsp;пропорциях. То&nbsp;есть, если у&nbsp;квадрата <code>flex-shrink</code> равен&nbsp;6, а&nbsp;у&nbsp;остальных он&nbsp;равен&nbsp;2, то, это значит, что наш квадрат будет сжиматься в&nbsp;три раза быстрее, чем остальные.</p>
+<h3>Flex</h3>
+<p><code>Flex</code> заменяет <code>flex-grow</code>, <code>flex-shrink</code> и <code>flex-basis</code>.</p>
+<p>Значения по&nbsp;умолчанию: <code>0 (grow) 1 (shrink) и auto (basis)</code>.</p>
+<p>Создадим два квадрата:</p>
+<pre class="line-numbers language-css"><code class=" language-css"><span class="token selector">.square#one</span><span class="token space"> </span><span class="token punctuation brace-curly brace-open brace-level-1" id="pair-5-close">{</span><span class="token lf">
+</span><span class="token space"> </span><span class="token space"> </span><span class="token property">flex</span><span class="token punctuation">:</span><span class="token space"> </span>2<span class="token space"> </span>1<span class="token space"> </span>300px<span class="token punctuation">;</span><span class="token lf">
+</span><span class="token punctuation brace-curly brace-close brace-level-1" id="pair-5-open">}</span><span class="token lf">
+</span><span class="token selector">.square#two</span><span class="token space"> </span><span class="token punctuation brace-curly brace-open brace-level-1" id="pair-6-close">{</span><span class="token lf">
+</span><span class="token space"> </span><span class="token space"> </span><span class="token property">flex</span><span class="token punctuation">:</span><span class="token space"> </span>1<span class="token space"> </span>2<span class="token space"> </span>300px<span class="token punctuation">;</span><span class="token lf">
+</span><span class="token punctuation brace-curly brace-close brace-level-1" id="pair-6-open">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>У&nbsp;обоих квадратов одинаковый <code>flex-basis</code>. Это значит, что они оба будут шириной в&nbsp;300px (ширина контейнера: 600px плюс margin и&nbsp;padding).</p>
+<p>Но&nbsp;когда контейнер начнет увеличиваться в&nbsp;размерах, первый квадрат (с&nbsp;большим <code>flex-grow</code>) будет увеличиваться в&nbsp;два раза быстрее, а&nbsp;второй квадрат (с&nbsp;наибольшим <code>flex-shrink</code>) будет сжиматься в&nbsp;два раза быстрее.</p>
+<p><img class="lazy-hidden size-full wp-image-29999 aligncenter" src="data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;1000px&quot; viewBox=&quot;0 0 1000 232&quot;%3E%3C/svg%3E" data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2017/02/flex_15.gif" alt="" width="1000" height="232"><noscript><img class="size-full wp-image-29999 aligncenter" src="https://cdn.tproger.ru/wp-content/uploads/2017/02/flex_15.gif" alt="" width="1000" height="232" /></noscript></p>
+<h3>Как вещи растут и&nbsp;сжимаются</h3>
+<p>Когда увеличивается первый квадрат, он&nbsp;не&nbsp;становится в&nbsp;два раза больше второго квадрата, и&nbsp;когда уменьшается второй квадрат, он&nbsp;не&nbsp;становится в&nbsp;два раза меньше первого. Это происходит из-за того, что <code>flex-grow</code> и <code>flex-shrink</code> отвечают за&nbsp;темп роста и&nbsp;сокращения.</p>
+<h3>Немного математики</h3>
+<p>Начальный размер контейнера: 640px. Вычтем по&nbsp;20px с&nbsp;каждой стороны для padding, и&nbsp;у&nbsp;нас останется 600px, как раз для двух квадратов.</p>
+<p>Когда ширина контейнера становится равной 430px (потеря в&nbsp;210px), первый квадрат (<code>flex-shrink: 1</code>) теряет 70px. Второй квадрат (<code>flex-shrink: 2</code>) теряет 140px.</p>
+<p>Когда контейнер сжимается до&nbsp;340px, мы&nbsp;теряем 300px. Первый квадрат теряет 100px, второй&nbsp;— 200px.</p>
+<p>Тоже самое происходит и&nbsp;с <code>flex-grow</code>.</p>
+<p><img class="lazy-hidden size-full wp-image-30005 aligncenter" src="data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;600px&quot; viewBox=&quot;0 0 600 160&quot;%3E%3C/svg%3E" data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2017/02/600x160_flex_16.gif" alt="" width="600" height="160"><noscript><img class="size-full wp-image-30005 aligncenter" src="https://cdn.tproger.ru/wp-content/uploads/2017/02/600x160_flex_16.gif" alt="" width="600" height="160" /></noscript></p>
+<div id="article-end-beacon"></div>
+<blockquote class="hint"><p>Не смешно? А здесь смешно: <a href="https://tproger.ru/tg/ithumor" onclick="$.reachGoal(&#39;native&#39;, &#39;click&#39;, &#39;ithumor&#39;);" target="_blank" data-wpel-link="internal" rel="follow">@ithumor</a></p>
+</blockquote> <footer class="entry-meta">
+<div class="footer-left">
+<ul><li><a href="https://tproger.ru/tag/css/" rel="tag">CSS</a>, <a href="https://tproger.ru/tag/web/" rel="tag">Веб-разработка</a>, <a href="https://tproger.ru/tag/for-beginners/" rel="tag">Для начинающих</a></li></ul>
+</div>
+<div class="end-sharing sharing">
+<a title="Поделиться во ВКонтакте" class="colored icon-vkontakte" href="javascript:void(0);" onclick="social_share(&#39;https://vk.com/share.php?url=https%3A%2F%2Ftproger.ru%2Ftranslations%2Fhow-css-flexbox-works%2F&amp;title=%D0%9A%D0%B0%D0%BA+%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%B5%D1%82+CSS+Flexbox%3A+%D0%BD%D0%B0%D0%B3%D0%BB%D1%8F%D0%B4%D0%BD%D0%BE%D0%B5+%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5+%D0%B2+%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%83+%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8+%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2+%D0%BD%D0%B0+%D0%B2%D0%B5%D0%B1-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B5&#39;);"></a>
+<a title="Поделиться на Facebook" class="colored icon-facebook" href="javascript:void(0);" onclick="social_share(&#39;http://www.facebook.com/sharer.php?u=https%3A%2F%2Ftproger.ru%2Ftranslations%2Fhow-css-flexbox-works%2F&amp;t=%D0%9A%D0%B0%D0%BA+%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%B5%D1%82+CSS+Flexbox%3A+%D0%BD%D0%B0%D0%B3%D0%BB%D1%8F%D0%B4%D0%BD%D0%BE%D0%B5+%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5+%D0%B2+%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%83+%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8+%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2+%D0%BD%D0%B0+%D0%B2%D0%B5%D0%B1-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B5&#39;);"></a>
+<a title="Поделиться в Twitter" class="colored icon-twitter" href="javascript:void(0);" onclick="social_share(&#39;http://twitter.com/intent/tweet?url=https%3A%2F%2Ftproger.ru%2Ftranslations%2Fhow-css-flexbox-works%2F&amp;text=Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице&#39;);"></a>
+<a title="Сохранить в Pocket" class="colored icon-pocket small" href="javascript:void(0);" onclick="social_share(&#39;https://getpocket.com/edit?url=https%3A%2F%2Ftproger.ru%2Ftranslations%2Fhow-css-flexbox-works%2F&#39;);"></a>
+<a title="Отправить в Telegram" class="colored icon-telegram" href="javascript:void(0);" onclick="social_share(&#39;https://telegram.me/share/url?url=https%3A%2F%2Ftproger.ru%2Ftranslations%2Fhow-css-flexbox-works%2F&amp;text=Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице&#39;);"></a>
+</div> </footer>
+</div>
+</div>
+<span class="vcard" style="display: none;">
+<span class="fn">
+<a href="https://tproger.ru/author/" class="author"> </a>
+</span>
+</span>
+</article>
+<div id="after-post-widget-container" class="h-widget-container">
+<a href="https://tproger.ru/translations/how-css-flexbox-works/#" class="fix-widget-main-a" id="after-post-widget-a" target="_blank"> </a>
+<div class="box h-widget" style="display:none">
+<img class="no-lazy-img" id="after-post-widget-img" src="https://tproger.ru/translations/how-css-flexbox-works/">
+<div id="after-post-widget-text"></div>
+<a id="after-post-widget-button" class="btn bluth tproger btn-" href="https://tproger.ru/translations/how-css-flexbox-works/" target="_blank">Узнать подробнее</a>
+</div>
+<div class="adsLinkBlockFixBaner" style="display:none">
+<a href="https://tproger.ru/ad" targer="_blank" class="adsLinkFixBaner">Реклама на tproger.ru</a>
+</div>
+</div>
+<div id="right_event_job_widget-18" class="box widget-feed-type widget-after-post" style="width:100%">
+<h3 class="widget-head" style="">Вакансии в тему:</h3>
+<div class="widget-list">
+<div class="loading-widget loading-vertical" style="display: none;"><i></i><i></i><i></i></div>
+<a href="https://tproger.ru/jobs/php-dev-statname/?utm_source=jobs-widget-after-post"><div class="widget-list-item hoverable"><div class="widget-list-item-left"><img data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2020/01/unnamed-50x50.jpg" data-srcset="https://cdn.tproger.ru/wp-content/uploads/2020/01/unnamed-50x50.jpg, https://cdn.tproger.ru/wp-content/uploads/2020/01/unnamed-150x150.jpg 1.5x, https://cdn.tproger.ru/wp-content/uploads/2020/01/unnamed-280x280.jpg 2x" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></div><div class="widget-list-item-right"><div class="widget-list-item-caption">PHP разработчик</div><div class="widget-list-description">Омск, можно удалённо,  по итогам собеседования</div></div></div></a><a href="https://tproger.ru/jobs/middle-senior-frontend-dev-usetech/?utm_source=jobs-widget-after-post"><div class="widget-list-item hoverable"><div class="widget-list-item-left"><img data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2019/12/usetechlogo-50x50.jpg" data-srcset="https://cdn.tproger.ru/wp-content/uploads/2019/12/usetechlogo-50x50.jpg, https://cdn.tproger.ru/wp-content/uploads/2019/12/usetechlogo-150x150.jpg 1.5x, https://cdn.tproger.ru/wp-content/uploads/2019/12/usetechlogo-280x280.jpg 2x" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></div><div class="widget-list-item-right"><div class="widget-list-item-caption">Middle/Senior Frontend разработчик</div><div class="widget-list-description">Москва, можно удалённо,  по итогам собеседования</div></div></div></a><div class="widget-list-footer"><a href="https://tproger.ru/jobs?utm_source=jobs-widget-after-post" class="show-more hoverable">Все вакансии<span class="icon-right-open vertical-middle"></span></a><div class="widget-list-footer-right"><a href="https://tproger.ru/ad/jobs" class="btn bluth tproger margin-top-10">Разместить вакансию</a></div></div></div>
+</div>
+<script defer="" type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function(event) { 
+        if(window.innerWidth < 977){
+          let getEventJobWidgetDataBinded = getEventJobWidgetData.bind(getEventJobWidgetData,"right_event_job_widget-18","/wp-json/jobs/widget/get?post_id=28540&type=3&shuffle=&count=5","Все вакансии","/jobs","jobs-widget-after-post","Разместить вакансию","/ad/jobs")
+          window.addLazyLoadFunction("#right_event_job_widget-18",window.onceFunction(getEventJobWidgetDataBinded), -300, 25)
+        }else{
+          getEventJobWidgetData("right_event_job_widget-18","/wp-json/jobs/widget/get?post_id=28540&type=3&shuffle=&count=5","Все вакансии","/jobs","jobs-widget-after-post","Разместить вакансию","/ad/jobs");
+        }
+      })
+    </script>
+<div id="related-posts" class="entry-content box">
+<h4 id="related-posts-header"><i class="colored icon-fire"></i>Также рекомендуем:</h4>
+<ul class="related-posts">
+<a href="https://tproger.ru/translations/regular-expression-python/">
+<li class="related-post hoverable">
+<img width="50" height="50" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/lazy_placeholder.webp" data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2015/06/regex-mini-80x80.png" class="lazy-hidden attachment-50x50 size-50x50 wp-post-image" alt="" srcset="" data-srcset="https://cdn.tproger.ru/wp-content/uploads/2015/06/regex-mini-80x80.png, https://cdn.tproger.ru/wp-content/uploads/2015/06/regex-mini-80x80.png 1.5x, https://cdn.tproger.ru/wp-content/uploads/2015/06/regex-mini-150x150.png 2x" data-id="52678"><noscript><img width="50" height="50" src="https://cdn.tproger.ru/wp-content/uploads/2015/06/regex-mini-80x80.png" class="attachment-50x50 size-50x50 wp-post-image" alt="" srcset="https://cdn.tproger.ru/wp-content/uploads/2015/06/regex-mini-80x80.png, https://cdn.tproger.ru/wp-content/uploads/2015/06/regex-mini-80x80.png 1.5x, https://cdn.tproger.ru/wp-content/uploads/2015/06/regex-mini-150x150.png 2x" data-id="52678" /></noscript> <div class="widget-list-item-right">
+<div class="widget-list-item-caption">Использование регулярных выражений в Python для новичков</div>
+<div class="widget-list-description"> </div>
+</div>
+</li>
+</a>
+<a href="https://tproger.ru/translations/frontend-backend-interaction/">
+<li class="related-post hoverable">
+<img width="50" height="50" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/lazy_placeholder.webp" data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2017/04/frontend-vs-backend-50x50.jpg" class="lazy-hidden attachment-50x50 size-50x50 wp-post-image" alt="" srcset="" data-srcset="https://cdn.tproger.ru/wp-content/uploads/2017/04/frontend-vs-backend-50x50.jpg, https://cdn.tproger.ru/wp-content/uploads/2017/04/frontend-vs-backend-90x90.jpg 1.5x, https://cdn.tproger.ru/wp-content/uploads/2017/04/frontend-vs-backend-150x150.jpg 2x" data-id="109101"><noscript><img width="50" height="50" src="https://cdn.tproger.ru/wp-content/uploads/2017/04/frontend-vs-backend-50x50.jpg" class="attachment-50x50 size-50x50 wp-post-image" alt="" srcset="https://cdn.tproger.ru/wp-content/uploads/2017/04/frontend-vs-backend-50x50.jpg, https://cdn.tproger.ru/wp-content/uploads/2017/04/frontend-vs-backend-90x90.jpg 1.5x, https://cdn.tproger.ru/wp-content/uploads/2017/04/frontend-vs-backend-150x150.jpg 2x" data-id="109101" /></noscript> <div class="widget-list-item-right">
+<div class="widget-list-item-caption">Простыми словами о «фронтенде» и «бэкенде»: что это такое и как они взаимодействуют</div>
+<div class="widget-list-description"> </div>
+</div>
+</li>
+</a>
+<a href="https://tproger.ru/translations/responsive-web-design-tips/">
+<li class="related-post hoverable">
+<img width="50" height="50" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/lazy_placeholder.webp" data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2018/08/responsiveness-2-50x50.jpg" class="lazy-hidden attachment-50x50 size-50x50 wp-post-image" alt="" srcset="" data-srcset="https://cdn.tproger.ru/wp-content/uploads/2018/08/responsiveness-2-50x50.jpg, https://cdn.tproger.ru/wp-content/uploads/2018/08/responsiveness-2-90x90.jpg 1.5x, https://cdn.tproger.ru/wp-content/uploads/2018/08/responsiveness-2-150x150.jpg 2x" data-id="95771"><noscript><img width="50" height="50" src="https://cdn.tproger.ru/wp-content/uploads/2018/08/responsiveness-2-50x50.jpg" class="attachment-50x50 size-50x50 wp-post-image" alt="" srcset="https://cdn.tproger.ru/wp-content/uploads/2018/08/responsiveness-2-50x50.jpg, https://cdn.tproger.ru/wp-content/uploads/2018/08/responsiveness-2-90x90.jpg 1.5x, https://cdn.tproger.ru/wp-content/uploads/2018/08/responsiveness-2-150x150.jpg 2x" data-id="95771" /></noscript> <div class="widget-list-item-right">
+<div class="widget-list-item-caption">Адаптивная верстка: что это и как использовать</div>
+<div class="widget-list-description"> </div>
+</div>
+</li>
+</a>
+<a href="https://tproger.ru/curriculum/intro-to-frontend-development/">
+<li class="related-post hoverable">
+<img width="50" height="50" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/lazy_placeholder.webp" data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2018/04/333135-PA04FK-538-e1545402996548-50x50.jpg" class="lazy-hidden attachment-50x50 size-50x50 wp-post-image" alt="" srcset="" data-srcset="https://cdn.tproger.ru/wp-content/uploads/2018/04/333135-PA04FK-538-e1545402996548-50x50.jpg, https://cdn.tproger.ru/wp-content/uploads/2018/04/333135-PA04FK-538-e1545402996548-90x90.jpg 1.5x, https://cdn.tproger.ru/wp-content/uploads/2018/04/333135-PA04FK-538-e1545402996548-150x150.jpg 2x" data-id="102390"><noscript><img width="50" height="50" src="https://cdn.tproger.ru/wp-content/uploads/2018/04/333135-PA04FK-538-e1545402996548-50x50.jpg" class="attachment-50x50 size-50x50 wp-post-image" alt="" srcset="https://cdn.tproger.ru/wp-content/uploads/2018/04/333135-PA04FK-538-e1545402996548-50x50.jpg, https://cdn.tproger.ru/wp-content/uploads/2018/04/333135-PA04FK-538-e1545402996548-90x90.jpg 1.5x, https://cdn.tproger.ru/wp-content/uploads/2018/04/333135-PA04FK-538-e1545402996548-150x150.jpg 2x" data-id="102390" /></noscript> <div class="widget-list-item-right">
+<div class="widget-list-item-caption">Хочу стать frontend разработчиком: базовые знания и план обучения</div>
+<div class="widget-list-description"> </div>
+</div>
+</li>
+</a>
+</ul>
+</div><div id="comments" class="comments-area comments-area-facebook">
+<div id="vk_comments" data-post-id="28540"></div>
+</div>
+</div>
+<aside id="side-bar" class="widget-area" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
+
+ 
+
+
+
+
+
+<div class="theiaStickySidebar" style="padding-top: 1px; padding-bottom: 1px; position: static; transform: none;"><div id="above-content-container" style="display: block;">
+<a id="above-content-link" href="tg://resolve?domain=tproger_official" rel="nofollow" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;buttons&#39;, &#39;click&#39;, &#39;above-content-call-to-action&#39;);">
+<div id="above-content-button" class="box">
+<i id="above-content-image" class="colored icon-telegram"></i>Читать нас в Telegram
+</div>
+</a>
+</div><div id="fix-top-widget-container" style="display: none;">
+<a href="https://tproger.ru/translations/how-css-flexbox-works/#" target="_blank" class="fix-widget-main-a" style="color: unset;" id="fix-widget-a"></a>
+<div class="fix-widget-content">
+<img src="https://tproger.ru/translations/how-css-flexbox-works/" id="fix-widget-img" class="no-lazy-img">
+<p id="fix-widget-text"></p>
+<a href="https://tproger.ru/translations/how-css-flexbox-works/#" target="_blank" class="widget-button-bottom" id="fix-widget-button">Узнать подробнее</a>
+</div>
+<div id="fix-widget-close-btn">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><path d="M1 1l13.636 13.636M14.636 1L1 14.636" vector-effect="non-scaling-stroke" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path></g></svg>
+</div>
+<div class="adsLinkBlockFixBaner">
+<a href="https://tproger.ru/ad" targer="_blank" class="adsLinkFixBaner">Реклама на tproger.ru</a>
+</div>
+</div><div class="box widget_tag_cloud" data-role="widget_get_new_quote">
+<div class="citation">
+<div class="citation-quote citation-quote-left"><i class="icon-quote-left"></i></div>
+<div class="citation-widget">
+<p data-role="widget_quote_text">Бойся 228, если это число ошибок в коде.</p>
+</div>
+<div class="citation-quote citation-quote-right"><i class="icon-quote-right"></i></div>
+<div class="quote_refresh_block icon-arrows-ccw"></div>
+</div>
+</div><div id="yikes_easy_mc_widget-2" class="box widget_yikes_easy_mc_widget">
+<section id="yikes-mailchimp-container-3" class="yikes-mailchimp-container yikes-mailchimp-container-3 ">
+<form id="right-sidebar-3" class="yikes-easy-mc-form yikes-easy-mc-form-3  " method="POST" data-attr-form-id="3">
+<label for="yikes-easy-mc-form-3-EMAIL" class="EMAIL-label yikes-mailchimp-field-required ">
+
+<span class="EMAIL-label">
+Рассылка «Аргументы и функции» </span>
+
+<p class="form-field-description" id="form-field-description-EMAIL">Только самые важные IT-новости</p>
+<input id="yikes-easy-mc-form-3-EMAIL" name="EMAIL" placeholder="Введите свой e-mail" class="yikes-easy-mc-email " required="required" type="email" value="">
+
+</label>
+
+<input type="hidden" name="yikes-mailchimp-honeypot" id="yikes-mailchimp-honeypot-3" value="">
+
+<input type="hidden" name="yikes-mailchimp-associated-list-id" id="yikes-mailchimp-associated-list-id-3" value="240c13bb08">
+
+<input type="hidden" name="yikes-mailchimp-submitted-form" id="yikes-mailchimp-submitted-form-3" value="3">
+
+<button type="submit" class="widget-button-bottom subscribe-button-widget-end">Подписаться</button> 
+<input type="hidden" id="yikes_easy_mc_new_subscriber_3" name="yikes_easy_mc_new_subscriber" value="e2ce521238">
+<input type="hidden" name="_wp_http_referer" value="/translations/how-css-flexbox-works/">
+</form>
+
+</section>
+</div><div id="right_event_job_widget-8" class="box nopadding" style="width:100%">
+<h3 class="widget-head" style="">События и курсы</h3>
+<div class="widget-list">
+<div class="loading-widget loading-vertical" style="display: none;"><i></i><i></i><i></i></div>
+<a href="https://tproger.ru/events/tg-bot-online-otus/?utm_source=tproger_events_right_sidebar"><div class="widget-list-item hoverable"><div class="widget-list-item-left"><img data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2020/01/Logo_Owl_600x600-50x50.png" data-srcset="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/Logo_Owl_600x600-50x50.png" class="lazy-loaded" srcset="https://cdn.tproger.ru/wp-content/uploads/2020/01/Logo_Owl_600x600-50x50.png, https://cdn.tproger.ru/wp-content/uploads/2020/01/Logo_Owl_600x600-150x150.png 1.5x, https://cdn.tproger.ru/wp-content/uploads/2020/01/Logo_Owl_600x600-280x280.png 2x"></div><div class="widget-list-item-right"><div class="widget-list-item-caption">Интенсив «Создание Telegram-бота для заказа кофе в заведении и оплаты онлайн»</div><div class="widget-list-description">21–22 января, онлайн,  беcплатно</div></div></div></a><a href="https://tproger.ru/events/vk-tech-talks-performance-advertising/?utm_source=tproger_events_right_sidebar"><div class="widget-list-item hoverable"><div class="widget-list-item-left"><img data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2019/11/VK_Blue_Logo_transparent-50x50.png" data-srcset="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/VK_Blue_Logo_transparent-50x50.png" class="lazy-loaded" srcset="https://cdn.tproger.ru/wp-content/uploads/2019/11/VK_Blue_Logo_transparent-50x50.png, https://cdn.tproger.ru/wp-content/uploads/2019/11/VK_Blue_Logo_transparent-150x150.png 1.5x, https://cdn.tproger.ru/wp-content/uploads/2019/11/VK_Blue_Logo_transparent-280x280.png 2x"></div><div class="widget-list-item-right"><div class="widget-list-item-caption">Митап VK Tech Talks Performance Advertising</div><div class="widget-list-description">23 января, Санкт-Петербург,  беcплатно</div></div></div></a><a href="https://tproger.ru/events/mieloconf/?utm_source=tproger_events_right_sidebar"><div class="widget-list-item hoverable"><div class="widget-list-item-left"><img data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2019/12/Mieloconf-300_300-50x50.jpg" data-srcset="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/Mieloconf-300_300-50x50.jpg" class="lazy-loaded" srcset="https://cdn.tproger.ru/wp-content/uploads/2019/12/Mieloconf-300_300-50x50.jpg, https://cdn.tproger.ru/wp-content/uploads/2019/12/Mieloconf-300_300-150x150.jpg 1.5x, https://cdn.tproger.ru/wp-content/uploads/2019/12/Mieloconf-300_300-280x280.jpg 2x"></div><div class="widget-list-item-right"><div class="widget-list-item-caption">Конференция MIELOCONF</div><div class="widget-list-description">24 января, Москва, 10 000–17 000&nbsp;₽</div></div></div></a><a href="https://tproger.ru/events/f-by-2020/?utm_source=tproger_events_right_sidebar"><div class="widget-list-item hoverable"><div class="widget-list-item-left"><img data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2019/12/fby-2020-logo-50x50.jpg" data-srcset="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/fby-2020-logo-50x50.jpg" class="lazy-loaded" srcset="https://cdn.tproger.ru/wp-content/uploads/2019/12/fby-2020-logo-50x50.jpg, https://cdn.tproger.ru/wp-content/uploads/2019/12/fby-2020-logo-150x150.jpg 1.5x, https://cdn.tproger.ru/wp-content/uploads/2019/12/fby-2020-logo.jpg 2x"></div><div class="widget-list-item-right"><div class="widget-list-item-caption">Конференция f(by) 2020</div><div class="widget-list-description">25 января, Минск, 62–296&nbsp;br</div></div></div></a><a href="https://tproger.ru/events/java-mentor-courses-jan-20/?utm_source=tproger_events_right_sidebar"><div class="widget-list-item hoverable"><div class="widget-list-item-left"><img data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2019/05/java-mentor-logo-50x50.png" data-srcset="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/java-mentor-logo-50x50.png" class="lazy-loaded" srcset="https://cdn.tproger.ru/wp-content/uploads/2019/05/java-mentor-logo-50x50.png, https://cdn.tproger.ru/wp-content/uploads/2019/05/java-mentor-logo-150x150.png 1.5x, https://cdn.tproger.ru/wp-content/uploads/2019/05/java-mentor-logo-280x280.png 2x"></div><div class="widget-list-item-right"><div class="widget-list-item-caption">Обучение Java-разработке с оплатой после трудоустройства</div><div class="widget-list-description">1 февраля, 4 месяца, Москва и онлайн,  беcплатно</div></div></div></a><div class="widget-list-footer"><a href="https://tproger.ru/events?utm_source=tproger_events_right_sidebar" class="show-more hoverable">Все события и курсы<span class="icon-right-open vertical-middle"></span></a></div></div>
+</div><div id="right_event_job_widget-6" class="box nopadding" style="width:100%">
+<h3 class="widget-head" style="">Вакансии</h3>
+<div class="widget-list">
+<div class="loading-widget loading-vertical" style="display: none;"><i></i><i></i><i></i></div>
+<a href="https://tproger.ru/jobs/php-dev-statname/?utm_source=tproger_ru_right_banner"><div class="widget-list-item hoverable"><div class="widget-list-item-left"><img data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2020/01/unnamed-50x50.jpg" data-srcset="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/unnamed-50x50.jpg" class="lazy-loaded" srcset="https://cdn.tproger.ru/wp-content/uploads/2020/01/unnamed-50x50.jpg, https://cdn.tproger.ru/wp-content/uploads/2020/01/unnamed-150x150.jpg 1.5x, https://cdn.tproger.ru/wp-content/uploads/2020/01/unnamed-280x280.jpg 2x"></div><div class="widget-list-item-right"><div class="widget-list-item-caption">PHP разработчик</div><div class="widget-list-description">Омск, можно удалённо,  по итогам собеседования</div></div></div></a><a href="https://tproger.ru/jobs/frontend-dev-vue-js-sportmaster/?utm_source=tproger_ru_right_banner"><div class="widget-list-item hoverable"><div class="widget-list-item-left"><img data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2019/09/sm_lab-50x50.png" data-srcset="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/sm_lab-50x50.png" class="lazy-loaded" srcset="https://cdn.tproger.ru/wp-content/uploads/2019/09/sm_lab-50x50.png, https://cdn.tproger.ru/wp-content/uploads/2019/09/sm_lab-150x150.png 1.5x, https://cdn.tproger.ru/wp-content/uploads/2019/09/sm_lab-280x280.png 2x"></div><div class="widget-list-item-right"><div class="widget-list-item-caption">Frontend Developer (Vue.js)</div><div class="widget-list-description">Москва, от 150 000&nbsp;₽</div></div></div></a><a href="https://tproger.ru/jobs/php-dev-spectrum/?utm_source=tproger_ru_right_banner"><div class="widget-list-item hoverable"><div class="widget-list-item-left"><img data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2020/01/logotip-dlja-tproger-50x50.jpg" data-srcset="https://cdn.tproger.ru/wp-content/uploads/2020/01/logotip-dlja-tproger-50x50.jpg, https://cdn.tproger.ru/wp-content/uploads/2020/01/logotip-dlja-tproger-150x150.jpg 1.5x, https://cdn.tproger.ru/wp-content/uploads/2020/01/logotip-dlja-tproger-280x280.jpg 2x" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></div><div class="widget-list-item-right"><div class="widget-list-item-caption">PHP Developer</div><div class="widget-list-description">Екатеринбург, от 100 000 до 160 000&nbsp;₽</div></div></div></a><a href="https://tproger.ru/jobs/middle-unity3d-developer-plarium/?utm_source=tproger_ru_right_banner"><div class="widget-list-item hoverable"><div class="widget-list-item-left"><img data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2019/08/plarium_logog-50x50.png" data-srcset="https://cdn.tproger.ru/wp-content/uploads/2019/08/plarium_logog-50x50.png, https://cdn.tproger.ru/wp-content/uploads/2019/08/plarium_logog-150x150.png 1.5x, https://cdn.tproger.ru/wp-content/uploads/2019/08/plarium_logog-280x280.png 2x" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></div><div class="widget-list-item-right"><div class="widget-list-item-caption">Middle Unity3D Developer</div><div class="widget-list-description">Краснодар,  по итогам собеседования</div></div></div></a><a href="https://tproger.ru/jobs/senior-php-dev-searchanise/?utm_source=tproger_ru_right_banner"><div class="widget-list-item hoverable"><div class="widget-list-item-left"><img data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/2019/12/searchanise300_Montazhnaja-oblast-1-50x50.png" data-srcset="https://cdn.tproger.ru/wp-content/uploads/2019/12/searchanise300_Montazhnaja-oblast-1-50x50.png, https://cdn.tproger.ru/wp-content/uploads/2019/12/searchanise300_Montazhnaja-oblast-1-150x150.png 1.5x, https://cdn.tproger.ru/wp-content/uploads/2019/12/searchanise300_Montazhnaja-oblast-1-280x280.png 2x" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></div><div class="widget-list-item-right"><div class="widget-list-item-caption">Senior PHP Developer</div><div class="widget-list-description">Ульяновск, от 150 000&nbsp;₽</div></div></div></a><div class="widget-list-footer"><a href="https://tproger.ru/jobs?utm_source=tproger_ru_right_banner" class="show-more hoverable">Все вакансии<span class="icon-right-open vertical-middle"></span></a></div></div>
+</div><div id="fix-bottom-widget-container" style="display: none;">
+<a href="https://tproger.ru/translations/how-css-flexbox-works/#" target="_blank" class="fix-widget-main-a" style="color: unset;" id="fix-widget-a"></a>
+<div class="fix-widget-content">
+<img src="https://tproger.ru/translations/how-css-flexbox-works/" id="fix-widget-img" class="no-lazy-img">
+<p id="fix-widget-text"></p>
+<a href="https://tproger.ru/translations/how-css-flexbox-works/#" target="_blank" class="widget-button-bottom" id="fix-widget-button">Узнать подробнее</a>
+</div>
+<div id="fix-widget-close-btn">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><path d="M1 1l13.636 13.636M14.636 1L1 14.636" vector-effect="non-scaling-stroke" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path></g></svg>
+</div>
+<div class="adsLinkBlockFixBaner">
+<a href="https://tproger.ru/ad" targer="_blank" class="adsLinkFixBaner">Реклама на tproger.ru</a>
+</div>
+</div><div id="fix-bottom-widget-container" style="display: none;">
+<a href="https://tproger.ru/translations/how-css-flexbox-works/#" target="_blank" class="fix-widget-main-a" style="color: unset;" id="fix-widget-a"></a>
+<div class="fix-widget-content">
+<img src="https://tproger.ru/translations/how-css-flexbox-works/" id="fix-widget-img" class="no-lazy-img">
+<p id="fix-widget-text"></p>
+<a href="https://tproger.ru/translations/how-css-flexbox-works/#" target="_blank" class="widget-button-bottom" id="fix-widget-button">Узнать подробнее</a>
+</div>
+<div id="fix-widget-close-btn">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><path d="M1 1l13.636 13.636M14.636 1L1 14.636" vector-effect="non-scaling-stroke" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path></g></svg>
+</div>
+<div class="adsLinkBlockFixBaner">
+<a href="https://tproger.ru/ad" targer="_blank" class="adsLinkFixBaner">Реклама на tproger.ru</a>
+</div>
+</div></div></aside>
+</div>
+</div>
+<footer id="footer">
+<div id="footer-body" class="windowed">
+<div id="custom_html-2" class="widget_text span4 widget_custom_html"><div class="textwidget custom-html-widget"><div class="footer_a"><a href="https://tproger.ru/about">О&nbsp;проекте</a>
+<a href="https://tproger.ru/ad">Реклама</a><a class="footer_a" href="https://tproger.ru/translations/how-css-flexbox-works/amp/">Мобильная&nbsp;версия</a>
+</div><div class="footer_dark_a"><a href="https://tproger.ru/wp-content/uploads/custom/terms_v1.pdf">Пользовательское&nbsp;соглашение</a><br><a href="https://tproger.ru/wp-content/uploads/custom/privacy_v1.pdf">Политика&nbsp;конфиденциальности</a></div>
+<div class="footer_dark_a footer-with-logo"><a href="https://tprg.ru/regru-footer" data-wpel-link="external" target="_blank" rel="nofollow noopener noreferrer">Используем&nbsp;серверы&nbsp;<img class="lazy-hidden" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/lazy_placeholder.webp" data-lazy-type="image" data-src="https://cdn.tproger.ru/wp-content/uploads/custom/regru-logo.svg" alt="Логотип REG.RU"><noscript><img src="https://cdn.tproger.ru/wp-content/uploads/custom/regru-logo.svg" alt="Логотип REG.RU"></noscript></a></div></div></div><div id="custom_html-4" class="widget_text span4 widget_custom_html"><div class="textwidget custom-html-widget"><div>
+<span itemscope="" itemtype="http://schema.org/Organization">
+<meta itemprop="logo" content="https://cdn.tproger.ru/android-chrome-32x32.png">
+<meta itemprop="url" content="https://tproger.ru">
+<meta itemprop="name" content="Tproger">
+<link itemprop="url" href="https://tproger.ru/">
+<a itemprop="sameAs" href="https://vk.com/tproger"><i class="social_b sprite sprite-vk" style="margin-left:-4px;"></i></a>&nbsp;
+<a itemprop="sameAs" href="https://www.facebook.com/tproger/"><i class="social_b sprite sprite-fb"></i></a>&nbsp;
+<a itemprop="sameAs" href="https://twitter.com/tproger"><i class="social_b sprite sprite-tw"></i></a>&nbsp;
+<a itemprop="sameAs" href="tg://resolve?domain=tproger_official"><i class="social_b sprite sprite-tm"></i></a>&nbsp;
+<a itemprop="sameAs" href="https://zen.yandex.ru/tproger"><i class="social_b sprite sprite-zn"></i></a>&nbsp;
+ <a href="https://tproger.ru/feed/"><i class="social_b sprite sprite-rs"></i></a>
+</span>
+</div>
+<div class="footer_dark_a"><a href="https://tproger.ru/newsletter/">«Аргументы и функции» — рассылка новостей</a></div></div></div><div id="custom_html-5" class="widget_text span4 widget_custom_html"><div class="textwidget custom-html-widget"><div id="subscribe-wrapper" style="display: none">
+<a href="https://tproger.ru/translations/how-css-flexbox-works/#" id="subscribe-link"><i class="icon-bell-1"></i> Включить уведомления</a>
+</div>
+<span style=" opacity: .2; color:#fff;">
+Нашли опечатку? Выделите фрагмент и отправьте нажатием Ctrl+Enter.
+</span></div></div> </div>
+</footer>
+</div>
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-78195897-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script type="text/javascript" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/google-analytics.js.Без названия" async=""></script>
+<script>
+window.ym=window.ym||function(){(ym.a=ym.a||[]).push(arguments)};ym.l=1*new Date();
+ym(27485085, "init", {clickmap: false, trackLinks: true, accurateTrackBounce: true, webvisor:false});
+</script>
+<script type="text/javascript" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/yandex-metrika.js.Без названия" async=""></script>
+<noscript><div><img src="https://mc.yandex.ru/watch/27485085" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<script type="text/javascript">
+	(function(w, d, s, u) {
+		function setup_tracking() {
+			if (typeof OneSignal != u && typeof ga != u) {
+				OneSignal.push(function() {
+					OneSignal.on('subscriptionChange', function (isSubscribed) {
+						if (typeof ga != u) {
+							if (isSubscribed) ga('send', 'event', 'buttons', 'click', 'onesignal-user-subscribed'); else
+								ga('send', 'event', 'buttons', 'click', 'onesignal-user-unsubscribed');
+						}                    
+					});
+				});
+			}
+			if (!w.trackLink) {
+				w.trackLink = function(track_id) {
+					if (typeof yaCounter27485085 != u) yaCounter27485085.reachGoal(track_id); 
+					if (typeof ga != u) ga('send', 'event', 'link', 'click', track_id);
+					return true;
+				};
+			};
+			if (!w.setupLinksTrack) {
+				w.setupLinksTrack = function() {
+					if (d['querySelectorAll'] != null) {
+						var track_links = d.querySelectorAll('[data-track-id]');
+						[].forEach.call(track_links, function(track_link) {
+							var track_id = track_link.getAttribute('data-track-id');
+							track_link.onclick = function(e) {
+								if (w.trackLink) return w.trackLink(track_id);
+							}                
+						});
+					}      
+				};
+				w.setupLinksTrack();
+			}
+			var form = document.getElementById('_send_jobs_candidate_form');
+			if (form) {
+				form.addEventListener('submit', function(event) {
+					if (typeof ga != u) ga('send', 'event', 'job-response', 'submit');
+				});
+			}
+			form = document.getElementById('quick_response_candidate_form');
+			if (form) {
+				form.addEventListener('submit', function(event) {
+					if (typeof ga != u) ga('send', 'event', 'quick-job-response', 'submit');
+				});
+			}
+		}
+		function setup_vk() {
+			VK.init({ apiId: 5104638, onlyWidgets: true });
+			if (typeof window.vkCommentsInit === "function") window.vkCommentsInit();        
+			VK.Retargeting.Init('VK-RTRG-271723-bcLdk');
+			VK.Retargeting.Hit(); 
+			if (typeof window.vkRetargetInit === "function") window.vkRetargetInit();
+		}    
+		function go() {
+			var js, fjs = d.getElementsByTagName(s)[0], load = function(url, id, onload = '', onerror = '') {
+				if (d.getElementById(id)) { return; }
+				js = d.createElement(s); js.src = url; js.id = id; js.onload = onload; js.onerror = onerror;
+				fjs.parentNode.insertBefore(js, fjs);
+			};
+			load('https://proxy.tproger.ru/vk-openapi.js', 'openapi-js', setup_vk);
+			setup_tracking();
+			if (location.search.indexOf('subscribed=true') !== -1) alert("Вы успешно подтвердили свою подписку");
+		}
+		if (w.addEventListener) { w.addEventListener("load", go, false); } else if (w.attachEvent) { w.attachEvent("onload",go); }    
+	}(window, document, 'script', 'undefined'));
+	</script>
+<div id="informer-modal" class="modal fade" role="dialog" aria-hidden="true" style="display: none;">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal">×</button>
+<h4 class="modal-title">Поздравляем!</h4>
+</div>
+<div class="modal-body">
+<p>Вы успешно подтвердили свою подписку на «Аргументы и функции».</p><p>Ждите первое письмо, оно придёт уже совсем скоро!</p>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-default" data-dismiss="modal">Понятно</button>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+			window.post_views = 0;
+			window.same_post_views = 0;
+			window.post_views_speed = 0;
+			var getPostViews = function(selector) {
+				var xhr = new XMLHttpRequest();
+				xhr.open('GET', '/wp-content/themes/bliss/fast-ajax.php?action=get-post-views&post-id=28540'); 
+				xhr.onreadystatechange = function () {
+					if (this.readyState == 4 && this.status === 200 && this.responseText.length < 500) { // 500 is a workaround for really big answer from cloudflare
+						const views = JSON.parse(this.responseText);
+						var views_count = parseInt(views.count.replace('&#8239;', ''));
+						if (views_count > 0) {
+							if (window.post_views == 0) {
+								document.querySelector(selector + ' .post-views-count').innerHTML = views.count;
+								document.querySelector(selector + ' .post-views').style.display = 'block';
+							} else {
+								if (CountUp instanceof Function) {
+									if (typeof window.count_up === 'undefined') {
+										const options = { startVal: window.post_views, useEasing: false };
+										views_count += Math.floor(parseFloat(views.speed));
+										window.count_up = new CountUp(document.querySelector(selector + ' .post-views-count'), views_count, options);
+										if (!window.count_up.error) { window.count_up.start(); } else { console.error(window.count_up.error); }
+									} else {
+										if (window.post_views > views_count) {
+											views_count = window.post_views;
+										}
+										window.count_up.update(views_count);
+									}
+								}
+							}							
+							if (window.post_views === views_count) {
+								window.same_post_views++;
+							} else {
+								window.same_post_views = 0;
+							}
+							window.post_views = views_count;
+							window.post_views_speed = views.speed;
+						} else {
+							console.log('Error: views count is zero on non integer');
+							if (window.same_post_views++ < 2) getPostViews(selector);
+						}
+					}
+				};
+				xhr.send();
+			};
+			getPostViews('[data-role="post_views"]');
+		</script>
+<div style="display:none;" class="tproger-elevator-block" id="tproger-elevator">
+<div class="elevator-arrow">
+<i id="tproger-arrow" class="icon-up-open"></i>
+<br>
+<i style="display:none;" class="sprite sprite-elevator" id="tproger-elevator-icon"></i>
+</div>
+</div>
+<script defer="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/187d0.js.Без названия"></script>
+<script>
+				!function(){if('PerformanceLongTaskTiming' in window){var g=window.__tti={e:[]};
+				g.o=new PerformanceObserver(function(l){g.e=g.e.concat(l.getEntries())});
+				g.o.observe({entryTypes:['longtask']})}}();
+				</script> <meta name="onesignal" content="wordpress-plugin">
+<script>
+
+      window.OneSignal = window.OneSignal || [];
+
+      OneSignal.push( function() {
+        OneSignal.SERVICE_WORKER_UPDATER_PATH = "OneSignalSDKUpdaterWorker.js.php";
+        OneSignal.SERVICE_WORKER_PATH = "OneSignalSDKWorker.js.php";
+        OneSignal.SERVICE_WORKER_PARAM = { scope: '/' };
+
+        OneSignal.setDefaultNotificationUrl("https://tproger.ru");
+        var oneSignal_options = {};
+        window._oneSignalInitOptions = oneSignal_options;
+
+        oneSignal_options['wordpress'] = true;
+oneSignal_options['appId'] = 'ef084fe2-45b1-4d59-9d24-c95f15a4357a';
+oneSignal_options['autoRegister'] = true;
+oneSignal_options['welcomeNotification'] = { };
+oneSignal_options['welcomeNotification']['title'] = "Привет!";
+oneSignal_options['welcomeNotification']['message'] = "Теперь вам будут приходить такие уведомления. Внизу страницы есть кнопка «Выключить уведомления», если вдруг передумаете.";
+oneSignal_options['path'] = "https://tproger.ru/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/";
+oneSignal_options['safari_web_id'] = "web.onesignal.auto.40e188d7-5f7a-4af3-8ac5-05427adc97a7";
+oneSignal_options['promptOptions'] = { };
+oneSignal_options['promptOptions']['actionMessage'] = 'Мы можем оповещать вас о важных статьях и новостях. Обычно такие выходят 3–4 раза в неделю.';
+oneSignal_options['promptOptions']['exampleNotificationTitleDesktop'] = 'Это пример сообщения';
+oneSignal_options['promptOptions']['exampleNotificationMessageDesktop'] = 'Оповещения будут показаны здесь';
+oneSignal_options['promptOptions']['exampleNotificationTitleMobile'] = 'Пример оповещения';
+oneSignal_options['promptOptions']['exampleNotificationMessageMobile'] = 'Уведомления будут отображаться на вашем устройстве';
+oneSignal_options['promptOptions']['exampleNotificationCaption'] = '(вы можете отменить подписку в любое время)';
+oneSignal_options['promptOptions']['acceptButtonText'] = 'Продолжить';
+oneSignal_options['promptOptions']['cancelButtonText'] = 'Нет, спасибо';
+oneSignal_options['promptOptions']['siteName'] = 'https://tproger.ru';
+oneSignal_options['promptOptions']['autoAcceptTitle'] = 'Нажмите «Разрешить»';
+              oneSignal_options['autoRegister'] = false;
+              OneSignal.showHttpPrompt();
+              OneSignal.init(window._oneSignalInitOptions);
+                    });
+
+      function documentInitOneSignal() {
+        var oneSignal_elements = document.getElementsByClassName("OneSignal-prompt");
+
+        var oneSignalLinkClickHandler = function(event) { OneSignal.push(['registerForPushNotifications']); event.preventDefault(); };        for(var i = 0; i < oneSignal_elements.length; i++)
+          oneSignal_elements[i].addEventListener('click', oneSignalLinkClickHandler, false);
+      }
+
+      if (document.readyState === 'complete') {
+           documentInitOneSignal();
+      }
+      else {
+           window.addEventListener("load", function(event){
+               documentInitOneSignal();
+          });
+      }
+    </script>
+<script type="text/javascript">
+          document.addEventListener("DOMContentLoaded", function(event) {           
+            let getTopWidgetAfterPostBinded = getTopWidgetAfterPost.bind(getTopWidgetAfterPost,"top-post-widget-container","28540","1","172,54,40")
+            window.addLazyLoadFunction("#top-post-widget-container",window.onceFunction(getTopWidgetAfterPostBinded), -300, 25)
+          })
+        </script> <script type="text/javascript">
+          document.addEventListener("DOMContentLoaded", function(event) { 
+            getFloatWidget("float-widget-container","28540","1","172,54,40")
+          })
+      </script> <script type="text/javascript">
+          document.addEventListener("DOMContentLoaded", function(event) {           
+            let getFixWidgetAfterPostBinded = getFixWidgetAfterPost.bind(getFixWidgetAfterPost,"after-post-widget-container","28540","1","172,54,40")
+            window.addLazyLoadFunction("#after-post-widget-container",window.onceFunction(getFixWidgetAfterPostBinded), -300, 25)
+          })
+        </script>
+<script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", function(event) { 
+              getFixWidget("","28540","1","172,54,40")
+            })
+        </script> <div id="tagsModal" style="display: none; position: fixed; width: 100%; height: 100%; top: 0px; left: 0px; background-color: rgb(255, 255, 255); overflow-y: auto; z-index: -9999; opacity: 0; animation-duration: 0.6s;" class="animated tagsModal-off">
+<div class="closebt-container close-tagsModal">
+<img class="lazy-hidden closebt" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/lazy_placeholder.webp" data-lazy-type="image" data-src="/wp-content/themes/bliss/assets/img/close-modal.svg"><noscript><img class="closebt" src="/wp-content/themes/bliss/assets/img/close-modal.svg"></noscript> </div>
+<div class="modal-container widget_tag_cloud">
+<div class="modal-tag-cloud tagcloud">
+<div data-tag="brands"><h2>По брендам</h2><a href="https://tproger.ru/tag/adobe/">Adobe</a><a href="https://tproger.ru/tag/amazon/">Amazon</a><a href="https://tproger.ru/tag/apple/">Apple</a><a href="https://tproger.ru/tag/cloudflare/">Cloudflare</a><a href="https://tproger.ru/tag/facebook/">Facebook</a><a href="https://tproger.ru/tag/github/">GitHub</a><a href="https://tproger.ru/tag/gitlab/">GitLab</a><a href="https://tproger.ru/tag/google/">Google</a><a href="https://tproger.ru/tag/ibm/">IBM</a><a href="https://tproger.ru/tag/intel/">Intel</a><a href="https://tproger.ru/tag/jetbrains/">JetBrains</a><a href="https://tproger.ru/tag/microsoft/">Microsoft</a><a href="https://tproger.ru/tag/mit/">MIT</a><a href="https://tproger.ru/tag/mozilla/">Mozilla</a><a href="https://tproger.ru/tag/nvidia/">NVIDIA</a><a href="https://tproger.ru/tag/oracle/">Oracle</a><a href="https://tproger.ru/tag/samsung/">Samsung</a><a href="https://tproger.ru/tag/stack-overflow/">Stack Overflow</a><a href="https://tproger.ru/tag/telegram/">Telegram</a><a href="https://tproger.ru/tag/windows/">Windows</a><a href="https://tproger.ru/tag/vkontakte/">ВКонтакте</a><a href="https://tproger.ru/tag/rkn/">Роскомнадзор</a><a href="https://tproger.ru/tag/yandex/">Яндекс</a></div><div data-tag="fields"><h2>По направлениям</h2><a href="https://tproger.ru/tag/big-data/">Big Data</a><a href="https://tproger.ru/tag/data-science/">Data Science</a><a href="https://tproger.ru/tag/devops/">DevOps</a><a href="https://tproger.ru/tag/hardware/">Hardware</a><a href="https://tproger.ru/tag/hr/">HR</a><a href="https://tproger.ru/tag/bots/">Боты</a><a href="https://tproger.ru/tag/blockchain/">Блокчейн</a><a href="https://tproger.ru/tag/veb-design/">Веб-дизайн</a><a href="https://tproger.ru/tag/web/">Веб-разработка</a><a href="https://tproger.ru/tag/virtual-reality/">Виртуальная реальность</a><a href="https://tproger.ru/tag/interface-design-ux/">Дизайн интерфейсов и UX</a><a href="https://tproger.ru/tag/augmented-reality/">Дополненная реальность</a><a href="https://tproger.ru/tag/iot/">Интернет вещей</a><a href="https://tproger.ru/tag/ai/">Искусственный интеллект</a><a href="https://tproger.ru/tag/quantum-computing/">Квантовые вычисления</a><a href="https://tproger.ru/tag/computer-graphics/">Компьютерная графика</a><a href="https://tproger.ru/tag/computer-vision/">Компьютерное зрение</a><a href="https://tproger.ru/tag/cryptocurrency/">Криптовалюты</a><a href="https://tproger.ru/tag/crypto/">Криптография</a><a href="https://tproger.ru/tag/machine-learning/">Машинное обучение</a><a href="https://tproger.ru/tag/mobiledev/">Мобильная разработка</a><a href="https://tproger.ru/tag/neural-network/">Нейронные сети</a><a href="https://tproger.ru/tag/cloud/">Облачные технологии</a><a href="https://tproger.ru/tag/gamedev/">Разработка игр</a><a href="https://tproger.ru/tag/robots/">Роботы</a><a href="https://tproger.ru/tag/sysadm/">Системное администрирование</a><a href="https://tproger.ru/tag/testing/">Тестирование</a><a href="https://tproger.ru/tag/project-management/">Управление проектами</a><a href="https://tproger.ru/tag/frontend/">Фронтенд</a><a href="https://tproger.ru/tag/math-and-probability/">Математика и теория вероятностей</a><a href="https://tproger.ru/tag/fintech/">Финтех</a></div><div data-tag="languages"><h2>По языкам и технологиям</h2><a href="https://tproger.ru/tag/cpp/">C++</a><a href="https://tproger.ru/tag/c-sharp/">C#</a><a href="https://tproger.ru/tag/java/">Java</a><a href="https://tproger.ru/tag/javascript/">JavaScript</a><a href="https://tproger.ru/tag/css/">CSS</a><a href="https://tproger.ru/tag/html/">HTML</a><a href="https://tproger.ru/tag/go/">Go</a><a href="https://tproger.ru/tag/kotlin/">Kotlin</a><a href="https://tproger.ru/tag/php/">PHP</a><a href="https://tproger.ru/tag/python/">Python</a><a href="https://tproger.ru/tag/ruby/">Ruby</a><a href="https://tproger.ru/tag/ruby-on-rails/">Ruby on Rails</a><a href="https://tproger.ru/tag/rust/">Rust</a><a href="https://tproger.ru/tag/scala/">Scala</a><a href="https://tproger.ru/tag/sql/">SQL</a><a href="https://tproger.ru/tag/swift/">Swift</a><a href="https://tproger.ru/tag/typescript/">TypeScript</a><a href="https://tproger.ru/tag/c-language/">Язык Си</a><a href="https://tproger.ru/tag/asm/">Язык ассемблера</a><a href="https://tproger.ru/tag/r-language/">Язык R</a><a href="https://tproger.ru/tag/lua/">Lua</a><a href="https://tproger.ru/tag/objective-c/">Objective-C</a><a href="https://tproger.ru/tag/perl/">Perl</a><a href="https://tproger.ru/tag/dot-net/">.NET</a><a href="https://tproger.ru/tag/django/">Django</a><a href="https://tproger.ru/tag/docker/">Docker</a><a href="https://tproger.ru/tag/mysql/">MySQL</a><a href="https://tproger.ru/tag/node-js/">Node.js</a><a href="https://tproger.ru/tag/react/">React</a><a href="https://tproger.ru/tag/webassembly/">WebAssembly</a></div><div data-tag="others"><h2></h2><a href="https://tproger.ru/tag/3d-printer/">3D-принтер</a><a href="https://tproger.ru/tag/agile/">Agile</a><a href="https://tproger.ru/tag/android/">Android</a><a href="https://tproger.ru/tag/api/">API</a><a href="https://tproger.ru/tag/bitcoin/">Bitcoin</a><a href="https://tproger.ru/tag/deepmind/">DeepMind</a><a href="https://tproger.ru/tag/diy/">DIY</a><a href="https://tproger.ru/tag/ethereum/">Ethereum</a><a href="https://tproger.ru/tag/f8-2017/">F8 2017</a><a href="https://tproger.ru/tag/firefox/">Firefox</a><a href="https://tproger.ru/tag/git/">Git</a><a href="https://tproger.ru/tag/google-chrome/">Google Chrome</a><a href="https://tproger.ru/tag/google-io-2017/">Google I/O 2017</a><a href="https://tproger.ru/tag/gtc-2017/">GTC 2017</a><a href="https://tproger.ru/tag/ide/">IDE</a><a href="https://tproger.ru/tag/ios/">iOS</a><a href="https://tproger.ru/tag/linux/">Linux</a><a href="https://tproger.ru/tag/macos/">macOS</a><a href="https://tproger.ru/tag/build-2017/">Microsoft Build 2017</a><a href="https://tproger.ru/tag/open-source/">Open Source</a><a href="https://tproger.ru/tag/opera/">Opera</a><a href="https://tproger.ru/tag/raspberry-pi/">Raspberry Pi</a><a href="https://tproger.ru/tag/seo/">SEO</a><a href="https://tproger.ru/tag/unity/">Unity</a><a href="https://tproger.ru/tag/vpn/">VPN</a><a href="https://tproger.ru/tag/wi-fi/">Wi-Fi</a><a href="https://tproger.ru/tag/windows-10/">Windows 10</a><a href="https://tproger.ru/tag/wordpress/">WordPress</a><a href="https://tproger.ru/tag/autopilot/">Автопилот</a><a href="https://tproger.ru/tag/algorithms/">Алгоритмы</a><a href="https://tproger.ru/tag/algos-and-data-structs/">Алгоритмы и структуры данных</a><a href="https://tproger.ru/tag/software-architecture/">Архитектура ПО</a><a href="https://tproger.ru/tag/db/">Базы данных</a><a href="https://tproger.ru/tag/security/">Безопасность</a><a href="https://tproger.ru/tag/safe-code/">Безопасный код</a><a href="https://tproger.ru/tag/autopilot-2/">Беспилотники</a><a href="https://tproger.ru/tag/biotechnology/">Биотехнологии</a><a href="https://tproger.ru/tag/browsers/">Браузеры</a><a href="https://tproger.ru/tag/quick-start/">Быстрый старт</a><a href="https://tproger.ru/tag/brain-teasers/">Головоломки</a><a href="https://tproger.ru/tag/for-motivation/">Для мотивации</a><a href="https://tproger.ru/tag/for-beginners/">Для начинающих</a><a href="https://tproger.ru/tag/for-advanced/">Для продвинутых</a><a href="https://tproger.ru/tag/for-amateurs/">Для продолжающих</a><a href="https://tproger.ru/tag/expert-problems/">Задачи повышенной сложности</a><a href="https://tproger.ru/tag/middle-problems/">Задачи умеренной сложности</a><a href="https://tproger.ru/tag/games/">Игры для программистов</a><a href="https://tproger.ru/tag/tools/">Инструменты</a><a href="https://tproger.ru/tag/command-line-tools/">Инструменты командной строки</a><a href="https://tproger.ru/tag/interesting-projects/">Интересные проекты</a><a href="https://tproger.ru/tag/internet/">Интернет</a><a href="https://tproger.ru/tag/it-history/">История IT</a><a href="https://tproger.ru/tag/success-story/">История успеха</a><a href="https://tproger.ru/tag/career/">Карьера</a><a href="https://tproger.ru/tag/code-style/">Кодстайл</a><a href="https://tproger.ru/tag/compilers/">Компиляторы</a><a href="https://tproger.ru/tag/conferences/">Конференции</a><a href="https://tproger.ru/tag/good-hack/">Красивый хак</a><a href="https://tproger.ru/tag/best-practice/">Лучшая практика</a><a href="https://tproger.ru/tag/mining/">Майнинг</a><a href="https://tproger.ru/tag/arrays-and-strings/">Массивы и строки</a><a href="https://tproger.ru/tag/guest/">Материалы от друзей Tproger</a><a href="https://tproger.ru/tag/software-development/">Методологии разработки</a><a href="https://tproger.ru/tag/microservices/">Микросервисы</a><a href="https://tproger.ru/tag/multithreading/">Многопоточность</a><a href="https://tproger.ru/tag/music/">Музыка</a><a href="https://tproger.ru/tag/skills/">Навыки</a><a href="https://tproger.ru/tag/low-level-coding/">Низкоуровневое программирование</a><a href="https://tproger.ru/tag/obrazovanie/">Образование</a><a href="https://tproger.ru/tag/courses/">Обучающие курсы</a><a href="https://tproger.ru/tag/learn-programming/">Обучение программированию</a><a href="https://tproger.ru/tag/oop/">Объектно-ориентированное программирование</a><a href="https://tproger.ru/tag/competitive-programming/">Олимпиадное программирование</a><a href="https://tproger.ru/tag/operating-systems/">Операционные системы</a><a href="https://tproger.ru/tag/optimization/">Оптимизация</a><a href="https://tproger.ru/tag/dev-organising/">Организация разработки</a><a href="https://tproger.ru/tag/debugging/">Отладка</a><a href="https://tproger.ru/tag/parsing/">Парсинг</a><a href="https://tproger.ru/tag/partnered/">Партнёрский материал</a><a href="https://tproger.ru/tag/performance/">Производительность</a><a href="https://tproger.ru/tag/job/">Работа</a><a href="https://tproger.ru/tag/recognition/">Распознавание</a><a href="https://tproger.ru/tag/retro/">Ретро</a><a href="https://tproger.ru/tag/services/">Сервисы</a><a href="https://tproger.ru/tag/network-protocols/">Сетевые протоколы</a><a href="https://tproger.ru/tag/job-interview/">Собеседование</a><a href="https://tproger.ru/tag/advices/">Советы</a><a href="https://tproger.ru/tag/social-networks/">Социальные сети</a><a href="https://tproger.ru/tag/supercomputers/">Суперкомпьютеры</a><a href="https://tproger.ru/tag/data-storage-formats/">Форматы хранения данных</a><a href="https://tproger.ru/tag/frameworks/">Фреймворки</a><a href="https://tproger.ru/tag/functional-programming/">Функциональное программирование</a><a href="https://tproger.ru/tag/meltdown-spectre/">Чипокалипсис</a><a href="https://tproger.ru/tag/cheatsheets/">Шпаргалки</a><a href="https://tproger.ru/tag/programming-languages/">Языки программирования</a></div> </div>
+</div>
+</div>
+<div id="mailModal" style="display: none; position: fixed; width: 100%; height: 100%; top: 0px; left: 0px; background-color: rgb(255, 255, 255); overflow-y: auto; z-index: -9999; opacity: 0; animation-duration: 0.6s;" class="animated mailModal-off">
+<div class="closebt-container close-mailModal">
+<img class="lazy-hidden closebt" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/lazy_placeholder.webp" data-lazy-type="image" data-src="/wp-content/themes/bliss/assets/img/close-modal.svg"><noscript><img class="closebt" src="/wp-content/themes/bliss/assets/img/close-modal.svg"></noscript> </div>
+<div class="modal-container fixed-modal-container">
+<section id="yikes-mailchimp-container-4" class="yikes-mailchimp-container yikes-mailchimp-container-4 ">
+<form id="modal-window-4" class="yikes-easy-mc-form yikes-easy-mc-form-4  " method="POST" data-attr-form-id="4">
+<label for="yikes-easy-mc-form-4-EMAIL" class="EMAIL-label yikes-mailchimp-field-required ">
+
+
+<p class="form-field-description" id="form-field-description-EMAIL">«Аргументы и функции» — обзор самого важного из мира разработки. Даже не нужно переходить по ссылкам, просто прочитать одно письмо. Присылаем каждый день, по вечерам.</p>
+<input id="yikes-easy-mc-form-4-EMAIL" name="EMAIL" placeholder="Введите свой e-mail" class="yikes-easy-mc-email field-no-label" required="required" type="email" value="">
+
+</label>
+
+<input type="hidden" name="yikes-mailchimp-honeypot" id="yikes-mailchimp-honeypot-4" value="">
+
+<input type="hidden" name="yikes-mailchimp-associated-list-id" id="yikes-mailchimp-associated-list-id-4" value="240c13bb08">
+
+<input type="hidden" name="yikes-mailchimp-submitted-form" id="yikes-mailchimp-submitted-form-4" value="4">
+
+<button type="submit" class="btn bluth tproger btn- yikes-subscribe-button-4">Подписаться</button> 
+<input type="hidden" id="yikes_easy_mc_new_subscriber_4" name="yikes_easy_mc_new_subscriber" value="e2ce521238">
+<input type="hidden" name="_wp_http_referer" value="/translations/how-css-flexbox-works/">
+</form>
+
+</section>
+<div>
+<p>Выглядит это примерно так:</p>
+<img id="mailModalImage" class="shadow" data-src="https://cdn.tproger.ru/wp-content/themes/bliss/assets/img/af.png" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+</div>
+</div>
+</div>
+<div id="float-banner-container" style="display:none">
+<a class="mail-modal" href="https://tproger.ru/translations/how-css-flexbox-works/#mailModal"><img class="swing5s" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/email.webp" title="Рассылка «Аргументы и функции»"></a>
+</div>
+<iframe name="ym-native-frame" title="ym-native-frame" frameborder="0" aria-hidden="true" style="opacity: 0 !important; width: 0px !important; height: 0px !important; position: absolute !important; left: 100% !important; bottom: 100% !important; border: 0px !important;" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/saved_resource.html"></iframe><script type="text/javascript">
+/* <![CDATA[ */
+var pvcArgsFrontend = {"mode":"ajax","requestURL":"https:\/\/tproger.ru\/wp-content\/plugins\/post-views-counter\/includes\/ajax.php","postID":"28540","nonce":"886423371f"};
+/* ]]> */
+</script>
+<script defer="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/0c8fd.js.Без названия"></script>
+<script type="text/javascript" defer="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/elevator.js.Без названия"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var tprogerElevator = {"pluginsUrl":"https:\/\/tproger.ru\/wp-content\/plugins"};
+/* ]]> */
+</script>
+<script type="text/javascript" defer="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/tproger-elevator.js.Без названия"></script>
+<script type="text/javascript" defer="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/modernizr.custom.js.Без названия"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var mistape_args = {"ajaxurl":"https:\/\/tproger.ru\/wp-admin\/admin-ajax.php","nonce":"2ec545737a"};
+/* ]]> */
+</script>
+<script type="text/javascript" defer="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/mistape-front.js.Без названия"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var pollsL10n = {"ajax_url":"https:\/\/tproger.ru\/wp-admin\/admin-ajax.php","text_wait":"\u0412\u0430\u0448 \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0439 \u0437\u0430\u043f\u0440\u043e\u0441 \u0435\u0449\u0435 \u043e\u0431\u0440\u0430\u0431\u0430\u0442\u044b\u0432\u0430\u0435\u0442\u0441\u044f. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430 \u043f\u043e\u0434\u043e\u0436\u0434\u0438\u0442\u0435 ...","text_valid":"\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430 \u043a\u043e\u0440\u0440\u0435\u043a\u0442\u043d\u043e \u0432\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u043e\u0442\u0432\u0435\u0442.","text_multiple":"\u041c\u0430\u043a\u0441\u0438\u043c\u0430\u043b\u044c\u043d\u043e \u0434\u043e\u043f\u0443\u0441\u0442\u0438\u043c\u043e\u0435 \u0447\u0438\u0441\u043b\u043e \u0432\u0430\u0440\u0438\u0430\u043d\u0442\u043e\u0432:","show_loading":"1","show_fading":"1"};
+/* ]]> */
+</script>
+<script defer="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/e0a8b.js.Без названия"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var blu = {"site_url":"https:\/\/tproger.ru","ajaxurl":"https:\/\/tproger.ru\/wp-admin\/admin-ajax.php","locale":{"no_search_results":"No results match your search.","searching":"Searching...","search_results":"\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u044b \u043f\u043e\u0438\u0441\u043a\u0430","see_all":"see all","loading":"Loading...","no_more_posts":"No more posts","see_more_articles":"See more articles","no_email_provided":"No email provided","thank_you_for_subscribing":"Thank you for subscribing!"}};
+/* ]]> */
+</script>
+<script defer="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/e1630.js.Без названия"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var a3_lazyload_params = {"apply_images":"1","apply_videos":"1"};
+/* ]]> */
+</script>
+<script defer="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/991e9.js.Без названия"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var a3_lazyload_extend_params = {"edgeY":"100"};
+/* ]]> */
+</script>
+<script defer="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/5adc3.js.Без названия"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var mystickyside_name = {"mystickyside_string":"#side-bar","mystickyside_content_string":"#primary","mystickyside_margin_top_string":"60","mystickyside_margin_bot_string":"5","mystickyside_update_sidebar_height_string":"","mystickyside_min_width_string":"977","device_desktop":"1","device_mobile":"1"};
+/* ]]> */
+</script>
+<script defer="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/33622.js.Без названия"></script>
+<script type="text/javascript" defer="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/prism.js.Без названия"></script>
+<script type="text/javascript" defer="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/main.js.Без названия"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var yikes_mailchimp_ajax = {"ajax_url":"https:\/\/tproger.ru\/wp-admin\/admin-ajax.php","page_data":"28540","interest_group_checkbox_error":"\u042d\u0442\u043e \u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e\u0435 \u043f\u043e\u043b\u0435.","preloader_url":"https:\/\/tproger.ru\/wp-content\/plugins\/yikes-inc-easy-mailchimp-extender\/includes\/images\/ripple.svg","loading_dots":"https:\/\/tproger.ru\/wp-content\/plugins\/yikes-inc-easy-mailchimp-extender\/includes\/images\/bars.svg","ajax_security_nonce":"43b9ae49f9","feedback_message_placement":"before"};
+var yikes_mailchimp_ajax = {"ajax_url":"https:\/\/tproger.ru\/wp-admin\/admin-ajax.php","page_data":"28540","interest_group_checkbox_error":"\u042d\u0442\u043e \u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e\u0435 \u043f\u043e\u043b\u0435.","preloader_url":"https:\/\/tproger.ru\/wp-content\/plugins\/yikes-inc-easy-mailchimp-extender\/includes\/images\/ripple.svg","loading_dots":"https:\/\/tproger.ru\/wp-content\/plugins\/yikes-inc-easy-mailchimp-extender\/includes\/images\/bars.svg","ajax_security_nonce":"43b9ae49f9","feedback_message_placement":"before"};
+/* ]]> */
+</script>
+<script defer="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/44701.js.Без названия"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var form_submission_helpers = {"ajax_url":"https:\/\/tproger.ru\/wp-admin\/admin-ajax.php","preloader_url":"https:\/\/tproger.ru\/wp-admin\/images\/wpspin_light.gif","countries_with_zip":{"US":"US","GB":"GB","CA":"CA","IE":"IE","CN":"CN","IN":"IN","AU":"AU","BR":"BR","MX":"MX","IT":"IT","NZ":"NZ","JP":"JP","FR":"FR","GR":"GR","DE":"DE","NL":"NL","PT":"PT","ES":"ES"},"page_data":"28540"};
+var form_submission_helpers = {"ajax_url":"https:\/\/tproger.ru\/wp-admin\/admin-ajax.php","preloader_url":"https:\/\/tproger.ru\/wp-admin\/images\/wpspin_light.gif","countries_with_zip":{"US":"US","GB":"GB","CA":"CA","IE":"IE","CN":"CN","IN":"IN","AU":"AU","BR":"BR","MX":"MX","IT":"IT","NZ":"NZ","JP":"JP","FR":"FR","GR":"GR","DE":"DE","NL":"NL","PT":"PT","ES":"ES"},"page_data":"28540"};
+/* ]]> */
+</script>
+<script defer="" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/de6ef.js.Без названия"></script>
+<script type="text/javascript" src="./Как работает CSS Flexbox_ наглядное введение в систему компоновки элементов на веб-странице_files/OneSignalSDK.js.Без названия" async="async"></script>
+<div class="mistape_mod_notification" style="display:none;">
+<div class="tms_icon">
+<span class="icon-heart"></span>
+</div>
+Спасибо за внимательность.<br>Опечатка уже отправлена нашим редакторам.
+</div>
+<script>
+				var mistape_slack_hook = "Когда-то тут был hook для отправки репорта нам в Slack, но он испугался злых хацкеров и убежал в лес";
+			</script>
+<ym-measure class="ym-viewport" style="display: block; top: 0px; right: 0px; bottom: 0px; left: 0px; position: fixed; transform: translate(0px, -100%); transform-origin: 0px 0px;"></ym-measure><ym-measure class="ym-zoom" style="bottom: 100%; position: fixed; width: 100vw;"></ym-measure></body></html>

@@ -1,0 +1,100 @@
+function getFloatWidget(widget_id,post_id,post_type,post_tags){let localStorageData=JSON.parse(localStorage.getItem('tp_a_d_s_baner'));let widget=document.getElementById(widget_id);if('fetch'in window){fetch('/wp-json/site/widget/v1/get',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},body:'data='+
+JSON.stringify(localStorageData)+
+'&post='+
+post_id+
+'&type=2&post_type='+
+post_type+
+'&post_tags='+
+post_tags}).then(r=>r.json()).then(data=>{let startInSeconds=3;if(data.text!=''){widget.querySelector('#float-widget-text').innerHTML=data.text;}
+if(data.button_text!=''){widget.querySelector('#float-widget-positive-btn').innerHTML=data.button_text;}
+if(data.button_cancel_text!=''){widget.querySelector('#float-widget-negative-btn').innerHTML=data.button_cancel_text;}
+if(data.image!=''){widget.querySelector('#float-widget-img').src=data.image;}
+if(data.link!=''){widget.querySelector('#float-widget-a').href=data.link;}
+if(data.custom_class!=''){widget.className+=data.custom_class;}
+if(data.custom_style!=''){createStyleBlock(data.custom_style);}
+let goalType='';let goalTarget=0;if(data.options!=''){let options=JSON.parse(data.options);if(options.marginBottom!=''){widget.style.marginBottom=options.marginBottom+'px';}
+if(options.paddingBottom!=''){widget.querySelector('#float-widget').style.paddingBottom=options.paddingBottom+'px';}
+if(options.transformSecond!=''){widget.querySelector('#float-widget').style.transition='transform '+options.transformSecond+'s ease';widget.querySelector('#float-widget').style.WebkitTransition='transform '+options.transformSecond+'s ease';widget.querySelector('#float-widget').style.MozTransition='transform '+options.transformSecond+'s ease';}
+if(options.paddingImageFromText!=''){if(options.imageAlignPosition&&options.imageAlignPosition==0){widget.querySelector('#float-widget-img').style.marginLeft=0;widget.querySelector('#float-widget-img').style.marginRight=options.paddingImageFromText+'px';widget.querySelector('#float-widget-a').style.flexDirection='row-reverse';}else{widget.querySelector('#float-widget-img').style.marginRight=0;widget.querySelector('#float-widget-img').style.marginLeft=options.paddingImageFromText+'px';}}
+if(options.alignImage!=''){widget.querySelector('#float-widget-a').style.alignItems=options.alignImage;}
+if(options.textWidth!=''){widget.querySelector('#float-widget-text').style.width=options.textWidth+'px';}
+if(options.positiveBtnBackgroundColor!=''){widget.querySelector('#float-widget-positive-btn').style.backgroundColor=options.positiveBtnBackgroundColor;if(options.textBorder!=''&&options.textBorder>0){widget.querySelector('#float-widget-text').style.border='solid 2px '+options.positiveBtnBackgroundColor;}}
+if(options.positiveBtnTextColor!=''){widget.querySelector('#float-widget-positive-btn').style.color=options.positiveBtnTextColor;}
+if(options.widgetAlignItems!=''){widget.querySelector('#float-widget-blocks').style.alignItems=options.widgetAlignItems;}
+if(options.goalType){goalType=options.goalType;}
+if(options.goalTarget){goalTarget=options.goalTarget;}
+if(window.innerWidth<='420'){if(options.decreaseFontOnMobile&&options.decreaseFontOnMobile>0){var mobile_font_size='15px';widget.querySelector('#float-widget-text').style.fontSize=mobile_font_size;widget.querySelector('.float-widget-btn').style.fontSize=mobile_font_size;}
+if(options.imageWidthMobile!=''){widget.querySelector('#float-widget-img').style.width=options.imageWidthMobile+'px';}}else{if(options.imageWidth!=''){widget.querySelector('#float-widget-img').style.width=options.imageWidth+'px';}}
+if(options.startInSeconds){startInSeconds=options.startInSeconds;}}
+if(data.ab_test==1&&typeof dataLayer!='undefined'&&dataLayer){dataLayer.push({event:'optimize.activate'});}
+let tags=null;if(document.getElementById('post_tag_list')){tags=document.getElementById('post_tag_list').value.split(',');}
+let baner_tags=data.tag_list.split(',');let arrays=[tags,baner_tags];let post_baner_tags=arrays.reduce((join,current)=>join.filter(el=>current.includes(el))).join(',');let jsonBaner=JSON.stringify({banner_id:data.id,event_tags:post_baner_tags,goal_type:goalType,goal_target:goalTarget});initBanner(data.baner_key,data.id,jsonBaner);widget.querySelector('#float-widget-a').onclick=function(){return clickBanner(widget,data.baner_key,data.id,jsonBaner);};widget.querySelector('#float-widget-negative-btn').onclick=function(e){e.preventDefault();e.stopPropagation();return closeBanner(widget,data.baner_key,data.id,jsonBaner);};widget.querySelector('#float-widget-close-btn').onclick=function(e){e.preventDefault();e.stopPropagation();return closeBanner(widget,data.baner_key,data.id,jsonBaner);};setTimeout(function(){widget.querySelector('#float-widget').classList.add('float-widget-show');showBanner(data.baner_key,data.id,jsonBaner);},startInSeconds*1000);}).catch(err=>{});}else{$.reachGloal('tech','not-supported','fetch');}}
+function getFixWidget(widget_id,post_id,post_type,post_tags,exclude=0){let localStorageData=JSON.parse(localStorage.getItem('tp_a_d_s_baner'));let widget=document.getElementById(widget_id);let url='data='+
+JSON.stringify(localStorageData)+
+'&post='+
+post_id+
+'&type=1&post_type='+
+post_type+
+'&post_tags='+
+post_tags;if(exclude>0){url=url+'&exclude='+exclude;}
+if('fetch'in window){fetch('/wp-json/site/widget/v1/get',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},body:url}).then(r=>r.json()).then(data=>{if(data.text!=''){widget.querySelector('#fix-widget-text').innerHTML=data.text;}
+if(data.button_text!=''){widget.querySelector('#fix-widget-button').innerHTML=data.button_text;}
+if(data.image!=''){widget.querySelector('#fix-widget-img').src=data.image;}
+if(data.link!=''){widget.querySelector('#fix-widget-a').href=data.link;widget.querySelector('#fix-widget-button').href=data.link;}
+if(data.custom_class!=''){widget.className+=data.custom_class;}
+if(data.custom_style!=''){createStyleBlock(data.custom_style);}
+let goalType='';let goalTarget=0;if(data.options!=''){let options=JSON.parse(data.options);if(options.goalType){goalType=options.goalType;}
+if(options.goalTarget){goalTarget=options.goalTarget;}
+if(options.imageWidth!=''){widget.querySelector('#fix-widget-img').style.width=options.imageWidth+'px';}}
+if(data.ab_test==1&&typeof dataLayer!='undefined'&&dataLayer){dataLayer.push({event:'optimize.activate'});}
+let tags=null;if(document.getElementById('post_tag_list')){tags=document.getElementById('post_tag_list').value.split(',');}
+let baner_tags=data.tag_list.split(',');let arrays=[tags,baner_tags];let post_baner_tags=arrays.reduce((join,current)=>join.filter(el=>current.includes(el))).join(',');let jsonBaner=JSON.stringify({banner_id:data.id,event_type:'test',event_tags:post_baner_tags,goal_type:goalType,goal_target:goalTarget});initBanner(data.baner_key,data.id,jsonBaner);widget.querySelector('#fix-widget-a').onclick=function(){return clickBanner(widget,data.baner_key,data.id,jsonBaner,2);};widget.querySelector('#fix-widget-button').onclick=function(){return clickBanner(widget,data.baner_key,data.id,jsonBaner,2);};widget.querySelector('#fix-widget-close-btn').onclick=function(e){e.preventDefault();e.stopPropagation();return closeBanner(widget,data.baner_key,data.id,jsonBaner,2);};if(exclude<1){if(window.innerWidth>979){let bottomWidget=document.getElementById('fix-bottom-widget-container');if(bottomWidget){getFixWidget('fix-bottom-widget-container',post_id,post_type,post_tags,data.id);}}
+let mobileWidget=document.getElementById('fbaner-mobile');if(mobileWidget&&window.innerWidth<=979){$(widget).detach().appendTo(mobileWidget);mobileWidget.style.display='block';}}
+widget.style.display='block';showBanner(data.baner_key,data.id,jsonBaner);}).catch(err=>{});}else{$.reachGloal('tech','not-supported','fetch');}}
+function getFixWidgetAfterPost(widget_id,post_id,post_type,post_tags){let widget=document.getElementById(widget_id);let url='post='+
+post_id+
+'&type=3&post_type='+
+post_type+
+'&post_tags='+
+post_tags;if('fetch'in window){fetch('/wp-json/site/widget/v1/get',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},body:url}).then(r=>r.json()).then(data=>{if(data.text!=''){widget.querySelector('#after-post-widget-text').innerHTML=data.text;}
+if(data.button_text!=''){widget.querySelector('#after-post-widget-button').innerHTML=data.button_text;}
+if(data.image!=''){widget.querySelector('#after-post-widget-img').src=data.image;}
+if(data.link!=''){widget.querySelector('#after-post-widget-a').href=data.link;widget.querySelector('#after-post-widget-button').href=data.link;}
+if(data.custom_class!=''){widget.className+=data.custom_class;}
+if(data.custom_style!=''){createStyleBlock(data.custom_style);}
+let goalType='';let goalTarget=0;if(data.options!=''){let options=JSON.parse(data.options);if(options.goalType){goalType=options.goalType;}
+if(options.goalTarget){goalTarget=options.goalTarget;}
+if(options.imageWidth!=''){widget.querySelector('#after-post-widget-img').style.width=options.imageWidth+'px';}}
+if(data.ab_test==1&&typeof dataLayer!='undefined'&&dataLayer){dataLayer.push({event:'optimize.activate'});}
+let tags=null;if(document.getElementById('post_tag_list')){tags=document.getElementById('post_tag_list').value.split(',');}
+let baner_tags=data.tag_list.split(',');let arrays=[tags,baner_tags];let post_baner_tags=arrays.reduce((join,current)=>join.filter(el=>current.includes(el))).join(',');let jsonBaner=JSON.stringify({banner_id:data.id,event_type:'test',event_tags:post_baner_tags,goal_type:goalType,goal_target:goalTarget});initBanner(data.baner_key,data.id,jsonBaner);widget.querySelector('#after-post-widget-a').onclick=function(){return clickBanner(widget,data.baner_key,data.id,jsonBaner,3);};widget.querySelector('#after-post-widget-button').onclick=function(){return clickBanner(widget,data.baner_key,data.id,jsonBaner,3);};if(window.jQuery){jQuery(widget.querySelector('.h-widget')).slideToggle('slow');jQuery(widget.querySelector('.adsLinkBlockFixBaner')).slideToggle('slow');}else{widget.querySelector('.h-widget').style.display='block';widget.querySelector('.adsLinkBlockFixBaner').style.display='block';}
+showBanner(data.baner_key,data.id,jsonBaner);}).catch(err=>{});}else{$.reachGloal('tech','not-supported','fetch');}}
+function getTopWidgetAfterPost(widget_id,post_id,post_type,post_tags){let localStorageData=JSON.parse(localStorage.getItem('tp_a_d_s_baner'));let widget=document.getElementById(widget_id);let url='data='+
+JSON.stringify(localStorageData)+
+'&post='+
+post_id+
+'&type=4&post_type='+
+post_type+
+'&post_tags='+
+post_tags;if('fetch'in window){fetch('/wp-json/site/widget/v1/get',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},body:url}).then(r=>r.json()).then(data=>{if(data.text!=''){widget.querySelector('#top-post-widget-text').innerHTML=data.text;}
+if(data.custom_class!=''){widget.className+=data.custom_class;}
+if(data.image!=''){widget.style.background="url('"+data.image+"') no-repeat center";}
+if(data.link!=''){widget.querySelector('#top-post-widget-a').href=data.link;widget.querySelector('#top-post-widget-button').href=data.link;}
+if(data.custom_style!=''){createStyleBlock(data.custom_style);}
+let goalType='';let goalTarget=0;if(data.options!=''){let options=JSON.parse(data.options);if(options.goalType){goalType=options.goalType;}
+if(options.goalTarget){goalTarget=options.goalTarget;}
+if(options.imageWidth!=''){}}
+if(data.ab_test==1&&typeof dataLayer!='undefined'&&dataLayer){dataLayer.push({event:'optimize.activate'});}
+let tags=null;if(document.getElementById('post_tag_list')){tags=document.getElementById('post_tag_list').value.split(',');}
+let baner_tags=data.tag_list.split(',');let arrays=[tags,baner_tags];let post_baner_tags=arrays.reduce((join,current)=>join.filter(el=>current.includes(el))).join(',');let jsonBaner=JSON.stringify({banner_id:data.id,event_type:'test',event_tags:post_baner_tags,goal_type:goalType,goal_target:goalTarget});initBanner(data.baner_key,data.id,jsonBaner);widget.querySelector('#top-post-widget-a').onclick=function(){return clickBanner(widget,data.baner_key,data.id,jsonBaner,4);};widget.style.height='232px';widget.style.marginBottom='-82px';if(window.jQuery){jQuery(widget.querySelector('.t-widget-box-container')).slideToggle('slow');}else{widget.querySelector('t-widget-box-container').style.display='block';}
+let header=document.getElementById('masthead');header.style.zIndex=500;let headContainer=document.getElementById('header-container');headContainer.style.backgroundColor='rgba(0,0,0,.4)';showBanner(data.baner_key,data.id,jsonBaner);}).catch(err=>{widget.remove();});}else{$.reachGloal('tech','not-supported','fetch');}}
+function createStyleBlock(style){if(style!=''){let styleBlock=document.createElement('style');styleBlock.type='text/css';styleBlock.appendChild(document.createTextNode(style));document.head.appendChild(styleBlock);}}
+function checkData(e){switch(e){case '':case 0:case '0':case null:case 'null':case false:case undefined:case typeof this=='undefined':return true;default:return false;}}
+function initBanner(key,banner_id,jsonBaner){let event='init';if(typeof ga!='undefined'&&ga)ga('send','event',event,key);fetch('/wp-json/site/widget/v1/'+event+'?id='+banner_id,{method:'HEAD',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'}});jsonBaner=JSON.parse(jsonBaner);jsonBaner.event_type=event;fetch('https://rstat.tproger.ru/wh/banner',{method:'POST',headers:{'Content-Type':'application/json;charset=utf-8'},body:JSON.stringify(jsonBaner)});}
+function showBanner(key,banner_id,jsonBaner){var event='show';var localStorageData=JSON.parse(localStorage.getItem('tp_a_d_s_baner'));if(checkData(localStorageData)){localStorageData={};}
+localStorageData[key]=event;localStorage.setItem('tp_a_d_s_baner',JSON.stringify(localStorageData));if(typeof ga!='undefined'&&ga)ga('send','event',event,key);fetch('/wp-json/site/widget/v1/'+event+'?id='+banner_id,{method:'HEAD',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'}});jsonBaner=JSON.parse(jsonBaner);jsonBaner.event_type=event;fetch('https://rstat.tproger.ru/wh/banner',{method:'POST',headers:{'Content-Type':'application/json;charset=utf-8'},body:JSON.stringify(jsonBaner)});}
+function clickBanner(widget,key,banner_id,jsonBaner,type=1){let event='click';if(type!=3){let localStorageData=JSON.parse(localStorage.getItem('tp_a_d_s_baner'));if(checkData(localStorageData)){localStorageData={};}
+localStorageData[key]=event;localStorage.setItem('tp_a_d_s_baner',JSON.stringify(localStorageData));}
+if(typeof ga!='undefined'&&ga)ga('send','event',event,key);fetch('/wp-json/site/widget/v1/'+event+'?id='+banner_id,{method:'HEAD',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'}});jsonBaner=JSON.parse(jsonBaner);jsonBaner.event_type=event;fetch('https://rstat.tproger.ru/wh/banner',{method:'POST',headers:{'Content-Type':'application/json;charset=utf-8'},body:JSON.stringify(jsonBaner)});if(type===1){widget.querySelector('#float-widget').className='';}else if(type===2){widget.remove();}}
+function closeBanner(widget,key,banner_id,jsonBaner,type=1){var event='close';var localStorageData=JSON.parse(localStorage.getItem('tp_a_d_s_baner'));if(checkData(localStorageData)){localStorageData={};}
+localStorageData[key]=event;localStorage.setItem('tp_a_d_s_baner',JSON.stringify(localStorageData));if(typeof ga!='undefined'&&ga)ga('send','event',event,key);fetch('/wp-json/site/widget/v1/'+event+'?id='+banner_id,{method:'HEAD',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'}});jsonBaner=JSON.parse(jsonBaner);jsonBaner.event_type=event;fetch('https://rstat.tproger.ru/wh/banner',{method:'POST',headers:{'Content-Type':'application/json;charset=utf-8'},body:JSON.stringify(jsonBaner)});if(type===1){widget.querySelector('#float-widget').className='';}else{widget.remove();}}
