@@ -633,3 +633,51 @@ form button:active {
 .details-info > p {
   padding-top: 20px;
 }
+.contact-content {
+  margin-bottom: 120px;
+}
+
+.contact-windows {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-evenly;
+}
+
+.contact-window {
+  text-align: center;
+  border: 1px solid #a6a6a6;
+  padding-top: 2em;
+  min-width: 25%;
+}
+
+.fa-map-marker-alt {
+  font-size: 50px;
+}
+
+.state {
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.364;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.type-contact {
+  font-size: 14px;
+  color: rgb(108, 108, 108);
+  font-weight: bold;
+  line-height: 1.429;
+}
+
+.type-contact-text {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.429;
+  padding-bottom: 1em;
+}
+
+.silver {
+  color: rgb(108, 108, 108);
+  font-weight: normal;
+}
