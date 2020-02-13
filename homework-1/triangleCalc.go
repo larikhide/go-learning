@@ -13,7 +13,7 @@ func main(){
 	area = a * b / 0.5
 
 	//find hypotenyse
-	hypotenyse = math.Sqrt(math.Hypot(a, b))
+	hypotenyse = math.Hypot(a, b)
 
 	//find perimeter
 	perimeter = a + b + hypotenyse
