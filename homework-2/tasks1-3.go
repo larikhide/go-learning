@@ -32,6 +32,7 @@ func fibHundred(...int) {
 	fmt.Printf("Первые 100 чисел Фибоначчи: ")
 	for i := 0; i <= 98; i++ {
 		fmt.Printf("%v ", a)
+		// складывает а и Б , результат записывает в а
 		a.Add(a, b)
 		a, b = b, a
 	}
