@@ -35,9 +35,32 @@ func fibHundred(a, b *big.Int) {
 	return
 }
 
+func sieveOfEratos(n int) {
+	//создать булевый массив зполненный false
+	nums := make([]bool, n)
+
+	//вычеркнуть числа от 2p, 3p .. до n
+	for i := 2; i*i < n; i++ {
+		if nums[i] == false {
+			for j := i * i; j < n; j += i {
+				nums[j] = true
+			}
+		}
+	}
+
+	//вывести на экран натуральные числа
+	fmt.Printf("\nПростые числа меньше %v: ", n)
+	for i := 2; i < n; i++ {
+		if nums[i] == false {
+			fmt.Printf("%v ", i)
+		}
+	}
+}
+
 func main() {
 	a := 6
 	evenNum(a)
 	multOfThree(a)
 	fibHundred(big.NewInt(0), big.NewInt(1))
+	sieveOfEratos(100)
 }
