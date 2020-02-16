@@ -32,7 +32,6 @@ func fibHundred(a, b *big.Int) {
 		a.Add(a, b)
 		a, b = b, a
 	}
-	return
 }
 
 func sieveOfEratos(n int) {
