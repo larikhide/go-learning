@@ -12,7 +12,6 @@ func evenNum(a int) {
 	} else {
 		fmt.Printf("Число %v не является четным числом\n", a)
 	}
-	return
 }
 
 // 2. Написать функцию, которая определяет, делится ли число без остатка на 3.
@@ -22,13 +21,10 @@ func multOfThree(a int) {
 	} else {
 		fmt.Printf("Число %v не делится на 3 без остатка\n", a)
 	}
-	return
 }
 
 // 3. Написать функцию, которая последовательно выводит на экран 100 первых чисел Фибоначчи, начиная с 0.
-func fibHundred(...int) {
-	a := big.NewInt(0)
-	b := big.NewInt(1)
+func fibHundred(a, b *big.Int) {
 	fmt.Printf("Первые 100 чисел Фибоначчи: ")
 	for i := 0; i <= 98; i++ {
 		fmt.Printf("%v ", a)
@@ -43,5 +39,5 @@ func main() {
 	a := 6
 	evenNum(a)
 	multOfThree(a)
-	fibHundred(0, 1)
+	fibHundred(big.NewInt(0), big.NewInt(1))
 }
