@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"quenec"
+)
 
 //Machine 1. Описать несколько структур
 type Machine struct {
@@ -39,4 +42,20 @@ func main() {
 	//2. Вывести значения свойств экземпляров в консоль.
 	fmt.Println(lightCar, heavyCar)
 	fmt.Println(heavyCar.Label, lightCar.Year)
+
+	//3. Реализовать очередь fifo
+	quenec.AddQ("Первый")
+	quenec.AddQ("Второй")
+	quenec.AddQ("Третий")
+	fmt.Println(quenec.q)
+
+	fmt.Println(quenec.DiscardQ())
+	fmt.Println(quenec.DiscardQ())
+
+	quenec.AddQ("Четвертый, который по идее уже второй")
+
+	fmt.Println(quenec.DiscardQ())
+	fmt.Println(quenec.DiscardQ())
+	fmt.Println(quenec.DiscardQ())
+
 }
