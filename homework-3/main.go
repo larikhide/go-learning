@@ -1,9 +1,11 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
-	"quenec"
-)
+	"io/ioutil"
+	"log"
+	/* "quenec" */)
 
 //Machine 1. Описать несколько структур
 type Machine struct {
@@ -43,7 +45,7 @@ func main() {
 	fmt.Println(lightCar, heavyCar)
 	fmt.Println(heavyCar.Label, lightCar.Year)
 
-	//3. Реализовать очередь fifo
+	/* //3. Реализовать очередь fifo
 	quenec.AddQ("Первый")
 	quenec.AddQ("Второй")
 	quenec.AddQ("Третий")
@@ -56,6 +58,49 @@ func main() {
 
 	fmt.Println(quenec.DiscardQ())
 	fmt.Println(quenec.DiscardQ())
-	fmt.Println(quenec.DiscardQ())
+	fmt.Println(quenec.DiscardQ()) */
 
+	//* 4. Внести в телефонный справочник дополнительные данные. Реализовать сохранение json-файла на диске с помощью пакета ioutil при изменении данных.
+	//cоздали книгу, записали двоих
+	addressBook := make(map[string]int)
+	addressBook["Masha"] = 8918745875
+	addressBook["Vasiliy"] = 8916547155
+
+	// из книги сделали массив байт
+	aB, err := json.Marshal(addressBook)
+	if err != nil {
+		log.Println(err)
+		return
+	}
+
+	// записали массив байт в файл
+	err = ioutil.WriteFile("myAddressBook", aB, 0644)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	//прочитали массив байт из файла
+	content, err := ioutil.ReadFile("myAddressBook")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	//массив байт в карту
+	err = json.Unmarshal(content, &aB)
+
+	//добавили нового человека
+	addressBook["Ahmed"] = 8922888294
+
+	// из книги сделали массив байт
+	aB, err = json.Marshal(addressBook)
+	if err != nil {
+		log.Println(err)
+		return
+	}
+
+	// записали массив байт в файл
+	err = ioutil.WriteFile("myAddressBook", aB, 0644)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
