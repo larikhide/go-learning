@@ -5,7 +5,9 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
-	/* "quenec" */)
+
+	"github.com/larikhide/GoSyntax/homework-3/quenec"
+)
 
 //Machine 1. Описать несколько структур
 type Machine struct {
@@ -45,11 +47,10 @@ func main() {
 	fmt.Println(lightCar, heavyCar)
 	fmt.Println(heavyCar.Label, lightCar.Year)
 
-	/* //3. Реализовать очередь fifo
+	//3. Реализовать очередь fifo
 	quenec.AddQ("Первый")
 	quenec.AddQ("Второй")
 	quenec.AddQ("Третий")
-	fmt.Println(quenec.q)
 
 	fmt.Println(quenec.DiscardQ())
 	fmt.Println(quenec.DiscardQ())
@@ -58,7 +59,7 @@ func main() {
 
 	fmt.Println(quenec.DiscardQ())
 	fmt.Println(quenec.DiscardQ())
-	fmt.Println(quenec.DiscardQ()) */
+	fmt.Println(quenec.DiscardQ())
 
 	//* 4. Внести в телефонный справочник дополнительные данные. Реализовать сохранение json-файла на диске с помощью пакета ioutil при изменении данных.
 	//cоздали книгу, записали двоих

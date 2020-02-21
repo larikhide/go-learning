@@ -1,19 +1,19 @@
 package quenec
 
-import "fmt"
-
 //cоздать очередь
-var q []int
+var q []string
 
 //AddQ добавить новый элемент в очередь
 func AddQ(str string) {
-	q = append(q, 1)
+	q = append(q, str)
 }
 
 //DiscardQ удалить из очереди
-func DiscardQ() {
-	q = q[1:]
+func DiscardQ() string {
 	if len(q) == 0 {
-		fmt.Println("Очереди нет")
+		return "Очереди нет"
 	}
+	elem := q[len(q)-1]
+	q = q[:len(q)-1]
+	return elem
 }
