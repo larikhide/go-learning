@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // 1. написать свой интерфейс и несколько структур удволетворяющих ему
 type getHomer interface {
@@ -25,16 +27,31 @@ type Human struct {
 //пытаюсь реализовать методы для каждой структуры, для того чтобы они удволетворяли интерфейсу
 
 func (w Wookie) home() {
-	fmt.Printf("Вуки под именем %s живет в деревне %s в дупле под номером %d", w.Name, w.Village, w.Hollow)
+	fmt.Printf("Вуки под именем %s живет в деревне %s в дупле под номером %d\n", w.Name, w.Village, w.Hollow)
 }
 
 func (h Human) home() {
-	fmt.Println("Человеки живут в бетонных коробках")
+	fmt.Printf("Человек под именем %s живет на улице %s в доме под номером %d в квартире %d\n", h.Name, h.Street, h.Build, h.Apartment)
 }
 
+// 2. Создать тип, описывающий контакт в телефонной книге. Создать псевдоним типа телефонной книги (массив контактов) и реализовать для него интерфейс Sort{}.
+
+// Contact создать тип описывающий контакт в телефонной книге
+type Contact struct {
+	Name    string
+	Number  int32
+	Address string
+}
+
+//ContactBook создать псевдоним типа телефонной книги (массив контактов)
+type ContactBook []Contact
+
+//Sort метод, который создан для удволетворения интерфейса Sort{}
+func (cb ContactBook) Sort() {}
+
 func main() {
-	var chuwi getHomer = Wookie{Name: "Choobaka", Village: "Hairybugs", Hollow: 3}
-	var khan getHomer = Human{}
+	chuwi := Wookie{Name: "Choobaka", Village: "Hairybugs", Hollow: 3}
+	khan := Human{Name: "Khan Solo", Street: "Puskins", Apartment: 5}
 	chuwi.home()
 	khan.home()
 }
