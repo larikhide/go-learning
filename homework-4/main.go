@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 // 1. написать свой интерфейс и несколько структур удволетворяющих ему
-type getHome interface {
+type getHomer interface {
 	home()
 }
 
@@ -25,7 +25,7 @@ type Human struct {
 //пытаюсь реализовать методы для каждой структуры, для того чтобы они удволетворяли интерфейсу
 
 func (w Wookie) home() {
-	fmt.Println("Вуки живут в деревне на деревьях")
+	fmt.Printf("Вуки под именем %s живет в деревне %s в дупле под номером %d", w.Name, w.Village, w.Hollow)
 }
 
 func (h Human) home() {
@@ -33,8 +33,8 @@ func (h Human) home() {
 }
 
 func main() {
-	var chuwi getHome = Wookie{}
-	var khan getHome = Human{}
+	var chuwi getHomer = Wookie{Name: "Choobaka", Village: "Hairybugs", Hollow: 3}
+	var khan getHomer = Human{}
 	chuwi.home()
 	khan.home()
 }
