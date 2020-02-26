@@ -46,12 +46,25 @@ type Contact struct {
 //ContactBook создать псевдоним типа телефонной книги (массив контактов)
 type ContactBook []Contact
 
-//Sort метод, который создан для удволетворения интерфейса Sort{}
-func (cb ContactBook) Sort() {}
+//Sort интерфейс который нужно удволетворить структурой, у которой есть метод SortingMethod
+type Sort interface {
+	SortingMethod()
+}
+
+//SortingMethod метод, который создан для удволетворения интерфейса Sort{}
+func (cb ContactBook) SortingMethod() {
+	fmt.Printf("Тут должнен быть написан алгоритм сортировки для книги контактов %v\n", cb)
+}
 
 func main() {
 	chuwi := Wookie{Name: "Choobaka", Village: "Hairybugs", Hollow: 3}
 	khan := Human{Name: "Khan Solo", Street: "Puskins", Apartment: 5}
 	chuwi.home()
 	khan.home()
+
+	andrey := Contact{Name: "Andrusha", Number: 1245, Address: "BigHouse"}
+	vladik := Contact{Name: "Vladushka", Number: 5421, Address: "SmallHouse"}
+	book := make(ContactBook, 0)
+	book = append(book, andrey, vladik)
+	book.SortingMethod()
 }
