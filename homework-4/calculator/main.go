@@ -18,6 +18,10 @@ func main() {
 			break
 		}
 
+		if input == "help" {
+			fmt.Println("тут типа текст справки")
+		}
+
 		if res, err := calculator.Calculate(input); err == nil {
 			fmt.Printf("Результат: %v\n", res)
 		} else {
