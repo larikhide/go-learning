@@ -2,12 +2,8 @@ package main
 
 import (
 	"fmt"
-<<<<<<< HEAD
 
 	"github.com/larikhide/GoSyntax/homework-4/calculator/pkg"
-=======
-	"github.com/larikhide/GoSyntax/homework-4/calculator"
->>>>>>> 29acc55fb251dfc75158db298029636c3838bc76
 )
 
 func main() {
@@ -23,13 +19,6 @@ func main() {
 			break
 		}
 
-<<<<<<< HEAD
-=======
-		if input == "help" {
-			fmt.Println("тут типа текст справки")
-		}
-
->>>>>>> 29acc55fb251dfc75158db298029636c3838bc76
 		if res, err := calculator.Calculate(input); err == nil {
 			fmt.Printf("Результат: %v\n", res)
 		} else {

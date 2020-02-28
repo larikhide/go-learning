@@ -59,14 +59,6 @@ func main() {
 	chuwi.home()
 	khan.home()
 
-<<<<<<< HEAD:homework-4/task1-2.go
-	andrey := Contact{Name: "Andrusha", Number: 1245, Address: "BigHouse"}
-	vladik := Contact{Name: "Vladushka", Number: 5421, Address: "SmallHouse"}
-	book := make(ContactBook, 0)
-	book = append(book, andrey, vladik)
-	book.SortingMethod()
-
-=======
 	// использую фунции для второго задания
 	book := []Contact{
 		{"Basya", 9999, "Pushkina Kolotushkina"},
@@ -76,5 +68,4 @@ func main() {
 	fmt.Println(book)
 	sort.Sort(ContactBook(book))
 	fmt.Println(book)
->>>>>>> 29acc55fb251dfc75158db298029636c3838bc76:homework-4/main.go
 }
