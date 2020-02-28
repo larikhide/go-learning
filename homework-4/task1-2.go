@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"sort"
 )
 
 // 1. написать свой интерфейс и несколько структур удволетворяющих ему
@@ -43,29 +44,37 @@ type Contact struct {
 	Address string
 }
 
-//ContactBook создать псевдоним типа телефонной книги (массив контактов)
+//ContactBook создать псевдоним типа телефонной книги (массив нтактов)
 type ContactBook []Contact
 
-//Sort интерфейс который нужно удволетворить структурой, у которой есть метод SortingMethod
-type Sort interface {
-	SortingMethod()
-}
-
-//SortingMethod метод, который создан для удволетворения интерфейса Sort{}
-func (cb ContactBook) SortingMethod() {
-	fmt.Printf("Тут должнен быть написан алгоритм сортировки для книги контактов %v\n", cb)
-}
+//методы которые позволят массиву контактов удволетворить интерфейс Sort{}
+func (cb ContactBook) Len() int           { return len(cb) }
+func (cb ContactBook) Swap(i, j int)      { cb[i], cb[j] = cb[j], cb[i] }
+func (cb ContactBook) Less(i, j int) bool { return cb[i].Name < cb[j].Name }
 
 func main() {
+	//использую функции для первого задания
 	chuwi := Wookie{Name: "Choobaka", Village: "Hairybugs", Hollow: 3}
 	khan := Human{Name: "Khan Solo", Street: "Puskins", Apartment: 5}
 	chuwi.home()
 	khan.home()
 
+<<<<<<< HEAD:homework-4/task1-2.go
 	andrey := Contact{Name: "Andrusha", Number: 1245, Address: "BigHouse"}
 	vladik := Contact{Name: "Vladushka", Number: 5421, Address: "SmallHouse"}
 	book := make(ContactBook, 0)
 	book = append(book, andrey, vladik)
 	book.SortingMethod()
 
+=======
+	// использую фунции для второго задания
+	book := []Contact{
+		{"Basya", 9999, "Pushkina Kolotushkina"},
+		{"Andrey", 7777, "Makarova 45"},
+		{"Zlata", 5555, "Vilkina Pupirkina"},
+	}
+	fmt.Println(book)
+	sort.Sort(ContactBook(book))
+	fmt.Println(book)
+>>>>>>> 29acc55fb251dfc75158db298029636c3838bc76:homework-4/main.go
 }
