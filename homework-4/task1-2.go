@@ -67,4 +67,5 @@ func main() {
 	book := make(ContactBook, 0)
 	book = append(book, andrey, vladik)
 	book.SortingMethod()
+
 }
