@@ -3,13 +3,16 @@ package main
 import "fmt"
 
 func main() {
-	naturals := make(chan int, 10)
+	n := 0
+	fmt.Println("Сколько квадратов посчитать?")
+	fmt.Scan(&n)
+	naturals := make(chan int, n)
 	squares := make(chan int)
 
 	//генерируются простые числа до 10 и отправляются в канал
 	go func() {
 		defer close(naturals)
-		for x := 2; x <= cap(naturals); x++ {
+		for x := 0; x < cap(naturals); x++ {
 			// отправление в буфферизированный канал
 			naturals <- x
 		}
