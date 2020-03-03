@@ -18,6 +18,6 @@ func spinner(delay time.Duration) {
 func main() {
 	go spinner(50 * time.Millisecond)
 	time.Sleep(1 * time.Second)
-	// убирает кусок спиннера из вывода
+	// убирает остаток спиннера из вывода
 	fmt.Printf("\r ")
 }
