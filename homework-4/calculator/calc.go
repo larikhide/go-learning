@@ -3,9 +3,10 @@ package main
 import (
 	"fmt"
 
-	"github.com/larikhide/GoSyntax/homework-4/calculator/pkg"
+	calculator "github.com/larikhide/GoSyntax/homework-4/calculator/pkg"
 )
 
+// Дописать функцию, которая будет выводить справку к калькулятору. Она должна вызываться при вводе слова help вместо выражения.
 func main() {
 	input := ""
 	for {
