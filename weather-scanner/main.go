@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"net/url"
 )
+
 //MMWEATHER преобразованный xml с помощью сайта https://www.onlinetool.io/xmltogo/
 type MMWEATHER struct {
 	XMLName xml.Name `xml:"MMWEATHER"`
@@ -68,8 +69,7 @@ type MMWEATHER struct {
 	} `xml:"REPORT"`
 }
 
-
-func main()  {
+func main() {
 	//запрос на xml в сеть
 	responce, err := http.Get("https://xml.meteoservice.ru/export/gismeteo/point/32277.xml")
 	//обработка ошибки
@@ -86,9 +86,6 @@ func main()  {
 		log.Fatal(err)
 	}
 
-	//вывод массива байт с конвертацией в строку
-	//fmt.Println(string(byteValue))
-
 	var weather MMWEATHER
 	//распаковываем полученный массив байт, передаем weather по ссылке, чтобы unmarshall поменял значение переменной weather
 	err = xml.Unmarshal(byteValue, &weather)
@@ -98,13 +95,12 @@ func main()  {
 	}
 
 	//раскодировать имя города
+	//TODO: url.PathUnescape возвращает строку и ошибку. Узнать как не выводить ошибку
 	fmt.Println(url.PathUnescape(weather.REPORT.TOWN.Sname))
 
 	// short name of area
 	forecast := weather.REPORT.TOWN.FORECAST
-	//пробежаться по полю структуры и получить список максимальных температур по 6 часов
-	//TODO: переписать на range и попробовать вывести другие поля
-	for i:= 0; i<len(forecast); i++ {
-		fmt.Println("T.Max:", forecast[i].TEMPERATURE.Max)
+	for a := range forecast {
+		fmt.Printf("%s-%s-%s at %s o'clock max temperature is %s celcium degree\n", forecast[a].Day, forecast[a].Month, forecast[a].Year, forecast[a].Hour, forecast[a].TEMPERATURE.Max)
 	}
 }
