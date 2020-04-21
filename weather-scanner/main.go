@@ -100,9 +100,7 @@ func main() {
 
 	// short name of area
 	forecast := weather.REPORT.TOWN.FORECAST
-	//пробежаться по полю структуры и получить список максимальных температур по 6 часов
-	//TODO: переписать на range и попробовать вывести другие поля
 	for a := range forecast {
-		fmt.Println("Температура", forecast[a].TEMPERATURE.Max)
+		fmt.Printf("%s-%s-%s at %s o'clock max temperature is %s celcium degree\n", forecast[a].Day, forecast[a].Month, forecast[a].Year, forecast[a].Hour, forecast[a].TEMPERATURE.Max)
 	}
 }
