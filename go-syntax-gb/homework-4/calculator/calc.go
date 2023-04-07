@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	calculator "github.com/larikhide/GoSyntax/homework-4/calculator/pkg"
+	calculator "github.com/larikhide/go-learning/go-syntax-gb/homework-4/calculator/pkg"
 )
 
 // Дописать функцию, которая будет выводить справку к калькулятору. Она должна вызываться при вводе слова help вместо выражения.
@@ -23,7 +23,7 @@ func main() {
 		res, err := calculator.Calculate(input)
 
 		switch {
-		case err == nil :
+		case err == nil:
 			fmt.Printf("Результат: %v\n", res)
 		case input == "help":
 			fmt.Println("Reference is here.\nFor exit inserts exit. SUDDENLY!")

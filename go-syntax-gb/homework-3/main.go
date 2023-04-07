@@ -6,10 +6,10 @@ import (
 	"io/ioutil"
 	"log"
 
-	"github.com/larikhide/GoSyntax/homework-3/quenec"
+	"github.com/larikhide/go-learning/go-syntax-gb/homework-3/quenec"
 )
 
-//Machine 1. Описать несколько структур
+// Machine 1. Описать несколько структур
 type Machine struct {
 	Label   string
 	Year    uint

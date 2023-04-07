@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
-import "D:/skripts/Study-to-be-a-golang-programmer/chapter11Packages/math"
+import (
+	"fmt"
+
+	"github.com/larikhide/go-learning/goolang-book/11-packages/math"
+)
 
 func main() {
 	xs := []float64{}
