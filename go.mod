@@ -1,3 +1,5 @@
-module https: //github.com/larikhide/go-learning
+module github.com/larikhide/go-learning
 
-go 1.12
+go 1.20
+
+require golang.org/x/tour v0.1.0
