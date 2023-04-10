@@ -10,7 +10,7 @@ type MyReader struct{}
 	for k := range b {
 		b[k] = 'A'
 	}
-	return 1, nil
+	return len(b), nil
 } */
 
 func (mr MyReader) Read(b []byte) (int, error) {
