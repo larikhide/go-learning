@@ -42,7 +42,7 @@ func main() {
 	for i := range ch {
 		fmt.Println(i)
 	} */
-
+	//TODO: move test functions in a test package
 	fmt.Println(Same(tree.New(2), tree.New(2)))
 	fmt.Println(Same(tree.New(2), tree.New(3)))
 	fmt.Printf("New 2 is %v \n New 3 is %v", tree.New(2), tree.New(2))
