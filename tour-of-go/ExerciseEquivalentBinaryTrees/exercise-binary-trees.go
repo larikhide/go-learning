@@ -37,13 +37,29 @@ func Same(t1, t2 *tree.Tree) bool {
 }
 
 func main() {
+	//TODO: add test for WalkandCloses
 	//ch := make(chan int)
 	/* go WalkAndClose(tree.New(1), ch)
 	for i := range ch {
 		fmt.Println(i)
 	} */
 	//TODO: move test functions in a test package
-	fmt.Println(Same(tree.New(2), tree.New(2)))
-	fmt.Println(Same(tree.New(2), tree.New(3)))
-	fmt.Printf("New 2 is %v \n New 3 is %v", tree.New(2), tree.New(2))
+	// type testCase struct {exp bool, rec bool}
+	// var testCases []testCase {}
+	fmt.Print("tree.New(1) == tree.New(1): ")
+	expected := true
+	received := Same(tree.New(1), tree.New(1))
+	if received {
+		fmt.Println("PASSED")
+	} else {
+		fmt.Printf("FAILED:\nneed %v\n got: %v", expected, received)
+	}
+	fmt.Print("tree.New(1) != tree.New(2): ")
+	expected = false
+	received = Same(tree.New(1), tree.New(2))
+	if !received {
+		fmt.Println("PASSED")
+	} else {
+		fmt.Printf("FAILED:\nneed %v\ngot: %v\n", expected, received)
+	}
 }
